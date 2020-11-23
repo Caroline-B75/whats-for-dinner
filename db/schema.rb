@@ -12,12 +12,18 @@
 
 ActiveRecord::Schema.define(version: 2020_11_23_163344) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "dishes", force: :cascade do |t|
+  create_table "menus", force: :cascade do |t|
+    t.string "diet"
+    t.integer "number_of_people"
+    t.integer "number_of_meals"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_menus_on_user_id"
   end
 
   create_table "recipes", force: :cascade do |t|
@@ -39,8 +45,12 @@ ActiveRecord::Schema.define(version: 2020_11_23_163344) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "menus", "users"
 end
