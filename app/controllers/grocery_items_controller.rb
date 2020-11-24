@@ -23,7 +23,7 @@ class GroceryItemsController < ApplicationController
     redirect_to menu_grocery_item_path(@grocery_item)
   end
 
-  PRIVATE
+  private
 
   def find_grocery_item
     @grocery_item = GroceryItem.find(params[:id])
