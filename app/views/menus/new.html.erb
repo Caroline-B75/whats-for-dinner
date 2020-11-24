@@ -1,0 +1,6 @@
+<%= simple_form_for @menu do |f| %>
+  <%= f.input :diet, collection: Recipe::DIET %>
+  <%= f.input :number_of_people, as: :numeric %>
+  <%= f.input :number_of_meals, as: :numeric %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>
