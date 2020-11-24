@@ -4,3 +4,5 @@
   <%= f.input :number_of_meals, as: :numeric %>
   <%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>
+
+<%= link_to "Créer un menu_recipe random", menu_menu_recipes_path(@menu, recipe_id: "random"), method: :post %>
