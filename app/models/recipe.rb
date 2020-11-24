@@ -8,7 +8,8 @@ class Recipe < ApplicationRecord
   has_many :ingredients, through: :preparations
   has_many :reviews
   has_many :menus, through: :menu_recipes
-  
+  has_one_attached :photo
+
   validates :name, presence: true
   validates_inclusion_of :difficulty, in :DIFFICULTY, presence: true
   validates_inclusion_of :price, in :PRICE, presence: true
