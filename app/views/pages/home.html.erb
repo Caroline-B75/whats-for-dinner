@@ -6,6 +6,5 @@
   <% recipe.preparations.each do |preparation| %>
     <p><%= Ingredient.find(preparation.ingredient_id).name %> - <%= preparation.quantity %> <%= Ingredient.find(preparation.ingredient_id).unit %></p>
   <% end %>
-  <h3><%= recipe.content %></h3>
+  <h3><%= simple_format(recipe.content) %></h3>
 <% end %>
-<p>re</p>
