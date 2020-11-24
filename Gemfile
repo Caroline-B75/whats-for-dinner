@@ -33,6 +33,9 @@ gem 'devise'
 # cloudinary security
 gem 'dotenv-rails', groups: [:development, :test]
 
+# cloudinary
+gem 'cloudinary', '~> 1.16.0'
+
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
