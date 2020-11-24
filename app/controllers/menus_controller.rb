@@ -27,6 +27,8 @@ class MenusController < ApplicationController
     authorize @menu
   end
 
+  private
+
   def menu_params
     params.require(:menu).permit(:diet, :number_of_people, :number_of_meals)
   end

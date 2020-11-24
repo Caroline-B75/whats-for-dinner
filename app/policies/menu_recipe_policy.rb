@@ -4,4 +4,21 @@ class MenuRecipePolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def create?
+    true
+  end
+
+  def switch?
+    true
+  end
+
+  def update?
+    true
+  end
+
+  def destroy?
+    true
+  end
+
 end
