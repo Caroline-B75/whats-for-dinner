@@ -5,5 +5,5 @@ class Review < ApplicationRecord
 
   validates :rating, presence: true
   validates :content, presence: true
-  validates_inclusion_of :rating, in :RATING
+  validates_inclusion_of :rating, in: RATING
 end
