@@ -1,8 +1,8 @@
 class Recipe < ApplicationRecord
 
-  DIFFICULTY = []
-  DIET = []
-  PRICE = []
+  DIFFICULTY = ["très facile", "facile", "moyen", "avancé"]
+  DIET = ["végétarien", "flexitarian", "carnivore", "sans porc"]
+  PRICE = ["bon marché", "coût moyen", "assez cher"]
 
   has_many :preparations
   has_many :ingredients, through: :preparations
