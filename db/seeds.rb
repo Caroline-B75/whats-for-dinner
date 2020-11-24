@@ -8,19 +8,12 @@
 require "open-uri"
 
 recipe1 = Recipe.create!(name: "Tarte chèvre miel", difficulty: "très facile", price: "bon marché", time: "20 minutes", diet: "végétarien", content: "1) Piquer la pâte brisée avec une fourchette et l'enfourner à 200°C, thermostat 6-7, environ 10 min.
-<br>
 2) Pendant ce temps, couper l'oignon en dés et le faire suer à l'huile d'olive dans une poêle.
-<br>
 3) Quand les oignons ont bien blondis, y ajouter la crème.
-<br>
 4) Lorsque la pâte commence à dorer, la sortir du four et verser dessus les oignons à la crème.
-<br>
 5) Déposer sur la tarte les rondelles de chèvre.
-<br>
 6) Parsemer de gruyère surtout sur les bords de la pâte pour éviter qu'elle ne se dessèche.
-<br>
 7) Verser le miel en ruban sur toute la tarte.
-<br>
 8) Enfourner à nouveau le temps de gratiner le fromage.")
 
 file1 = URI.open("https://res.cloudinary.com/dogomm21h/image/upload/v1606232113/ofwvigvhy76zijzopwvy.jpg")
@@ -28,13 +21,9 @@ recipe1.photo.attach(io: file1, filename: 'some-image.jpg', content_type: 'image
 recipe1.save!
 
 recipe2 = Recipe.create!(name: "Bricks au thon", difficulty: "très facile", price: "bon marché", time: "25 minutes", diet: "carnivore", content: "1) Faire cuire les œufs dans l'eau bouillante pour qu'ils deviennent durs (9 minutes).
-<br>
 2) Écailler les œufs, les écraser avec une fourchette et les mélanger avec le persil et les oignons.
-<br>
 3) Ajouter le thon émietté et le jus du citron pressé.
-<br>
 4) Poivrer à votre convenance en n'hésitant pas à goûter la farce.
-<br>
 5) Mettre un peu de farce au centre de chaque feuille de brick puis replier les quatre côtés de la feuille sur le dessus pour former un rectangle.")
 
 file2 = URI.open("http://res.cloudinary.com/dogomm21h/image/upload/v1606231285/h4ayric0te81ark1scsk.jpg")
