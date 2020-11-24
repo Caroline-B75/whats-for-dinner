@@ -23,8 +23,8 @@ class MenuRecipesController < ApplicationController
   end
 
   def update
-    @menu = Menu.find(params[:id])
-    @menu.update(menu_recipe_params)
+    @menu_recipe = MenuRecipe.find(params[:id])
+    @menu_recipe.update(menu_recipe_params)
 
     authorize @menu_recipe
 
@@ -36,8 +36,8 @@ class MenuRecipesController < ApplicationController
   end
 
   def destroy
-    @menu = Menu.find(params[:id])
-    @menu.destroy
+    @menu_recipe = MenuRecipe.find(params[:id])
+    @menu_recipe.destroy
 
 
     authorize @menu_recipe
