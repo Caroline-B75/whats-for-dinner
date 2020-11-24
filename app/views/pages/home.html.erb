@@ -1,9 +1,67 @@
 <div class=main-container>
-  <input type="button" class="red_button" value="Je crée mon menu">
-  <br>
-  <input type="button" class="yellow_button" value="Générer un menu">
-  <br>
-  <button class="send_button">Envoyer à un ami  |  <i class="fa fa-paper-plane"></i></button>
-  <br>
-  <div class="card-home">card-home</div>
+
+<!-- home top div with bg image -->
+  <div class="title">
+    What's for dinner?
+  </div>
+
+  <!-- home middle div -->
+  <div class="home-middle">
+    <h1>Nous vous simplifions le quotidien<br>dans votre cuisine.</h1>
+    <br><br><br>
+    <div class="d-flex flex-row justify-content-around">
+      <div class="card-home">
+        <p>Obtenez en quelques clics votre menu <b>totalement personnalisable</b> avec des
+        recettes variées et adaptées à vos besoins et vos envies.</p>
+      </div>
+      <div class="card-home">
+        <p>Une <b>liste de courses</b> est automatiquement générée en fonction de votre
+        menu. Vous pouvez <b>la modifier et la compléter</b> à votre guise.</p>
+      </div>
+      <div class="card-home">
+        <p>Chaque jour, accédez aux recettes de votre menu et suivez le guide.
+        Vous, votre famille, vos amis, vos convives se régaleront de vos petits
+        plats mitonnés !</p>
+      </div>
+    </div>
+    <br><br><br>
+    <input type="button" class="red_button home-red" value="Je crée mon menu">
+  </div>
+
+<!-- home bottom div -->
+  <div class="home-bottom">
+    <h2>Pour vous mettre l'eau à la bouche...</h2>
+    <div class="d-flex flex-row">
+      <ul>
+        <!-- iteration sur array random de 4 plats dans une liste -->
+        <li></li>
+      </ul>
+    </div>
+  </div>
+
+<!-- COMPONENTS  -->
+
+  <!-- yellow button -->
+    <input type="button" class="yellow_button" value="Générer un menu">
+    <br>
+
+  <!-- send button -->
+    <button class="send_button">Envoyer à un ami  |  <i class="fa fa-paper-plane"></i></button>
+    <br>
+
+  <!-- card home page -->
+    <div class="card-home">card-home</div>
+    <br>
+
+  <!-- small card -->
+    <div class="card-small">
+      <div class="img-small img">
+        <%= image_tag "" %>
+      </div>
+      <div>
+        <p><b>This is the title</b>
+        <br>This is the description</p>
+      </div>
+    </div>
+
 </div>

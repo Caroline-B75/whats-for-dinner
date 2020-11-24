@@ -1,6 +1,6 @@
 .red_button {
-  width: 401px;
-  height: 71px;
+  width: 250px;
+  height: 70px;
   border-radius: 50px;
   background-color: #AD243E;
   border: 0px;
@@ -11,12 +11,17 @@
   margin-right: auto;
   color: white;
   font-family: 'Lato', sans-serif;
-  font-size: 30px;
+  font-size: 22px;
 }
 
+.home-red {
+    margin-bottom: -75px;
+    z-index: 1099;
+  }
+
 .yellow_button {
-  width: 401px;
-  height: 65px;
+  width: 300px;
+  height: 45px;
   border-radius: 50px;
   background-color: #EAA858;
   border: 0px;
@@ -27,12 +32,12 @@
   margin-right: auto;
   color: white;
   font-family: 'Lobster', sans-serif;
-  font-size: 30px;
+  font-size: 22px;
 }
 
 .send_button {
-  width: 321px;
-  height: 45px;
+  width: 190px;
+  height: 25px;
   border-radius: 15px;
   background-color: #FFFAF6;
   border: 0px;
@@ -41,7 +46,7 @@
   margin-left: auto;
   margin-right: auto;
   font-family: 'Lato', sans-serif;
-  font-size: 18px;
+  font-size: 12px;
 }
 
 
