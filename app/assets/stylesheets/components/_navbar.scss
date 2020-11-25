@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  height: 100px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +10,31 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-button {
+  height: 15px;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 15px;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  color: black;
+  text-decoration: none;
+  border: solid 1px black;
+  padding:  5px;
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+  }
+}
+
+.logo {
+  padding-left: 15px;
+}
+
+.dropdown-item {
+  font-size: 13px;
 }

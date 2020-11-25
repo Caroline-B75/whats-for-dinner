@@ -1,1 +1,33 @@
 // Specific CSS for your home-page
+.home-middle {
+  background-color: #FFFAF6;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  padding: 20px 70px 40px 70px;
+  z-index: 10;
+  h1 {
+    color: #7D4F50;
+    font-size: 35px;
+  }
+  h2 {
+    color: #7D4F50;
+    font-size: 25px;
+  }
+}
+
+.home-bottom {
+  background-color: white;
+  text-align: center;
+  margin-top: -50px;
+  margin-bottom: 50px;
+  padding: 150px 70px 40px 70px;
+  h1 {
+    color: #7D4F50;
+    font-size: 35px;
+  }
+  h2 {
+    color: #7D4F50;
+    font-size: 30px;
+  }
+}
