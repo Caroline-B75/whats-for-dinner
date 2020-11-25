@@ -1,15 +1,10 @@
 class MenuRecipesController < ApplicationController
   def create
     @menu = Menu.find(params[:menu_id])
-    list_recipes = Recipe.where(diet: @menu.diet)
-
-    # random
     if params[:recipe_id] == "random"
-
+      list_recipes = Recipe.where(diet: @menu.diet)
       recipe = list_recipes.sample
-
     else
-    # parmi la list
       recipe = Recipe.find(params[:recipe_id])
     end
 
@@ -28,17 +23,24 @@ class MenuRecipesController < ApplicationController
 
     authorize @menu_recipe
 
-    redirect_to edit_menu_path(@menu)
+    redirect_to edit_menu_path(@menu) if params[:recipe] == "new"
   end
 
   def switch
+    @menu = Menu.find(params[:menu_id])
+    list_recipes = Recipe.where(diet: @menu.diet)
+    new_menu_recipe = list_recipes.sample
+    @menu_recipe = MenuRecipe.find(params[:id])
+    @menu_recipe.update(recipe: new_menu_recipe)
 
+    authorize @menu_recipe
+    redirect_to edit_menu_path(@menu)
   end
 
   def destroy
+    @menu = Menu.find(params[:menu_id])
     @menu_recipe = MenuRecipe.find(params[:id])
     @menu_recipe.destroy
-
 
     authorize @menu_recipe
     redirect_to edit_menu_path(@menu)

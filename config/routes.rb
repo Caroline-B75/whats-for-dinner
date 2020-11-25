@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :menus, only: [ :show, :new, :create, :edit ] do
-    resources :menu_recipes, only: [ :create ]
+    resources :menu_recipes, only: [ :create, :destroy ]
     resources :grocery_items, only: [ :index, :create, :update ]
   end
 
@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   end
 # ajouter 2 spéciales : grocery et menu_recipes patch
   # get 'users/toys', to: "toys#show_user_toy", as: :user_toys
-  post '/menus/:id/switch', to: "menu_recipes#switch"
+  post '/menus/:menu_id/menu_recipes/:id/switch', to: "menu_recipes#switch", as: :switch_menu_recipe
   post '/menus/:id/create_grocery', to: "grocery_items#create_grocery"
 end
