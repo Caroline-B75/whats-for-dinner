@@ -25,7 +25,12 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto d-flex align-items-center">
           <li class="nav-item active">
-            <%= link_to "CREER UN MENU", "#", class: "navbar-button mr-4" %>
+            <% if @menu %>
+                <%= link_to "MON MENU", menu_path, class: "navbar-button mr-4" %>
+                <%= link_to "MA LISTE", menu_grocery_items_path, class: "navbar-button mr-4" %>
+              <% else %>
+                <%= link_to "CREER UN MENU", new_menu_path, class: "navbar-button mr-4" %>
+            <% end %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -33,6 +38,7 @@
               <%= link_to "Mon menu", "#", class: "dropdown-item " %><hr>
               <%= link_to "Ma liste de course", "#", class: "dropdown-item" %><hr>
               <%= link_to "Mon historique", "#", class: "dropdown-item" %><hr>
+              <%= link_to "Mon Profil", "#", class: "dropdown-item" %><hr>
               <%= link_to "Me déconnecter", "#", class: "dropdown-item" %>
             </div>
           </li>

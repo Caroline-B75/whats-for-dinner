@@ -1,7 +1,6 @@
 class Ingredient < ApplicationRecord
   CATEGORY = ["Produits laitiers", "Poisson", "Fruits et Légumes", "Boulangerie", "Boucherie", "Cave",
-              "Epicerie sucrée", "Bio", "Hygiène", "Boisson", "Frais", "Condiment et Assaisonnement", "Epicerie sucrée",
-              "Boissons"]
+              "Epicerie sucrée", "Bio", "Hygiène", "Boisson", "Frais", "Condiment et Assaisonnement"]
   UNIT = ["mL", "cL", "g", "feuille(s)", "entier", "cuillère(s) à café", "cuillère(s) à soupe", "pincée(s)", "rouleau(x)",
           "tranche(s)", "branche(s)", "gousse(s)", "paquet(s)", "botte(s)", "cube(s)"]
   has_many :preparations
