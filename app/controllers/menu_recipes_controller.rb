@@ -1,4 +1,10 @@
 class MenuRecipesController < ApplicationController
+  def show
+    @menu_recipe = MenuRecipe.find(params[:id])
+    authorize @menu_recipe
+    @review = Review.new
+  end
+
   def create
     @menu = Menu.find(params[:menu_id])
     list_recipes = Recipe.where(diet: @menu.diet)
@@ -24,11 +30,11 @@ class MenuRecipesController < ApplicationController
 
   def update
     @menu_recipe = MenuRecipe.find(params[:id])
+    @menu = @menu_recipe.menu
     @menu_recipe.update(menu_recipe_params)
 
     authorize @menu_recipe
 
-    redirect_to edit_menu_path(@menu)
   end
 
   def switch
@@ -43,6 +49,7 @@ class MenuRecipesController < ApplicationController
     authorize @menu_recipe
     redirect_to edit_menu_path(@menu)
   end
+
 
   private
 
