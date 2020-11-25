@@ -8,6 +8,10 @@
 
 require "open-uri"
 
+Recipe.destroy_all
+User.destroy_all
+Ingredient.destroy_all
+Preparation.destroy_all
 
     # création recettes et ajout photo
 
