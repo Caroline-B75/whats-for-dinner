@@ -25,9 +25,9 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto d-flex align-items-center">
           <li class="nav-item active">
-            <% if @menu %>
-                <%= link_to "MON MENU", menu_path, class: "navbar-button mr-4" %>
-                <%= link_to "MA LISTE", menu_grocery_items_path, class: "navbar-button mr-4" %>
+            <% if current_user.menus.any? %>
+                <%= link_to "MON MENU", menu_path(current_user.menus.last), class: "navbar-button mr-4" %>
+                <%= link_to "MA LISTE", menu_grocery_items_path(current_user.menus.last), class: "navbar-button mr-4" %>
               <% else %>
                 <%= link_to "CREER UN MENU", new_menu_path, class: "navbar-button mr-4" %>
             <% end %>
