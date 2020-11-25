@@ -1,11 +1,11 @@
 
-<% @categories.each do |category| %>
+<% Ingredient::CATEGORY.each do |category| %>
   <h3>Au rayon <%= category %> :</h3>
   <ul>
-    <% @grocery_items.each do |grocery_item| %>
-      <% if category === grocery_item.category %>
-        <li><%= @grocery_item.name %> (<%= @grocery_item.quantity %> <%= @grocery_item.unit %>)</li>
-      <% end %>
+  <% @grocery_items.group(:name).sum(:quantity).each do |k,v| %>
+    <% if category == GroceryItem.find_by(name: k).category %>
+      <li><%= k %> (<%= v %> <%= GroceryItem.find_by(name: k).unit %>)</li>
     <% end %>
+  <% end %>
   </ul>
 <% end %>
