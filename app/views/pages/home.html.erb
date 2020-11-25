@@ -1,13 +1,16 @@
 <div class=main-container>
 
 <!-- home top div with bg image -->
-  <div class="title">
-    What's for dinner?
+  <div class="banner d-flex flex-column justify-content-around align-items-center">
+    <h1 class="home-title">What's for dinner?</h1>
+    <%= link_to "Je crée mon menu", new_menu_path, class:"red-button" %>
+    <a href="#next"><%= image_tag("arrow.png", height: 100, width: 150, crop: :fill) %></a>
   </div>
 
   <!-- home middle div -->
+  <br id="next"><br><br><br>
   <div class="home-middle">
-    <h1>Nous vous simplifions le quotidien<br>dans votre cuisine.</h1>
+    <h2>Nous vous simplifions le quotidien<br>dans votre cuisine.</h2>
     <br><br><br>
     <div class="d-flex flex-row justify-content-around">
       <div class="card-home">
@@ -25,44 +28,34 @@
       </div>
     </div>
     <br><br><br>
-    <input type="button" class="red_button home-red" value="Je crée mon menu">
+    <%= link_to "Je crée mon menu", new_menu_path, class:"red-button special" %>
   </div>
 
 <!-- home bottom div -->
   <div class="home-bottom">
     <h2>Pour vous mettre l'eau à la bouche...</h2>
-    <div class="d-flex flex-row">
+    <br><br>
+    <div class="d-flex flex-row justify-content-around">
       <ul>
         <!-- iteration sur array random de 4 plats dans une liste -->
-        <li></li>
+        <% random_recipes = Recipe.all.sample(5) %>
+        <% random_recipes.each do |random_recipe|  %>
+          <li>
+            <div class="card-menu-edit">
+              <div class="card-recipe">
+                <div class="img-small img">
+                  <%= cl_image_tag random_recipe.photo.key, height: 100, width: 150, crop: :fill %>
+                </div>
+                <div class="card-recipe-title">
+                  <p><%= random_recipe.name %></p>
+                </div>
+              </div>
+            </div>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
-
-<!-- COMPONENTS  -->
-
-  <!-- yellow button -->
-    <input type="button" class="yellow_button" value="Générer un menu">
-    <br>
-
-  <!-- send button -->
-    <button class="send_button">Envoyer à un ami  |  <i class="fa fa-paper-plane"></i></button>
-    <br>
-
-  <!-- card home page -->
-    <div class="card-home">card-home</div>
-    <br>
-
-  <!-- small card -->
-    <div class="card-small">
-      <div class="img-small img">
-        <%= image_tag "" %>
-      </div>
-      <div>
-        <p><b>This is the title</b>
-        <br>This is the description</p>
-      </div>
-    </div>
 
 </div>
 

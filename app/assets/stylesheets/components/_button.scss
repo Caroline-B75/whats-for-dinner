@@ -1,23 +1,16 @@
-.red_button {
-  width: 250px;
-  height: 70px;
-  border-radius: 50px;
-  background-color: #AD243E;
-  border: 0px;
-  padding-bottom: 5px;
-  box-shadow: 5px 5px 5px grey;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  color: white;
-  font-family: 'Lato', sans-serif;
-  font-size: 22px;
+.red-button {
+    background-color: $red;
+    padding: 10px 30px 10px;
+    box-shadow: $shadow;
+    color: white;
+    font-size: 22px;
+    border-radius: $border-radius;
+    &:hover {
+      text-decoration: none;
+      color: $red;
+      background-color: white;
+    }
 }
-
-.home-red {
-    margin-bottom: -75px;
-    z-index: 1099;
-  }
 
 .yellow_button {
   width: 300px;

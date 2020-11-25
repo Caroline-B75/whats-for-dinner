@@ -5,7 +5,7 @@
 
 // Define fonts for body and headers
 $body-font: "Lato", "sans-serif";
-$headers-font: "Lato", "sans-serif";
+$headers-font: "Lobster";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -17,15 +17,4 @@ $headers-font: "Lato", "sans-serif";
 // }
 // $my-font: "Font Name";
 
-h1 {
-  font-family: "Lobster";
-}
 
-.title {
-  text-align: center;
-  margin-top: 130px;
-  margin-bottom: 130px;
-  font-family: "Lobster";
-  font-size: 50px;
-  color: #AD243E;
-}
