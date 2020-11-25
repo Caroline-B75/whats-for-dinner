@@ -1,7 +1,10 @@
 .main-container {
   width: 100%;
-  padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.content-container {
+  padding: 150px 100px 100px 100px;
 }
 
 .card-home {
@@ -26,5 +29,28 @@
     width: 100%;
     padding: 5px;
     height: 50px;
+  }
+}
+
+.recipe-card {
+  width: 700px;
+  margin-top: 100px;
+  padding: 10px
+}
+
+
+.step-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    margin-bottom: 0px;
+  }
+  .step-creation-menu {
+    background-color: $yellow;
+    padding: 1px 17px;
+    border-radius: 50%;
+    color: white;
+    margin-right: 10px;
   }
 }

@@ -1,13 +1,14 @@
 <div class=main-container>
 
 <!-- home top div with bg image -->
-  <div class="title">
-    What's for dinner?
+  <div class="banner d-flex flex-column justify-content-around align-items-center">
+    <h1 class="home-title">What's for dinner?</h1>
+    <%= link_to "Je crée mon menu", new_menu_path, class:"red-button" %>
   </div>
 
   <!-- home middle div -->
   <div class="home-middle">
-    <h1>Nous vous simplifions le quotidien<br>dans votre cuisine.</h1>
+    <h2>Nous vous simplifions le quotidien<br>dans votre cuisine.</h2>
     <br><br><br>
     <div class="d-flex flex-row justify-content-around">
       <div class="card-home">
@@ -25,43 +26,62 @@
       </div>
     </div>
     <br><br><br>
-    <input type="button" class="red_button home-red" value="Je crée mon menu">
+     <%= link_to "Je crée mon menu", new_menu_path, class:"red-button special" %>
   </div>
 
 <!-- home bottom div -->
   <div class="home-bottom">
     <h2>Pour vous mettre l'eau à la bouche...</h2>
-    <div class="d-flex flex-row">
+    <br><br>
       <ul>
-        <!-- iteration sur array random de 4 plats dans une liste -->
-        <li></li>
+        <div class="d-flex flex-row justify-content-around">
+            <!-- iteration sur array random de 4 plats dans une liste -->
+            <li>
+              <div class="card-small">
+                <div class="img-small img">
+                  <%= image_tag("/images/dish1.jpg") %>
+                </div>
+                <div>
+                  <p><b>This is the 1st card</b>
+                  <br>This is the description</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="card-small">
+                <div class="img-small img">
+                  <%= image_tag("/images/dish2.jpg") %>
+                </div>
+                <div>
+                  <p><b>This is the 2nd card</b>
+                  <br>This is the description</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="card-small">
+                <div class="img-small img">
+                  <%= image_tag("/images/dish3.jpg") %>
+                </div>
+                <div>
+                  <p><b>This is the 3rd card</b>
+                  <br>This is the description</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="card-small">
+                <div class="img-small img">
+                  <%= image_tag("/images/dish4.jpg") %>
+                </div>
+                <div>
+                  <p><b>This is the 4th card</b>
+                  <br>This is the description</p>
+                </div>
+              </div>
+            </li>
+        </div>
       </ul>
-    </div>
   </div>
-
-<!-- COMPONENTS  -->
-
-  <!-- yellow button -->
-    <input type="button" class="yellow_button" value="Générer un menu">
-    <br>
-
-  <!-- send button -->
-    <button class="send_button">Envoyer à un ami  |  <i class="fa fa-paper-plane"></i></button>
-    <br>
-
-  <!-- card home page -->
-    <div class="card-home">card-home</div>
-    <br>
-
-  <!-- small card -->
-    <div class="card-small">
-      <div class="img-small img">
-        <%= image_tag "" %>
-      </div>
-      <div>
-        <p><b>This is the title</b>
-        <br>This is the description</p>
-      </div>
-    </div>
 
 </div>
