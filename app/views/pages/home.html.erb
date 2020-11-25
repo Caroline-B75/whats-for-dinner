@@ -4,9 +4,11 @@
   <div class="banner d-flex flex-column justify-content-around align-items-center">
     <h1 class="home-title">What's for dinner?</h1>
     <%= link_to "Je crée mon menu", new_menu_path, class:"red-button" %>
+    <a href="#next"><%= image_tag("arrow.png", height: 100, width: 150, crop: :fill) %></a>
   </div>
 
   <!-- home middle div -->
+  <br id="next"><br><br><br>
   <div class="home-middle">
     <h2>Nous vous simplifions le quotidien<br>dans votre cuisine.</h2>
     <br><br><br>
@@ -26,62 +28,33 @@
       </div>
     </div>
     <br><br><br>
-     <%= link_to "Je crée mon menu", new_menu_path, class:"red-button special" %>
+    <%= link_to "Je crée mon menu", new_menu_path, class:"red-button special" %>
   </div>
 
 <!-- home bottom div -->
   <div class="home-bottom">
     <h2>Pour vous mettre l'eau à la bouche...</h2>
     <br><br>
+    <div class="d-flex flex-row justify-content-around">
       <ul>
-        <div class="d-flex flex-row justify-content-around">
-            <!-- iteration sur array random de 4 plats dans une liste -->
-            <li>
-              <div class="card-small">
+        <!-- iteration sur array random de 4 plats dans une liste -->
+        <% random_recipes = Recipe.all.sample(5) %>
+        <% random_recipes.each do |random_recipe|  %>
+          <li>
+            <div class="card-menu-edit">
+              <div class="card-recipe">
                 <div class="img-small img">
-                  <%= image_tag("/images/dish1.jpg") %>
+                  <%= cl_image_tag random_recipe.photo.key, height: 100, width: 150, crop: :fill %>
                 </div>
-                <div>
-                  <p><b>This is the 1st card</b>
-                  <br>This is the description</p>
+                <div class="card-recipe-title">
+                  <p><%= random_recipe.name %></p>
                 </div>
               </div>
-            </li>
-            <li>
-              <div class="card-small">
-                <div class="img-small img">
-                  <%= image_tag("/images/dish2.jpg") %>
-                </div>
-                <div>
-                  <p><b>This is the 2nd card</b>
-                  <br>This is the description</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="card-small">
-                <div class="img-small img">
-                  <%= image_tag("/images/dish3.jpg") %>
-                </div>
-                <div>
-                  <p><b>This is the 3rd card</b>
-                  <br>This is the description</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="card-small">
-                <div class="img-small img">
-                  <%= image_tag("/images/dish4.jpg") %>
-                </div>
-                <div>
-                  <p><b>This is the 4th card</b>
-                  <br>This is the description</p>
-                </div>
-              </div>
-            </li>
-        </div>
+            </div>
+          </li>
+        <% end %>
       </ul>
+    </div>
   </div>
 
 </div>

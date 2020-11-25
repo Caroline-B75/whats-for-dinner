@@ -13,3 +13,13 @@ h2 {
 ul {
   list-style: none;
 }
+
+// Scroll behavior
+
+html {
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+ display: none;
+}
