@@ -1,8 +1,57 @@
-<%= simple_form_for @menu do |f| %>
-  <%= f.input :diet, collection: Recipe::DIET %>
-  <%= f.input :number_of_people, as: :numeric %>
-  <%= f.input :number_of_meals, as: :numeric %>
-  <%= f.submit "Submit", class: "btn btn-primary" %>
-<% end %>
-
-<%= link_to "Créer un menu_recipe random", menu_menu_recipes_path(@menu, recipe_id: "random"), method: :post %>
+<div class="background-photo">
+  <div class="content-container">
+    <div class="step-title">
+      <div class="step-creation-menu">
+        <h1>2</h1>
+      </div>
+        <h1>Personnalisez votre menu</h1>
+    </div>
+    <div class="container-card-menu-edit">
+      <% @menu.menu_recipes.order(:id).each do |menu_recipe| %>
+        <div class="card-menu-edit">
+          <div class="card-recipe">
+            <div class="img-small img">
+              <%= cl_image_tag Recipe.find(menu_recipe.recipe_id).photo.key, height: 100, width: 150, crop: :fill %>
+            </div>
+            <div class="card-recipe-title">
+              <p><%= Recipe.find(menu_recipe.recipe_id).name %></p>
+            </div>
+          </div>
+          <div class="footer-card-menu-edit">
+            <%= link_to '<i class="fas fa-sync"></i>'.html_safe, switch_menu_recipe_path(@menu, menu_recipe), method: :post %>
+            <%= link_to '<i class="fas fa-trash"></i>'.html_safe, menu_menu_recipe_path(@menu, menu_recipe), method: :delete %>
+            <%= link_to '<i class="fas fa-user-edit"></i>'.html_safe, switch_menu_recipe_path(@menu, menu_recipe), method: :post, id: "edit-number-people" %>
+          </div>
+        </div>
+      <% end %>
+      <div class="card-menu-edit">
+        <div class="card-add-meal">
+          <%= link_to "Ajouter un repas", menu_menu_recipes_path(@menu, recipe_id: "random"), method: :post %>
+          <i class="fas fa-plus"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="more-recipes">
+  <h2>D'autres recettes</h2>
+  <div class="container-recipe-random" id="recipe-random-generator">
+    <% random_recipes = Recipe.all.sample(5) %>
+    <% random_recipes.each do |random_recipe|  %>
+      <div class="card-menu-edit">
+        <div class="card-recipe">
+          <div class="img-small img">
+            <%= cl_image_tag random_recipe.photo.key, height: 100, width: 150, crop: :fill %>
+          </div>
+          <div class="card-recipe-title">
+            <p><%= random_recipe.name %></p>
+          </div>
+        </div>
+        <div class="footer-card-recipe-random">
+          <%= link_to '<i class="fas fa-plus"></i>'.html_safe, menu_menu_recipes_path(@menu, recipe_id: random_recipe.id), method: :post %>
+        </div>
+      </div>
+    <% end %>
+    <i class="fas fa-sync"></i>
+  </div>
+</div>
