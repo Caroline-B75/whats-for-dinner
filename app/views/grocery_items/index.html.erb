@@ -1,11 +1,58 @@
 
-<% Ingredient::CATEGORY.each do |category| %>
-  <h3>Au rayon <%= category %> :</h3>
-  <ul>
-  <% @grocery_items.group(:name).sum(:quantity).each do |k,v| %>
-    <% if category == GroceryItem.find_by(name: k).category %>
-      <li><%= k %> (<%= v %> <%= GroceryItem.find_by(name: k).unit %>)</li>
-    <% end %>
-  <% end %>
-  </ul>
-<% end %>
+
+
+
+
+<div class="background-photo">
+  <div class="content-container mx-auto">
+    <div class="step-title mb-5">
+      <h1>Votre liste de courses</h1>
+    </div>
+    <div class="container-card-menu-edit">
+      <% Ingredient::CATEGORY.each do |category| %>
+        <% if GroceryItem.find_by(category: category).nil? == false %>
+          <div class="col-12 col-sm-8 col-md-6 col-lg-4 p-3">
+            <div class="card-grocery_item">
+                <h3><%= category %> :</h3>
+                <table class="table_grocery_item">
+                <% @grocery_items.each do |grocery_item| %>
+                  <% if category == grocery_item.category %>
+                    <tr>
+                      <td>
+                        <%= simple_form_for grocery_item do |f| %>
+                          <%= f.check_box :checked, class: "check-done mr-1", onchange: "this.form.submit()"%>
+                          <%= f.label "#{grocery_item.name} - #{grocery_item.quantity} #{grocery_item.unit}", { class: "#{grocery_item.checked ? 'item-bought' : 'item-to-buy'}" } %>
+                        <% end %>
+                      </td>
+                    </tr>
+                  <% end %>
+                <% end %>
+                </table>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+
+      <div class="card-menu-edit mb-5">
+        <div class="btn red-button">
+          <%= link_to "Ajouter une course", menu_grocery_items_path(@menu.id), method: :post %>
+          <i class="fas fa-plus"></i>
+          <%= simple_form_for([@menu, @grocery_item]) do |f| %>
+            <%= f.input :name %>
+            <%= f.input :quantity %>
+            <%= f.input :unit %>
+            <%= f.input :category, collection: Ingredient::CATEGORY %>
+            <%= f.input :checked, as: :hidden %>
+            <%= f.button :submit %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# <%= mail_to "moi@domaine.dvp", "Contact par mail",
+ :subject=>"formulaire rails",
+ :body=>"Hello, Je te partage ma liste de courses !",
+ :encoding=>"javascript"%>
+

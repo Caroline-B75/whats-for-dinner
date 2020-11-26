@@ -1,24 +1,53 @@
-<div>
-  <h1><%= @menu_recipe.recipe.name %></h1>
-  <p><%= @menu_recipe.recipe.time %></p>
-  <p><%= @menu_recipe.recipe.difficulty %></p>
-  <p><%= @menu_recipe.recipe.price %></p>
-  <p><%= simple_format(@menu_recipe.recipe.content) %></p>
-
-  <%= form_for @menu_recipe do |f| %>
-    <%= f.check_box :done, class: "check-done", onchange: "this.form.submit()"%>
-    <%= f.label "Fait", {class: "checkbox inline"} %>
-  <% end %>
-
-  <div id="review-form">
-    <%= render "reviews/new", menu_recipe: @menu_recipe, review: @review %>
+<div class="main-container">
+  <div class="background-recipe">
+    <div class="recipe-title">
+      <h1><%= @menu_recipe.recipe.name %></h1>
+    </div>
   </div>
 
-  <div>
-    <ul>
-      <% @menu_recipe.recipe.reviews.each do | review | %>
-        <li><%= review.rating %>, <%= review.content %></li>
+  <div class="menu-recipe-container">
+    <%= cl_image_tag @menu_recipe.recipe.photo.key, class: "recipe-image" %>
+
+    <div class="recipe-ingredients">
+      <h3>Ingredients</h3>
+      <div class="ingredients-list">
+        <% @menu_recipe.recipe.preparations.each do |preparation| %>
+          <div class="ingredients-detail">
+            <p><%= Ingredient.find(preparation.ingredient_id).name %></p>
+            <p><%= preparation.quantity %> <%= Ingredient.find(preparation.ingredient_id).unit %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="recipe-content">
+      <h3>Recette</h3>
+      <p><%= simple_format(@menu_recipe.recipe.content) %></p>
+      <%= form_for @menu_recipe do |f| %>
+        <%= f.check_box :done, class: "check-done", onchange: "this.form.submit()"%>
+        <%= f.label "Fait", {class: "checkbox inline label-done"} %>
       <% end %>
-    </ul>
+    </div>
+
+
+    <div id="review-form">
+      <% if @user_review.nil? %>
+      <%= render "reviews/new", menu_recipe: @menu_recipe, review: @review %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="reviews-display">
+    <% @menu_recipe.recipe.reviews.each do | review | %>
+      <div class="review">
+        <div class="review-features">
+          <p><%= review.user.username %></p>
+          <p><%= review.rating %>/ 4 </p>
+        </div>
+        <div class="review-content">
+          <p><%= review.content %></p>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
