@@ -164,25 +164,20 @@
 }
 
 .popover {
-  border: solid 1px black;
-  border-radius: 15px;
+  border: solid 1px lightgrey;
+  border-radius: 15px 15px 0px 0px;
   width: 150px;
-  height: 115px;
-  background-color: lightgrey;
+  height: 112px;
+  background-color: $yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.popover-header,
 .popover-body {
   text-align: center;
-}
-
-.popover-header {
-  background-color: $yellow;
   color: white;
-}
-
-.popover-body {
-  color: black;
+  font-size: 15px;
 }
 
 .menu-recipe-container {

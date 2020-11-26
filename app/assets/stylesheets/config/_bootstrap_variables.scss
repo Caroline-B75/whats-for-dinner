@@ -23,9 +23,9 @@ $border-radius-lg: 15px;
 $border-radius-sm: 10px;
 
 // Override other variables below!
-$popover-arrow-outer-color:           black !default;
-$popover-arrow-outer-fallback-color:  lightgrey !default;
+$popover-arrow-outer-color:           lightgrey !default;
+$popover-arrow-outer-fallback-color:  $yellow !default;
 $popover-arrow-height:                 5px !default;
 $popover-arrow-width:                 25px !default;
 $popover-arrow-outer-width:           ($popover-arrow-width + 3) !default;
-$popover-arrow-color:                 lightgrey !default;
+$popover-arrow-color:                 $yellow !default;
