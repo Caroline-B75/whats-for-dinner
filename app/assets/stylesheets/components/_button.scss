@@ -10,6 +10,13 @@
       color: $red;
       background-color: white;
     }
+    a {
+      color: white;
+      &:hover {
+        color: $red;
+        text-decoration: none;
+      }
+    }
 }
 
 .yellow_button {

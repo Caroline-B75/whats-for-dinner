@@ -11,18 +11,18 @@
     <div class="container-card-menu-edit">
       <% Ingredient::CATEGORY.each do |category| %>
         <% if GroceryItem.find_by(category: category).nil? == false %>
-          <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+          <div class="col-12 col-sm-8 col-md-6 col-lg-4 p-3">
             <div class="card-grocery_item">
                 <h3><%= category %> :</h3>
                 <table class="table_grocery_item">
-                <% @grocery_items.group(:name).sum(:quantity).each do |k,v| %>
-                  <% if category == GroceryItem.find_by(name: k).category %>
+                <% @grocery_items.each do |grocery_item| %>
+                  <% if category == grocery_item.category %>
                     <tr>
                       <td>
-                        <form id="myform">
-                          <input type="checkbox" id="checkbox" onclick="javascript:stripe();" />
-                          <label for="checkbox"><span id="grocery-item" class="item-to-buy"><%= k %> - <%= v %> <%= GroceryItem.find_by(name: k).unit %></span></label>
-                        </form>
+                        <%= simple_form_for grocery_item do |f| %>
+                          <%= f.check_box :checked, class: "check-done mr-1", onchange: "this.form.submit()"%>
+                          <%= f.label "#{grocery_item.name} - #{grocery_item.quantity} #{grocery_item.unit}", { class: "#{grocery_item.checked ? 'item-bought' : 'item-to-buy'}" } %>
+                        <% end %>
                       </td>
                     </tr>
                   <% end %>
@@ -33,34 +33,26 @@
         <% end %>
       <% end %>
 
-      <div class="card-menu-edit">
-        <div class="card-add-meal">
-          <%# <%= link_to "Ajouter une course", menu_grocery_items_path(@grocery_item, ???), method: :post %>
+      <div class="card-menu-edit mb-5">
+        <div class="btn red-button">
+          <%= link_to "Ajouter une course", menu_grocery_items_path(@menu.id), method: :post %>
           <i class="fas fa-plus"></i>
+          <%= simple_form_for([@menu, @grocery_item]) do |f| %>
+            <%= f.input :name %>
+            <%= f.input :quantity %>
+            <%= f.input :unit %>
+            <%= f.input :category, collection: Ingredient::CATEGORY %>
+            <%= f.input :checked, as: :hidden %>
+            <%= f.button :submit %>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="more-recipes">
-  <h2>D'autres recettes</h2>
-  <div class="container-recipe-random" id="recipe-random-generator">
-    <% random_recipes = Recipe.all.sample(5) %>
-    <% random_recipes.each do |random_recipe|  %>
-      <div class="card-menu-edit">
-        <div class="card-recipe">
-          <div class="img-small img">
-            <%= cl_image_tag random_recipe.photo.key, height: 100, width: 150, crop: :fill %>
-          </div>
-          <div class="card-recipe-title">
-            <p><%= random_recipe.name %></p>
-          </div>
-        </div>
-        <div class="footer-card-recipe-random">
-          <%= link_to '<i class="fas fa-plus"></i>'.html_safe, menu_menu_recipes_path(@menu, recipe_id: random_recipe.id), method: :post %>
-        </div>
-      </div>
-    <% end %>
-    <i class="fas fa-sync"></i>
-  </div>
-</div>
+
+<%# <%= mail_to "moi@domaine.dvp", "Contact par mail",
+ :subject=>"formulaire rails",
+ :body=>"Hello, Je te partage ma liste de courses !",
+ :encoding=>"javascript"%>
+

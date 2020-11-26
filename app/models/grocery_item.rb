@@ -1,5 +1,5 @@
 class GroceryItem < ApplicationRecord
-  belongs_to :menu_recipe
+  belongs_to :menu_recipe, optional: true
   belongs_to :menu
 
   validates :quantity, presence: true
