@@ -35,9 +35,11 @@
             <% end %>
           </li>
           <li class="nav-item dropdown">
-              <button class="profile-avatar shadow" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <%= current_user.first_name.first %>
-              </button>
+              <% if current_user %>
+                <button class="profile-avatar shadow" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <%= current_user.first_name.first %>
+                </button>
+              <% end %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "Mon menu", "#", class: "dropdown-item " %><hr>
               <%= link_to "Ma liste de course", "#", class: "dropdown-item" %><hr>
