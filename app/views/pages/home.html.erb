@@ -35,25 +35,24 @@
   <div class="home-bottom">
     <h2>Pour vous mettre l'eau à la bouche...</h2>
     <br><br>
-    <div class="d-flex flex-row justify-content-around">
-      <ul>
-        <!-- iteration sur array random de 4 plats dans une liste -->
-        <% random_recipes = Recipe.all.sample(5) %>
-        <% random_recipes.each do |random_recipe|  %>
-          <li>
-            <div class="card-menu-edit">
-              <div class="card-recipe">
-                <div class="img-small img">
-                  <%= cl_image_tag random_recipe.photo.key, height: 100, width: 150, crop: :fill %>
-                </div>
-                <div class="card-recipe-title">
-                  <p><%= random_recipe.name %></p>
-                </div>
-              </div>
+      <div class="container-recipe-random" id="recipe-random-generator">
+      <% random_recipes = Recipe.all.sample(5) %>
+      <% random_recipes.each do |random_recipe|  %>
+        <div class="card-menu-edit">
+          <div class="card-recipe">
+            <div class="img-small img">
+              <%= cl_image_tag random_recipe.photo.key, height: 100, width: 150, crop: :fill %>
             </div>
-          </li>
-        <% end %>
-      </ul>
+            <div class="card-recipe-title">
+              <p><%= random_recipe.name %></p>
+            </div>
+          </div>
+          <div class="footer-card-recipe-random">
+          <!-- manque une icone... cf. slack -->
+          </div>
+        </div>
+      <% end %>
+      <i class="fas fa-sync"></i>
     </div>
   </div>
 
