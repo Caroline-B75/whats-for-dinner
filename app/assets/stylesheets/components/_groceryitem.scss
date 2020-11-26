@@ -1,0 +1,18 @@
+.table_grocery_item {
+  table-layout: auto;
+  width: 100%;  
+}
+
+.grocery-list{
+  padding-inline-start: 0px;
+  margin-top: 1em;
+}
+
+.item-to-buy {
+  text-decoration: none;
+}
+
+.item-bought {
+  text-decoration: line-through;
+  color: #888888;
+}
