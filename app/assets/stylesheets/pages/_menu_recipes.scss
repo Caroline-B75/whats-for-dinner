@@ -20,6 +20,10 @@
   height: 300px;
 }
 
+.recipe-ingredients {
+  margin-bottom: 15px;
+}
+
 .recipe-ingredients p {
   text-align: center;
   margin: 0;
@@ -62,7 +66,6 @@
 }
 .review {
   background-color: white;
-  box-shadow: $shadow;
   border-radius: 15px;
   padding: 20px;
   margin: 15px;
