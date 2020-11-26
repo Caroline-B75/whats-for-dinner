@@ -3,6 +3,8 @@ class MenuRecipesController < ApplicationController
     @menu_recipe = MenuRecipe.find(params[:id])
     authorize @menu_recipe
     @review = Review.new
+
+    @user_review = @menu_recipe.recipe.reviews.find_by(user_id: current_user.id)
   end
 
   def create
