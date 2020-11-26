@@ -1,6 +1,34 @@
-<%= simple_form_for @menu do |f| %>
-  <%= f.input :diet, collection: Recipe::DIET %>
-  <%= f.input :number_of_people, as: :numeric %>
-  <%= f.input :number_of_meals, as: :numeric %>
-  <%= f.submit "Submit", class: "btn btn-primary" %>
-<% end %>
+<div class="banner">
+  <div class="step-title">
+    <div class="step-creation-menu">
+      <h1>1</h1>
+    </div>
+      <h1>Dites-nous en plus</h1>
+  </div>
+  <div class="d-flex flex-row justify-content-around align-items-center">
+  <%= simple_form_for @menu do |f| %>
+    <div>
+      <div class="d-flex flew-row profile-set justify-content-between">
+        <%= f.input :number_of_people,
+          as: :numeric,
+          placeholder: "Nombre de personnes à table",
+          label: false %>
+        <%= f.input :number_of_meals,
+          as: :numeric,
+          placeholder: "Nombre de repas",
+          label: false %>
+      </div>
+        <%= f.input :diet,
+          collection: Recipe::DIET,
+          wrapper_tag: 'div',
+          label_method: lambda { |diet| render 'menus/diet_card', diet: diet },
+          as: :check_boxes,
+          include_blank: false,
+          include_hidden: false,
+          label: false %>
+        <br><br>
+        <%= f.submit "Submit", class: "yellow-button" %>
+      </div>
+    <% end %>
+  </div>
+</div>

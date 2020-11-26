@@ -1,0 +1,58 @@
+.profile-set {
+  > div {
+    flex: 1;
+    &:first-of-type {
+      margin-right: 20px;
+    }
+  }
+}
+
+#new_menu {
+  width: 600px;
+  input {
+    // line-height: 2em;
+    font-size: 1.2em;
+    padding: 20px 15px;
+    text-align: center;
+    box-shadow: $shadow;
+  }
+  .yellow-button {
+    padding: unset;
+  }
+}
+
+.menu_diet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  legend {
+    display: none;
+  }
+  input[type='checkbox'] {
+    display: none;
+  }
+  input[type='checkbox']:checked + label .diet-card {
+    background-color: white;
+    box-shadow: none;
+    opacity: 1;
+  }
+}
+
+.diet-card {
+  height: 65px;
+  width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 2.8em;
+  margin: 10px 15px;
+  background-color: lightgrey;
+  box-shadow: $shadow;
+  opacity: 0.6;
+}
+
+.diet-pic {
+  max-height: 20px;
+  max-width: 20px;
+}
