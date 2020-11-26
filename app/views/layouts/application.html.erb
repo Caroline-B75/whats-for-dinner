@@ -43,7 +43,7 @@
               <%= link_to "Ma liste de course", "#", class: "dropdown-item" %><hr>
               <%= link_to "Mon historique", "#", class: "dropdown-item" %><hr>
               <%= link_to "Mon Profil", "#", class: "dropdown-item" %><hr>
-              <%= link_to "Me déconnecter", "#", class: "dropdown-item" %>
+              <%= link_to "Me déconnecter", destroy_user_session_path, method: :delete,  class: "dropdown-item" %>
             </div>
           </li>
         </ul>

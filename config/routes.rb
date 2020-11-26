@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :menus, only: [ :show, :new, :create, :edit ] do
     resources :menu_recipes, only: [ :create, :destroy ]
-    resources :grocery_items, only: [ :index, :create, :update ]
+    resources :grocery_items, only: [ :index, :create ]
   end
 
+  resources :grocery_items, only: [ :update ]
   resources :menu_recipes, only: [ :show, :update, :destroy ] do
     resources :reviews, only: [ :create ]
   end
