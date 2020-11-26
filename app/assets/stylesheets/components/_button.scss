@@ -20,19 +20,23 @@
 }
 
 .yellow_button {
-  width: 300px;
-  height: 45px;
   border-radius: 50px;
-  background-color: #EAA858;
+  background-color: $yellow;
   border: 0px;
-  padding-bottom: 5px;
-  box-shadow: 5px 5px 5px grey;
+  padding: 5px 30px 10px;
+  box-shadow: 5px 5px 5px #0000003b;
   display: block;
   margin-left: auto;
   margin-right: auto;
   color: white;
   font-family: 'Lobster', sans-serif;
-  font-size: 22px;
+  font-size: 25px;
+  &:hover {
+    transition: background-color 0.4s;
+    text-decoration: none;
+    color: $yellow;
+    background-color: white;
+  }
 }
 
 .send_button {
@@ -49,4 +53,101 @@
   font-size: 12px;
 }
 
+.arrow-down {
+  position: absolute;
+  bottom: 10px;
+  line-height: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  #more-recipe-text {
+    opacity: 0;
+    color: white;
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  &:hover {
+    #more-recipe-text {
+      transition: opacity 0.4s;
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+}
 
+.retour-btn {
+  color: black;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+#btn-refresh-random-recipe {
+  color: #a7a7a7;
+  font-size: 25px;
+  margin: -15px;
+  position: relative;
+  right: -30px;
+}
+
+.btn-add-meal {
+  width: 150px;
+  height: 150px;
+  box-shadow: 4px 4px 5px #0000001f;
+  border: solid 0.5px lightgrey;
+  border-radius: 15px;
+  color: #424242;
+  line-height: 18px;
+  margin-bottom: 10px;
+  background: #a7a7a7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  margin: 10px 15px;
+  &:hover {
+    color: #424242;
+    text-decoration: none;
+    transition: background-color 0.4s;
+    background-color: white;
+  }
+}
+
+.btn-title-popover {
+  color: black;
+  line-height: 15px;
+  margin-bottom: 5px;
+  background: none;
+  border: none;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 5px;
+  &:hover {
+    color: $yellow;
+    text-decoration: none;
+    transition: color 0.4s;
+  }
+  &:focus {
+   outline: 0;
+  }
+}
+
+.not-a-btn {
+  border: none;
+  background: none;
+  padding: 0px;
+  &:focus {
+   outline: 0;
+  }
+}
+
+.btn-submit-number-of-people {
+  height: 20px;
+  width: 20px;
+  padding: 5px;
+  font-size: 10px;
+  box-shadow: 3px 3px 5px #0000003b;
+}
