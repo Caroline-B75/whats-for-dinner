@@ -35,3 +35,14 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   displayReviewForm();
 });
+
+function stripe() {
+  var checkBox = document.getElementById("checkbox");
+  var item = document.getElementById("grocery-item");
+  if (document.myform.checkBox.checked == true){
+    item.className = 'item-bought';
+  } 
+  else {
+    item.className = 'item-to-buy';
+  }
+}

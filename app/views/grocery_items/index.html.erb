@@ -1,11 +1,66 @@
 
-<% Ingredient::CATEGORY.each do |category| %>
-  <h3>Au rayon <%= category %> :</h3>
-  <ul>
-  <% @grocery_items.group(:name).sum(:quantity).each do |k,v| %>
-    <% if category == GroceryItem.find_by(name: k).category %>
-      <li><%= k %> (<%= v %> <%= GroceryItem.find_by(name: k).unit %>)</li>
+
+
+
+
+<div class="background-photo">
+  <div class="content-container mx-auto">
+    <div class="step-title mb-5">
+      <h1>Votre liste de courses</h1>
+    </div>
+    <div class="container-card-menu-edit">
+      <% Ingredient::CATEGORY.each do |category| %>
+        <% if GroceryItem.find_by(category: category).nil? == false %>
+          <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+            <div class="card-grocery_item">
+                <h3><%= category %> :</h3>
+                <table class="table_grocery_item">
+                <% @grocery_items.group(:name).sum(:quantity).each do |k,v| %>
+                  <% if category == GroceryItem.find_by(name: k).category %>
+                    <tr>
+                      <td>
+                        <form id="myform">
+                          <input type="checkbox" id="checkbox" onclick="javascript:stripe();" />
+                          <label for="checkbox"><span id="grocery-item" class="item-to-buy"><%= k %> - <%= v %> <%= GroceryItem.find_by(name: k).unit %></span></label>
+                        </form>
+                      </td>
+                    </tr>
+                  <% end %>
+                <% end %>
+                </table>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+
+      <div class="card-menu-edit">
+        <div class="card-add-meal">
+          <%# <%= link_to "Ajouter une course", menu_grocery_items_path(@grocery_item, ???), method: :post %>
+          <i class="fas fa-plus"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="more-recipes">
+  <h2>D'autres recettes</h2>
+  <div class="container-recipe-random" id="recipe-random-generator">
+    <% random_recipes = Recipe.all.sample(5) %>
+    <% random_recipes.each do |random_recipe|  %>
+      <div class="card-menu-edit">
+        <div class="card-recipe">
+          <div class="img-small img">
+            <%= cl_image_tag random_recipe.photo.key, height: 100, width: 150, crop: :fill %>
+          </div>
+          <div class="card-recipe-title">
+            <p><%= random_recipe.name %></p>
+          </div>
+        </div>
+        <div class="footer-card-recipe-random">
+          <%= link_to '<i class="fas fa-plus"></i>'.html_safe, menu_menu_recipes_path(@menu, recipe_id: random_recipe.id), method: :post %>
+        </div>
+      </div>
     <% end %>
-  <% end %>
-  </ul>
-<% end %>
+    <i class="fas fa-sync"></i>
+  </div>
+</div>
