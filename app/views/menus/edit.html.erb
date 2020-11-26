@@ -4,7 +4,7 @@
       <div class="step-creation-menu">
         <h1>2</h1>
       </div>
-        <h1>Personnalisez votre menu</h1>
+      <h1>Personnalisez votre menu</h1>
     </div>
     <div class="container-card-menu-edit">
       <% @menu.menu_recipes.order(:id).each do |menu_recipe| %>
@@ -14,21 +14,26 @@
               <%= cl_image_tag Recipe.find(menu_recipe.recipe_id).photo.key, height: 150, width: 150, crop: :fill %>
             </div>
             <div class="card-recipe-title">
-              <a tabindex="0" class="btn-title-popover" role="button" data-placement="top" data-toggle="popover" data-trigger="focus" title="<%= Recipe.find(menu_recipe.recipe_id).name %>" data-html="true" data-content="<%= Recipe.find(menu_recipe.recipe_id).time %><br><%= Recipe.find(menu_recipe.recipe_id).difficulty%><br><%= Recipe.find(menu_recipe.recipe_id).price%><br>"><%= Recipe.find(menu_recipe.recipe_id).name %></a>
+              <a tabindex="0" class="btn-title-popover" role="button" data-placement="top" data-toggle="popover" data-trigger="focus" title="Infos" data-html="true" data-content="<%= Recipe.find(menu_recipe.recipe_id).time %><br><%= Recipe.find(menu_recipe.recipe_id).difficulty%><br><%= Recipe.find(menu_recipe.recipe_id).price%><br>"><%= Recipe.find(menu_recipe.recipe_id).name %></a>
             </div>
           </div>
           <div class="footer-card-menu-edit">
             <%= link_to '<i class="fas fa-sync"></i>'.html_safe, switch_menu_recipe_path(@menu, menu_recipe), method: :post, remote: true %>
+            &nbsp;&nbsp;&nbsp;&nbsp;
             <%= link_to '<i class="fas fa-trash"></i>'.html_safe, menu_menu_recipe_path(@menu, menu_recipe), method: :delete, remote: true %>
-            <%= link_to '<i class="fas fa-user-edit"></i>'.html_safe, switch_menu_recipe_path(@menu, menu_recipe), method: :post, id: "edit-number-people", remote: true %>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <%= simple_form_for(menu_recipe) do |f| %>
+              <i class="fas fa-user-friends"></i>
+              <%= f.select :number_of_people, (1..50), {}, { value: menu_recipe.number_of_people, onchange: 'this.form.submit();' } %>
+            <% end %>
           </div>
         </div>
       <% end %>
       <% if  @menu.menu_recipes.count < 14 %>
-      <%= link_to 'Ajouter un repas<br/><i class="fas fa-plus"></i>'.html_safe, menu_menu_recipes_path(@menu, recipe_id: "random"), method: :post, remote: true, class: "btn-add-meal"%>
+        <%= link_to 'Ajouter un repas<br/><i class="fas fa-plus"></i>'.html_safe, menu_menu_recipes_path(@menu, recipe_id: "random"), method: :post, remote: true, class: "btn-add-meal"%>
       <% end %>
     </div>
-    <%= link_to 'Valider mon menu'.html_safe,  menu_grocery_items_path(@menu), class: "yellow_button" %>
+    <%= link_to 'Valider mon menu',  menu_grocery_items_path(@menu), method: :post, class: "yellow_button" %>
   </div>
   <%= link_to '<i class="fas fa-arrow-left"></i> Retour'.html_safe, new_menu_path, class: "retour-btn" %>
   <div class= "arrow-down" >
@@ -47,7 +52,7 @@
             <%= cl_image_tag random_recipe.photo.key, height: 100, width: 150, crop: :fill %>
           </div>
           <div class="card-recipe-title">
-            <p><%= random_recipe.name %></p>
+            <a tabindex="0" class="btn-title-popover" role="button" data-placement="top" data-toggle="popover" data-trigger="focus" title="Infos" data-html="true" data-content="<%= random_recipe.time %><br><%= random_recipe.difficulty%><br><%= random_recipe.price%><br>"><%= random_recipe.name %></a>
           </div>
         </div>
         <div class="footer-card-recipe-random">

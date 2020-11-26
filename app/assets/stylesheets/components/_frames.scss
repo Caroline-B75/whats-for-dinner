@@ -132,6 +132,9 @@
 .footer-card-recipe-random,
 .footer-card-menu-edit {
   width: 100%;
+  color: #8c8989;
+  padding: 7px 0px;
+  text-align: center;
   a {
     color: #8c8989;
     &:hover {
@@ -142,16 +145,11 @@
   }
 }
 
-.footer-card-recipe-random {
-  text-align: center;
-  padding: 7px 0px;
-}
-
 .footer-card-menu-edit {
-  justify-content: space-between;
+  justify-content: center;
   display: flex;
   align-items: center;
-  padding: 5px 15px;
+  font-size: 17px;
 }
 
 .more-recipes {
@@ -168,10 +166,21 @@
 .popover {
   border: solid 1px black;
   border-radius: 15px;
+  width: 150px;
+  height: 115px;
+  background-color: lightgrey;
 }
 
 .popover-header,
 .popover-body {
-  color: black;
   text-align: center;
+}
+
+.popover-header {
+  background-color: $yellow;
+  color: white;
+}
+
+.popover-body {
+  color: black;
 }
