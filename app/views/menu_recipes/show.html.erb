@@ -42,7 +42,14 @@
       <div class="review">
         <div class="review-features">
           <p><%= review.user.username %> - <%= (review.created_at).to_s.match(/\d{4}-\d{2}-\d{2}/) %></p>
-          <p><%= review.rating %>/ 4 </p>
+          <p>
+            <% review.rating.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+            <% (5 - review.rating).times do %>
+              <i class="far fa-star"></i>
+            <% end %>
+          </p>
         </div>
         <div class="review-content">
           <p><%= review.content %></p>
