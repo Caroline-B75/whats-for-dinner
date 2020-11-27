@@ -15,5 +15,5 @@ Rails.application.routes.draw do
 # ajouter 2 spéciales : grocery et menu_recipes patch
   # get 'users/toys', to: "toys#show_user_toy", as: :user_toys
   post '/menus/:menu_id/menu_recipes/:id/switch', to: "menu_recipes#switch", as: :switch_menu_recipe
-  post '/menus/:id/create_grocery', to: "grocery_items#create_grocery"
+  post '/menus/:id/create_grocery', to: "grocery_items#create_grocery", as: :menu_create_grocery_list
 end

@@ -16,4 +16,8 @@ class GroceryItemPolicy < ApplicationPolicy
   def update?
     true
   end
+
+  def create_grocery?
+    true
+  end
 end
