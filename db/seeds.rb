@@ -8,9 +8,13 @@
 
 require "open-uri"
 
+Review.destroy_all
 Preparation.destroy_all
 Ingredient.destroy_all
+GroceryItem.destroy_all
+MenuRecipe.destroy_all
 Recipe.destroy_all
+Menu.destroy_all
 User.destroy_all
 
     # création recettes et ajout photo

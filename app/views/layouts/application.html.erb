@@ -41,13 +41,15 @@
                 </button>
               <% end %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <% if current_user.menus.any? %>
-                <%= link_to "Mon menu", menu_path(current_user.menus.last), class: "dropdown-item" %><hr>
-                <%= link_to "Ma liste de course", menu_grocery_items_path(current_user.menus.last), class: "dropdown-item" %><hr>
-              <% else %>
-                <%= link_to "Créer un menu", new_menu_path, class: "dropdown-item" %><hr>
+              <% if current_user %>
+                <% if current_user.menus.any? %>
+                  <%= link_to "Mon menu", menu_path(current_user.menus.last), class: "dropdown-item" %><hr>
+                  <%= link_to "Ma liste de course", menu_grocery_items_path(current_user.menus.last), class: "dropdown-item" %><hr>
+                <% else %>
+                  <%= link_to "Créer un menu", new_menu_path, class: "dropdown-item" %><hr>
+                <% end %>
+                <%= link_to "Me déconnecter", destroy_user_session_path, method: :delete,  class: "dropdown-item" %>
               <% end %>
-              <%= link_to "Me déconnecter", destroy_user_session_path, method: :delete,  class: "dropdown-item" %>
             </div>
           </li>
         </ul>
