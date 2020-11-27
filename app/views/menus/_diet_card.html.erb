@@ -1,3 +1,6 @@
-<div class="diet-card">
-    <%= cl_image_tag("#{diet}.png", height: 25, width: 25, crop: :fill) %>
+<div class="diet-choice">
+  <div class="diet-card">
+    <%= cl_image_tag("#{diet}.png", height: 35, width: 35, crop: :fill) %>
+  </div>
+  <p> <%= diet.capitalize %> </p>
 </div>

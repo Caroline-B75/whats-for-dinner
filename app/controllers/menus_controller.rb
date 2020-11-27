@@ -10,6 +10,7 @@ class MenusController < ApplicationController
     @menu.user = current_user
     @menu.diet = @diet
     @menu.save
+
     if @menu.save
       redirect_to edit_menu_path(@menu)
     else

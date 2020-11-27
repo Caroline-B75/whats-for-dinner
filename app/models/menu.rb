@@ -7,5 +7,5 @@ class Menu < ApplicationRecord
   validates :diet, presence: true
   validates :number_of_people, presence: true
   validates :number_of_meals, presence: true
-  # validates_inclusion_of :diet, in: Recipe::DIET
+  validates_inclusion_of :diet, in: Recipe::DIET
 end
