@@ -31,3 +31,11 @@ body::-webkit-scrollbar {
   background-color: snow;
   padding: 5px 15px;
 }
+
+.link {
+  text-decoration: none;
+  color: $brown;
+  &:hover {
+    text-decoration: none;
+  }
+}

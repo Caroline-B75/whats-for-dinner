@@ -39,6 +39,14 @@
 .logo {
   padding: 10px 15px;
   font-size: 30px;
+  color: $black;
+  text-align: center;
+  text-decoration: none;
+  font-family: Lobster;
+  &:hover {
+    text-decoration: none;
+    color: $black;
+  }
 }
 
 .dropdown-item {
@@ -47,6 +55,7 @@
 
 .dropdown-menu {
   border-radius: 10px;
+  z-index: 1099;
 }
 
 

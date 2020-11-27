@@ -1,20 +1,20 @@
 // Specific CSS for your home-page
 .banner {
-  background-image: url("https://res.cloudinary.com/dogomm21h/image/upload/v1606302236/Screenshot_2020-11-23_at_18.42.00_eqtfec.png");
+  background-image: url("https://res.cloudinary.com/dogomm21h/image/upload/v1606485167/background_photo_owmsqk.jpg");
   background-size: cover;
   background-position: bottom;
   height: calc(100vh - 80px);
 }
 
 .home-title {
-  margin-top: 20vh;
+  margin-top: 15vh;
   font-size: 80px;
   color:$red;
 }
 
 .home-middle {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 5px;
   padding: 20px 70px 35px 70px;
 }
 
@@ -24,4 +24,3 @@
   margin-top: -50px;
   padding: 70px 70px 40px 70px;
 }
-
