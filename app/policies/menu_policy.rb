@@ -16,5 +16,9 @@ class MenuPolicy < ApplicationPolicy
   def edit?
     true
   end
+
+  def destroy?
+    true
+  end
 end
 

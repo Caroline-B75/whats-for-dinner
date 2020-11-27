@@ -42,7 +42,7 @@ class GroceryItemsController < ApplicationController
         end
       end
     end
-    redirect_to menu_grocery_items_path(@menu)
+    redirect_to menu_path(@menu)
   end
 
   private
