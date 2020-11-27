@@ -47,7 +47,7 @@
           <%= f.input :unit, collection: Ingredient::UNIT, prompt: "unité de mesure", label: false %>
           <%= f.input :category, collection: Ingredient::CATEGORY, prompt: "au rayon",label: false %>
           <%= f.input :checked, as: :hidden %>
-          <%= f.button :submit, "Ajouter à ma liste", class: "btn grocery_yellow_button"%>
+          <%= f.button :submit, "Ajouter à ma liste", data: {confirm: "Souhaitez-vous ajouter ce produit et enregistrer votre nouvelle liste de courses ?"}, class: "btn grocery_yellow_button"%>
         <% end %>
         </div>
       </div>
