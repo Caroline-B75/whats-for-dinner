@@ -2,7 +2,7 @@ class Ingredient < ApplicationRecord
   CATEGORY = ["Produits laitiers", "Poisson", "Fruits et Légumes", "Boulangerie", "Boucherie", "Cave",
               "Epicerie sucrée", "Bio", "Hygiène", "Boissons", "Frais", "Condiment et Assaisonnement", "Autre"].sort
   UNIT = ["mL", "cL", "g", "feuille(s)", "entier", "cuillère(s) à café", "cuillère(s) à soupe", "pincée(s)", "rouleau(x)",
-          "tranche(s)", "branche(s)", "gousse(s)", "paquet(s)", "botte(s)", "cube(s)"]
+          "tranche(s)", "branche(s)", "gousse(s)", "paquet(s)", "botte(s)", "cube(s)","unité(s)"].sort
   has_many :preparations
   has_many :recipes, through: :preparations
 

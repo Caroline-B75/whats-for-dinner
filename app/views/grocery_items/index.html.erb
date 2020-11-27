@@ -1,57 +1,59 @@
-
-
-
-
-
-<div class="background-photo">
-  <div class="content-container mx-auto">
-    <div class="step-title mb-5">
-      <h1 class="grocery-list-title">Votre liste de courses</h1>
-    </div>
+<div class="main-container">
+  <div class="banner d-flex flex-column align-items-center">
+  </div>
+   <div class="grocery-container mx-auto" id="haut">
+      <div class="step-title mb-5">
+        <h1 class="grocery-list-title">Votre liste de courses</h1>
+      </div>
       <div class="col-md-3 offset-md-9 text-right">
         <a href="#add-item" class="btn grocery_yellow_button">Ajouter une course</a>
       </div>
-    <div class="container-card-menu-edit" id="haut">
-      <% Ingredient::CATEGORY.each do |category| %>
-        <% if GroceryItem.find_by(category: category).nil? == false %>
-          <div class="col-12 col-sm-8 col-md-6 col-lg-3 p-3">
-            <div class="card-grocery_item">
+      <div class="container-card-menu-edit">
+        <% Ingredient::CATEGORY.each do |category| %>
+          <% if GroceryItem.find_by(category: category).nil? == false %>
+            <div class="col-12 col-sm-8 col-md-6 col-lg-3 p-3">
+
+              <div class="card-grocery_item">
                 <h3 class="grocery-list-category"><%= category %> :</h3>
                 <table class="table_grocery_item">
-                <% @grocery_items.each do |grocery_item| %>
-                  <% if category == grocery_item.category %>
-                    <tr>
-                      <td>
-                        <%= simple_form_for grocery_item do |f| %>
-                          <%= f.check_box :checked, class: "check-done mr-1", onchange: "this.form.submit()"%>
-                          <%= f.label "#{grocery_item.name} - #{grocery_item.quantity} #{grocery_item.unit}", { class: "#{grocery_item.checked ? 'item-bought' : 'item-to-buy'}" } %>
-                        <% end %>
-                      </td>
-                    </tr>
+                  <% @grocery_items.each do |grocery_item| %>
+                    <% if category == grocery_item.category %>
+                      <tr>
+                        <td>
+                          <%= simple_form_for grocery_item do |f| %>
+                            <%= f.check_box :checked, class: "check-done mr-1", onchange: "this.form.submit()"%>
+                            <%= f.label "#{grocery_item.name} - #{grocery_item.quantity} #{grocery_item.unit}", { class: "#{grocery_item.checked ? 'item-bought' : 'item-to-buy'}" } %>
+                          <% end %>
+                        </td>
+                      </tr>
+                    <% end %>
                   <% end %>
-                <% end %>
                 </table>
+              </div>
+
             </div>
-          </div>
+          <% end %>
         <% end %>
-      <% end %>
-      <div class="col-md-3 offset-md-9 text-right">
-        <a href="#haut"><i class="fas fa-angle-double-up"></i></a>
+        <div class="col-md-3 offset-md-9 text-right">
+          <a href="#haut"><i class="fas fa-angle-double-up"></i></a>
+        </div>
+      </div>
+      <div class="card-menu-edit mt-5 mb-5 mx-auto text-center justify-center" id="add-item">
+        <h4>Complétez votre liste de courses :</h4>
+        <div class="row justify-content-center">
+        <%= simple_form_for([@menu, @grocery_item], remote: true, html: {class: 'form-inline'} ) do |f| %>
+          <%= f.input :name, placeholder: "article à ajouter", label: false, input_html: { maxlength: 40 } %>
+          <%= f.input :quantity, placeholder: "quantité", label: false %>
+          <%= f.input :unit, collection: Ingredient::UNIT, prompt: "unité de mesure", label: false %>
+          <%= f.input :category, collection: Ingredient::CATEGORY, prompt: "au rayon",label: false %>
+          <%= f.input :checked, as: :hidden %>
+          <%= f.button :submit, "Ajouter à ma liste", class: "btn grocery_yellow_button"%>
+        <% end %>
+        </div>
       </div>
     </div>
-      <div class="card-menu-edit mt-5" id="add-item">
-          <h4>Complétez votre liste de courses :</h4>
-          <%= simple_form_for([@menu, @grocery_item], remote: true, html: {class: 'form-inline'} ) do |f| %>
-            <%= f.input :name, placeholder: "article à ajouter", label: false, input_html: { maxlength: 40 } %>
-            <%= f.input :quantity, placeholder: "quantité", label: false %>
-            <%= f.input :unit, placeholder: "unité de mesure", label: false %>
-            <%= f.input :category, collection: Ingredient::CATEGORY, placeholder: "au rayon", label: false %>
-            <%= f.input :checked, as: :hidden %>
-            <%= f.button :submit, "Ajouter à ma liste", class: "btn grocery_yellow_button"%>
-          <% end %>
-      </div>
-  </div>
 </div>
+
 
 <%# <%= mail_to "moi@domaine.dvp", "Contact par mail",
  :subject=>"formulaire rails",
