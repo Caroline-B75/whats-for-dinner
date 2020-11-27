@@ -6,14 +6,17 @@
 <div class="background-photo">
   <div class="content-container mx-auto">
     <div class="step-title mb-5">
-      <h1>Votre liste de courses</h1>
+      <h1 class="grocery-list-title">Votre liste de courses</h1>
     </div>
-    <div class="container-card-menu-edit">
+      <div class="col-md-3 offset-md-9 text-right">
+        <a href="#add-item" class="btn grocery_yellow_button">Ajouter une course</a>
+      </div>
+    <div class="container-card-menu-edit" id="haut">
       <% Ingredient::CATEGORY.each do |category| %>
         <% if GroceryItem.find_by(category: category).nil? == false %>
-          <div class="col-12 col-sm-8 col-md-6 col-lg-4 p-3">
+          <div class="col-12 col-sm-8 col-md-6 col-lg-3 p-3">
             <div class="card-grocery_item">
-                <h3><%= category %> :</h3>
+                <h3 class="grocery-list-category"><%= category %> :</h3>
                 <table class="table_grocery_item">
                 <% @grocery_items.each do |grocery_item| %>
                   <% if category == grocery_item.category %>
@@ -32,22 +35,21 @@
           </div>
         <% end %>
       <% end %>
-
-      <div class="card-menu-edit mb-5">
-        <div class="btn red-button">
-          <%= link_to "Ajouter une course", menu_grocery_items_path(@menu.id), method: :post %>
-          <i class="fas fa-plus"></i>
-          <%= simple_form_for([@menu, @grocery_item]) do |f| %>
-            <%= f.input :name %>
-            <%= f.input :quantity %>
-            <%= f.input :unit %>
-            <%= f.input :category, collection: Ingredient::CATEGORY %>
-            <%= f.input :checked, as: :hidden %>
-            <%= f.button :submit %>
-          <% end %>
-        </div>
+      <div class="col-md-3 offset-md-9 text-right">
+        <a href="#haut"><i class="fas fa-angle-double-up"></i></a>
       </div>
     </div>
+      <div class="card-menu-edit mt-5" id="add-item">
+          <h4>Complétez votre liste de courses :</h4>
+          <%= simple_form_for([@menu, @grocery_item], remote: true, html: {class: 'form-inline'} ) do |f| %>
+            <%= f.input :name, placeholder: "article à ajouter", label: false, input_html: { maxlength: 40 } %>
+            <%= f.input :quantity, placeholder: "quantité", label: false %>
+            <%= f.input :unit, placeholder: "unité de mesure", label: false %>
+            <%= f.input :category, collection: Ingredient::CATEGORY, placeholder: "au rayon", label: false %>
+            <%= f.input :checked, as: :hidden %>
+            <%= f.button :submit, "Ajouter à ma liste", class: "btn grocery_yellow_button"%>
+          <% end %>
+      </div>
   </div>
 </div>
 
