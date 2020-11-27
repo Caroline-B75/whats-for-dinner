@@ -24,6 +24,7 @@ class GroceryItemsController < ApplicationController
 
   def create_grocery
     @menu = Menu.find(params[:id])
+    @menu.grocery_items.destroy_all
     menu_grocery_items_names = []
     @menu.menu_recipes.each do |menu_recipe|
       recipe = Recipe.find(menu_recipe.recipe_id)
