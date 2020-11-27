@@ -11,7 +11,7 @@ require "open-uri"
 
     # création recettes et ajout photo
 
-recipe1 = Recipe.create!(name: "Tarte chèvre miel", difficulty: "très facile", price: "bon marché", time: "20 minutes", diet: "végétarien", content: "1) Piquer la pâte brisée avec une fourchette et l'enfourner à 200°C, thermostat 6-7, environ 10 min.
+recipe1 = Recipe.create!(name: "Tarte chèvre miel", difficulty: "très facile", price: "bon marché", time: "20 minutes", diet: "vegetarien", content: "1) Piquer la pâte brisée avec une fourchette et l'enfourner à 200°C, thermostat 6-7, environ 10 min.
 <br />2) Pendant ce temps, couper l'oignon en dés et le faire suer à l'huile d'olive dans une poêle.
 <br />3) Quand les oignons ont bien blondis, y ajouter la crème.
 <br />4) Lorsque la pâte commence à dorer, la sortir du four et verser dessus les oignons à la crème.
@@ -81,7 +81,7 @@ file5 = URI.open("http://res.cloudinary.com/dogomm21h/image/upload/v1606244788/r
 recipe5.photo.attach(io: file5, filename: 'some-image.jpg', content_type: 'image/jpg')
 recipe5.save!
 
-recipe6 = Recipe.create!(name: "Risotto aux asperges fraîches", difficulty: "très facile", price: "coût moyen", time: "60 minutes", diet: "végétarien", content: "1) Préparer les asperges en cassant le bas de l'asperge d'un coup sec (c'est la partie plus dure), les peler si nécéssaire.
+recipe6 = Recipe.create!(name: "Risotto aux asperges fraîches", difficulty: "très facile", price: "coût moyen", time: "60 minutes", diet: "vegetarien", content: "1) Préparer les asperges en cassant le bas de l'asperge d'un coup sec (c'est la partie plus dure), les peler si nécéssaire.
 <br />2) Couper en tronçons en réservant les pointes.
 <br />3) Faire fondre le beurre et y mettre à suer les échalotes ou l'oignon finement coupés.
 <br />4) Ajouter les asperges (sans les pointes) et faites cuire doucement pendant 5 minutes.
@@ -109,7 +109,7 @@ file7 = URI.open("http://res.cloudinary.com/dogomm21h/image/upload/v1606247400/p
 recipe7.photo.attach(io: file7, filename: 'some-image.jpg', content_type: 'image/jpg')
 recipe7.save!
 
-recipe8 = Recipe.create!(name: "Riz au curry", difficulty: "moyen", price: "bon marché", time: "30 minutes", diet: "végétarien", content: "1) Faites chauffer l'huile dans une poêle assez profonde. Versez les deux tasses de riz, puis le faire revenir 3 mn.
+recipe8 = Recipe.create!(name: "Riz au curry", difficulty: "moyen", price: "bon marché", time: "30 minutes", diet: "vegetarien", content: "1) Faites chauffer l'huile dans une poêle assez profonde. Versez les deux tasses de riz, puis le faire revenir 3 mn.
 <br />2) Versez 2 verres d'eau sur le riz. Ajoutez le cube de bouillon puis le curry selon le goût. Couvrez. Surveillez et mélanger fréquemment.
 <br />3) Après absorbtion complète de l'eau, vérifier si le riz est assez cuit; s'il ne l'est pas, rajouter de l'eau jusqu'à ce qu'il le soit.")
 
@@ -117,7 +117,7 @@ file8 = URI.open("http://res.cloudinary.com/dogomm21h/image/upload/v1606247825/g
 recipe8.photo.attach(io: file8, filename: 'some-image.jpg', content_type: 'image/jpg')
 recipe8.save!
 
-recipe9 = Recipe.create!(name: "Lasagnes d'aubergines", difficulty: "très facile", price: "coût moyen", time: "1 heure 40 minutes", diet: "végétarien", content: "1) Peler les aubergines et les couper en tranches (pas trop épaisses) dans le sens de la longueur. Faire chauffer l'huile dans une sauteuse et y faire griller les aubergines sur feu vif: elles doivent devenir tendres et dorées. Les déposer sur du papier absorbant.
+recipe9 = Recipe.create!(name: "Lasagnes d'aubergines", difficulty: "très facile", price: "coût moyen", time: "1 heure 40 minutes", diet: "vegetarien", content: "1) Peler les aubergines et les couper en tranches (pas trop épaisses) dans le sens de la longueur. Faire chauffer l'huile dans une sauteuse et y faire griller les aubergines sur feu vif: elles doivent devenir tendres et dorées. Les déposer sur du papier absorbant.
 <br />2) Préparer la sauce : dans une casserole, faire fondre le beurre ; ajouter la farine et bien remuer. Ajouter ensuite progressivement le coulis (comme pour une béchamel) puis le bouillon, jusqu'à consistance moyennement liquide.
 <br />3) Peler la carotte et la détailler en petits dés: les jeter dans la sauce tomate ainsi que l'oignon coupé finement. Ajouter poivre et herbes de Provence. Laisser cuire 30 mn sur feu très doux en remuant souvent.
 <br />4) Dans un plat à gratin, couvrir le fond de quelques cuillerées de sauce. Recouvrir de feuilles de lasagnes (sans les faire se chevaucher) puis placer les tranches d'aubergines parallèles. Saler, poivrer, parsemer de parmesan et d'une petite poignée de Comté. Placer à nouveau feuilles de lasagne, sauce, aubergines, Comté, Parmesan. Faire 3 couches. Recouvrir le dessus du gratin de Comté.
