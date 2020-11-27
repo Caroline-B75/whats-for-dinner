@@ -7,6 +7,16 @@
   padding: 0px 50px;
 }
 
+.footer h1 {
+  font-size: 20px;
+}
+
+@include media-breakpoint-up(md) {
+  .footer h1 {
+  font-size: 35px;
+  }
+}
+
 .footer-links {
   display: flex;
   align-items: center;
