@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :menus, only: [ :show, :new, :create, :edit ] do
+  resources :menus, only: [ :show, :new, :create, :edit, :destroy ] do
     resources :menu_recipes, only: [ :create, :destroy ]
     resources :grocery_items, only: [ :index, :create ]
   end

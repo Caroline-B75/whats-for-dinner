@@ -117,10 +117,25 @@
     text-align: center;
     width: 100%;
     height: 50px;
-    p {
+    a {
       color: black;
       line-height: 15px;
       margin-bottom: 5px;
+      background: none;
+      border: none;
+      width: 100%;
+      margin: 0px;
+      padding: 0px;
+      margin-bottom: 5px;
+      &:hover {
+        color: $yellow;
+        text-decoration: none;
+        transition: color 0.4s;
+      }
+      &:focus {
+        outline: 0;
+        color: black;
+      }
     }
   }
 }

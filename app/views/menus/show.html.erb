@@ -1,7 +1,32 @@
-<ul>
-<li>Régime : <%= @menu.diet %></li>
-<li>Nombre de personnes : <%= @menu.number_of_people %></li>
-<li>Nombre de repas : <%= @menu.number_of_meals %></li>
-</ul>
+<div class="banner d-flex flex-column align-items-center">
+  <div class="content-container">
+    <div class="step-title">
+      <h1>Mon menu</h1>
+    </div>
+      <%= link_to 'Supprimer ce menu <i class="fas fa-trash"></i>'.html_safe, menu_path(@menu), method: :delete, class: "delete-menu-button" %>
+      <div class="container-card-menu-edit">
+        <% @menu.menu_recipes.order(:id).each do |menu_recipe| %>
+          <div class="card-menu-edit">
+            <div class="card-recipe">
+              <div class="img-small img">
+                <%= cl_image_tag Recipe.find(menu_recipe.recipe_id).photo.key, height: 150, width: 150, crop: :fill %>
+              </div>
+              <div class="card-recipe-title">
+                <%= link_to Recipe.find(menu_recipe.recipe_id).name,  menu_recipe_path(menu_recipe), class: "menu-recipe-button" %>
+              </div>
+            </div>
+            <div class="footer-card-menu-edit">
+              <%= menu_recipe.number_of_people %>
+              &nbsp;
+              <i class="fas fa-user-friends"></i>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="d-flex">
+        <%= link_to 'Ma liste de course',  menu_grocery_items_path(@menu), class: "yellow-button" %>
+      </div>
+  </div>
+  <%= link_to '<i class="fas fa-arrow-left"></i> Retour'.html_safe, root_path, class: "retour-btn" %>
+</div>
 
-<%= link_to "Edit button", edit_menu_path(@menu) %>
