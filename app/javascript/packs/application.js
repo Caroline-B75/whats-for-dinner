@@ -26,6 +26,7 @@ require("channels")
 import "bootstrap";
 
 import {displayReviewForm} from "../plugins/display_review_form.js"
+import {allowPopovers} from "../plugins/popovers.js"
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -34,4 +35,8 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   displayReviewForm();
+});
+
+document.addEventListener('turbolinks:load', () => {
+  allowPopovers();
 });

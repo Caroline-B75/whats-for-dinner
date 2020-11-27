@@ -3,7 +3,8 @@
   background: white;
   position: fixed;
   width: 100%;
-  height: 100px;
+  height: 80px;
+
   position: relative;
   width: 100%;
   opacity: 0.8;
@@ -28,7 +29,6 @@
   text-decoration: none;
   border: solid 1px $red;
   padding:  5px;
-
   &:hover {
     text-decoration: none;
     color: white;
@@ -37,7 +37,8 @@
 }
 
 .logo {
-  padding-left: 15px;
+  padding: 10px 15px;
+  font-size: 30px;
 }
 
 .dropdown-item {
@@ -47,3 +48,5 @@
 .dropdown-menu {
   border-radius: 10px;
 }
+
+

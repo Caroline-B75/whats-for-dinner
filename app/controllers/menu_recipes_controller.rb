@@ -45,6 +45,9 @@ class MenuRecipesController < ApplicationController
     redirect_to edit_menu_path(@menu)
   end
 
+  def new_random
+  end
+
   def destroy
     @menu = Menu.find(params[:menu_id])
     @menu_recipe = MenuRecipe.find(params[:id])
