@@ -6,21 +6,26 @@
       </div>
         <h1>Dites-nous en plus</h1>
     </div>
-    <br><br><br>
-    <div class="d-flex flex-row justify-content-around align-items-center">
+    <div class="d-flex flex-row justify-content-around align-items-center mt-5">
     <%= simple_form_for @menu do |f| %>
       <div>
         <div class="d-flex flew-row profile-set justify-content-between">
-          <%= f.input :number_of_people,
-            as: :numeric,
-            placeholder: "Nombre de personnes à table",
-            label: false %>
-          <%= f.input :number_of_meals,
-            as: :numeric,
-            placeholder: "Nombre de repas",
-            label: false %>
+          <div>
+            <%= f.input :number_of_people,
+              as: :range,
+              input_html: {value: 1, min: 1, max: 15},
+              label: "Nombre de personnes à table" %>
+            <div id="value-menu_number_of_people" class="h4-container"><div id="h4-subcontainer"><h4>1<span></span></h4></div></div>
+          </div>
+          <div class="range">
+            <%= f.input :number_of_meals,
+              as: :range,
+              input_html: {value: 1, min: 1, max: 14},
+              label: "Nombre de repas" %>
+            <div id="value-menu_number_of_meals" class="h4-container"><div id="h4-subcontainer"><h4>1<span></span></h4></div></div>
+          </div>
         </div>
-        <br><br>
+        <div class="mt-5">
           <%= f.input :diet,
             collection: Recipe::DIET,
             wrapper_tag: 'div',
@@ -29,8 +34,7 @@
             include_blank: false,
             include_hidden: false,
             label: true %>
-          <br><br><br>
-          <%= f.submit "Générer mon menu", class: "yellow-button" %>
+          <%= f.submit "Générer mon menu", class: "yellow-button mt-5" %>
         </div>
       <% end %>
     </div>

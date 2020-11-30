@@ -8,6 +8,7 @@
 
 require "open-uri"
 
+Access.destroy_all
 Review.destroy_all
 Preparation.destroy_all
 Ingredient.destroy_all
