@@ -8,30 +8,29 @@
 </div>
 
   <!-- home middle div -->
-  <br id="next">
-  <div class="home-middle">
-    <h2>Nous vous simplifions le quotidien<br>dans votre cuisine.</h2>
-    <br><br><br><br>
-    <div class="d-flex flex-row justify-content-around">
-      <div class="card-home">
-        <%= cl_image_tag("menu-icon-final.png", class:"image-home") %>
-        <br><br>
-        <p>Obtenez en quelques clics votre menu <b>totalement personnalisable</b> avec des
-        recettes variées et adaptées à vos besoins et vos envies.</p>
-      </div>
-      <div class="card-home">
-        <%= cl_image_tag("grocery-items-icon-final.png", class:"image-home") %>
-        <br><br>
-        <p>Une <b>liste de courses</b> est automatiquement générée en fonction de votre
-        menu. Vous pouvez <b>la modifier et la compléter</b> à votre guise.</p>
-      </div>
-      <div class="card-home">
-        <%= cl_image_tag("recipe-icon-final.png", class:"image-home") %>
-        <br><br>
-        <p>Chaque jour, accédez aux recettes de votre menu et suivez le guide.
-        Vous, votre famille, vos amis, vos convives se régaleront de vos petits
-        plats mitonnés !</p>
-      </div>
+<br id="next">
+<div class="home-middle">
+  <h2>Nous vous simplifions le quotidien<br>dans votre cuisine.</h2>
+  <br><br><br><br>
+  <div class="d-flex flex-row justify-content-around">
+    <div class="card-home">
+      <%= cl_image_tag("menu-icon-final.png", class:"image-home") %>
+      <br><br>
+      <p>Obtenez en quelques clics votre menu <b>totalement personnalisable</b> avec des
+      recettes variées et adaptées à vos besoins et vos envies.</p>
+    </div>
+    <div class="card-home">
+      <%= cl_image_tag("grocery-items-icon-final.png", class:"image-home") %>
+      <br><br>
+      <p>Une <b>liste de courses</b> est automatiquement générée en fonction de votre
+      menu. Vous pouvez <b>la modifier et la compléter</b> à votre guise.</p>
+    </div>
+    <div class="card-home">
+      <%= cl_image_tag("recipe-icon-final.png", class:"image-home") %>
+      <br><br>
+      <p>Chaque jour, accédez aux recettes de votre menu et suivez le guide.
+      Vous, votre famille, vos amis, vos convives se régaleront de vos petits
+      plats mitonnés !</p>
     </div>
   </div>
   <%= link_to "Je crée mon menu", new_menu_path, class:"red-button special py-4" %>
