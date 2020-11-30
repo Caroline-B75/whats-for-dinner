@@ -40,3 +40,7 @@ document.addEventListener('turbolinks:load', () => {
 document.addEventListener('turbolinks:load', () => {
   allowPopovers();
 });
+
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})

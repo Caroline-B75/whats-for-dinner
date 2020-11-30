@@ -70,6 +70,18 @@
   margin: 20px;
 }
 
+.grocery_grey_button {
+  border-radius: $border-radius;
+  background-color: #7e7e7e;
+  border: 0px;
+  padding: 4px 20px 5px 20px;
+  box-shadow: $shadow;
+  display: block;
+  color: white;
+  font-family: 'Lobster', sans-serif;
+  font-size: 22px;
+  margin: 20px;
+}
 .arrow-down {
   position: absolute;
   bottom: 10px;
