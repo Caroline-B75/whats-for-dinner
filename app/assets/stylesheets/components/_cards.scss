@@ -1,0 +1,160 @@
+// cards home page
+
+.card-home {
+  width: 230px;
+  height: 280px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px lightgrey;
+  background-color: white;
+  padding: 0px 30px 20px 30px;
+  margin-bottom: 50px;
+  p {
+    font-size: 15px;
+  }
+}
+
+.image-home {
+    height: 100px;
+    margin-top: -50px;
+  }
+
+.card-small {
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  border: solid 0.5px lightgrey;
+  img {
+    width: 100%;
+    height: 100px;
+  }
+  p {
+    width: 100%;
+    padding: 5px;
+    height: 50px;
+  }
+}
+
+// cards recipes in menu
+
+.recipe-card {
+  width: 700px;
+  margin-top: 100px;
+  padding: 10px
+}
+
+.container-card-menu-edit {
+  background-color: white;
+  border: solid 0.5px lightgrey;
+  box-shadow: 5px 5px 5px #0000003b;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.card-recipe {
+  width: 150px;
+  height: 150px;
+  box-shadow: 4px 4px 5px #0000001f;
+  border: solid 0.5px lightgrey;
+  border-radius: 15px;
+}
+
+
+.card-recipe {
+  background-color: white;
+  img {
+    width: 100%;
+    height: 100px;
+    border-radius: 14px 14px 0px 0px;
+  }
+  .card-recipe-title {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    a {
+      color: black;
+      line-height: 15px;
+      margin-bottom: 5px;
+      background: none;
+      border: none;
+      width: 100%;
+      margin: 0px;
+      padding: 0px;
+      margin-bottom: 5px;
+      &:hover {
+        color: $yellow;
+        text-decoration: none;
+        transition: color 0.4s;
+      }
+      &:focus {
+        outline: 0;
+        color: black;
+      }
+    }
+  }
+}
+
+.card-menu-edit {
+  margin: 0px 15px;
+  padding-top: 10px;
+}
+
+.footer-card-recipe-random,
+.footer-card-menu-edit {
+  width: 100%;
+  color: #8c8989;
+  padding: 7px 0px;
+  text-align: center;
+  a {
+    color: #8c8989;
+    &:hover {
+      text-decoration: none;
+      transition: color 0.4s;
+      color: black;
+    }
+  }
+}
+
+.footer-card-menu-edit {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+}
+
+.more-recipes {
+  width: 100%;
+  height: fit-content;
+  background: white;
+  display: flex;
+  padding: 100px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.popover {
+  border: solid 1px lightgrey;
+  border-radius: 15px 15px 0px 0px;
+  width: 150px;
+  height: 112px;
+  background-color: $yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popover-body {
+  text-align: center;
+  color: white;
+  font-size: 15px;
+}
