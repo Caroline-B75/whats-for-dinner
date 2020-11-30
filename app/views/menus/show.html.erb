@@ -8,19 +8,26 @@
       <div class="container-card-menu-show">
         <% @menu.menu_recipes.order(:id).each do |menu_recipe| %>
           <div class="card-menu-edit">
-            <div class="card-recipe">
-              <div class="img-small img">
-                <%= cl_image_tag Recipe.find(menu_recipe.recipe_id).photo.key, height: 150, width: 150, crop: :fill %>
+            <% if menu_recipe.done == true %>
+              <div class="card-recipe-done">
+            <% else %>
+              <div class="card-recipe">
+            <% end %>
+                <div class="img-small img">
+                  <%= cl_image_tag Recipe.find(menu_recipe.recipe_id).photo.key, height: 150, width: 150, crop: :fill %>
+                </div>
+                <div class="card-recipe-title">
+                  <%= link_to Recipe.find(menu_recipe.recipe_id).name,  menu_recipe_path(menu_recipe), class: "menu-recipe-button" %>
+                </div>
               </div>
-              <div class="card-recipe-title">
-                <%= link_to Recipe.find(menu_recipe.recipe_id).name,  menu_recipe_path(menu_recipe), class: "menu-recipe-button" %>
+              <div class="footer-card-menu-edit">
+                <% if menu_recipe.done == true %>
+                  <p>Faite</p>
+                <% end %>
+                <%= menu_recipe.number_of_people %>
+                &nbsp;
+                <i class="fas fa-user-friends"></i>
               </div>
-            </div>
-            <div class="footer-card-menu-edit">
-              <%= menu_recipe.number_of_people %>
-              &nbsp;
-              <i class="fas fa-user-friends"></i>
-            </div>
           </div>
         <% end %>
       </div>
