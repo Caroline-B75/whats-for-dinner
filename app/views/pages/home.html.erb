@@ -1,13 +1,11 @@
-<div class=main-container>
-
 <!-- home top div with bg image -->
-  <div class="banner d-flex flex-column justify-content-around align-items-center mb-3">
-    <h1 class="home-title">What's for dinner?</h1>
-    <%= link_to "Je crée mon menu", new_menu_path, class:"red-button mb-5" %>
-    <div class= "arrow-down mb-3">
-      <a href="#next"><%= cl_image_tag("double_down_array_white_ltq34i.png", height: 35, width: 50, crop: :fill) %></a>
-    </div>
+<div class="banner d-flex flex-column justify-content-around align-items-center mb-3">
+  <h1 class="home-title">What's for dinner?</h1>
+  <%= link_to "Je crée mon menu", new_menu_path, class:"red-button mb-5" %>
+  <div class= "arrow-down mb-3">
+    <a href="#next"><%= cl_image_tag("double_down_array_white_ltq34i.png", height: 35, width: 50, crop: :fill) %></a>
   </div>
+</div>
 
   <!-- home middle div -->
   <br id="next">
@@ -35,29 +33,27 @@
         plats mitonnés !</p>
       </div>
     </div>
-    <%= link_to "Je crée mon menu", new_menu_path, class:"red-button special py-4" %>
   </div>
-
-<!-- home bottom div -->
-  <div class="home-bottom">
-    <h2 id="next_2"><a href="#next_2" class="link"> Pour vous mettre l'eau à la bouche...</a></h2>
-    <br><br>
-      <div class="container-recipe-random" id="recipe-random-generator">
-      <% random_recipes = Recipe.all.sample(5) %>
-      <% random_recipes.each do |random_recipe|  %>
-        <div class="card-menu-edit">
-          <div class="card-recipe">
-            <div class="img-small img">
-              <%= cl_image_tag random_recipe.photo.key, height: 100, width: 150, crop: :fill %>
-            </div>
-            <div class="card-recipe-title">
-              <p><%= random_recipe.name %></p>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
-
+  <%= link_to "Je crée mon menu", new_menu_path, class:"red-button special py-4" %>
 </div>
 
+<!-- home bottom div -->
+<div class="home-bottom">
+  <h2 id="next_2"><a href="#next_2" class="link"> Pour vous mettre l'eau à la bouche...</a></h2>
+  <br><br>
+    <div class="container-recipe-random" id="recipe-random-generator">
+    <% random_recipes = Recipe.all.sample(5) %>
+    <% random_recipes.each do |random_recipe|  %>
+      <div class="card-menu-edit">
+        <div class="card-recipe">
+          <div class="img-small img">
+            <%= cl_image_tag random_recipe.photo.key, height: 100, width: 150, crop: :fill %>
+          </div>
+          <div class="card-recipe-title">
+            <p><%= random_recipe.name %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

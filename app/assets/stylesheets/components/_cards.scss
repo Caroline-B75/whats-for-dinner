@@ -1,72 +1,45 @@
-// basic page structure (except navbar and footer)
-
-.main-container {
-  width: 100%;
-  scroll-behavior: smooth;
-}
-
-.banner {
-  background-image: url("https://res.cloudinary.com/dogomm21h/image/upload/v1606485167/background_photo_owmsqk.jpg");
-  background-size: cover;
-  background-position: bottom;
-  height: calc(100vh - 80px);
-}
+// cards home page
 
 .card-home {
   width: 230px;
-  height: 250px;
+  height: 280px;
   border-radius: 15px;
   box-shadow: 5px 5px 5px lightgrey;
   background-color: white;
   padding: 0px 30px 20px 30px;
-  margin-top: 30px;
   margin-bottom: 50px;
   p {
     font-size: 15px;
   }
 }
+
 .image-home {
-  height: 130px;
-  margin-top: -90px;
-}
+    height: 100px;
+    margin-top: -50px;
+  }
 
-.home-middle {
-  text-align: center;
-  margin-top: 5px;
-  padding: 20px 70px 35px 70px;
-}
-
-.home-bottom {
+.card-small {
+  width: 150px;
+  height: 150px;
   background-color: white;
-  text-align: center;
-  margin-top: -50px;
-  padding: 70px 70px 40px 70px;
+  border: solid 0.5px lightgrey;
+  img {
+    width: 100%;
+    height: 100px;
+  }
+  p {
+    width: 100%;
+    padding: 5px;
+    height: 50px;
+  }
 }
 
-// inside containers
+// cards recipes in menu
 
-.content-container {
-  width: 90%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 30px 0px 100px;
-}
-
-.container-recipe-random,
-.container-card-menu-edit {
-  height: fit-content;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.container-recipe-random{
-  justify-content: center;
-  align-items: center;
+.recipe-card {
+  width: 700px;
+  margin-top: 100px;
+  padding: 10px
 }
 
 .container-card-menu-edit {
@@ -107,7 +80,6 @@
     text-align: center;
     width: 100%;
     height: 50px;
-    p,
     a {
       color: black;
       line-height: 15px;
@@ -118,11 +90,11 @@
       margin: 0px;
       padding: 0px;
       margin-bottom: 5px;
-    }
-    a:hover {
+      &:hover {
         color: $yellow;
         text-decoration: none;
         transition: color 0.4s;
+      }
       &:focus {
         outline: 0;
         color: black;
@@ -134,11 +106,6 @@
 .card-menu-edit {
   margin: 0px 15px;
   padding-top: 10px;
-}
-
-.card-menu-edit-margined {
-  margin: -15px 5px;
-  padding: 0px 10px 13px 10px;
 }
 
 .footer-card-recipe-random,
@@ -158,11 +125,10 @@
 }
 
 .footer-card-menu-edit {
-  justify-content: space-between;
+  justify-content: center;
   display: flex;
   align-items: center;
   font-size: 17px;
-  padding: 6px 11px;
 }
 
 .more-recipes {
@@ -191,44 +157,4 @@
   text-align: center;
   color: white;
   font-size: 15px;
-}
-
-.menu-recipe-container {
-  background-color: white;
-  border-radius: 15px;
-  width: 350px;
-  padding: 20px 20px 10px 20px;
-  margin: auto;
-  box-shadow : $shadow;
-  font-size: 15px;
-  margin-top: -450px;
-}
-
-.grocery-container {
-  background-color: none;
-  border-radius: 15px;
-  width: 90%;
-  padding: 120px 20px 10px 20px;
-  margin: auto;
-  font-size: 15px;
-  margin-top: -800px;
-}
-
-@include media-breakpoint-up(md) {
-  .menu-recipe-container {
-  width: 600px;
-  padding: 40px 40px 20px 40px;
-  margin-top: -570px;
-  }
-}
-
-.menu-recipe-container h3 {
-  font-family: Lobster;
-  margin-top: 20px;
-  text-align: center;
-}
-
-.card-grocery_item {
-  margin: 15px;
-  padding-top: 10px;
 }

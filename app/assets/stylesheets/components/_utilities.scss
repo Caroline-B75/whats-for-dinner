@@ -39,3 +39,25 @@ body::-webkit-scrollbar {
     text-decoration: none;
   }
 }
+
+// step titles
+
+.step-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  h1 {
+    margin-bottom: 0px;
+  }
+  .step-creation-menu {
+    background-color: $yellow;
+    padding: 1px 17px;
+    border-radius: 50%;
+    color: white;
+    margin-right: 10px;
+    h1 {
+      color: white;
+    }
+  }
+}
