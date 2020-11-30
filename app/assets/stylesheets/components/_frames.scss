@@ -69,6 +69,7 @@
   align-items: center;
 }
 
+.container-card-menu-show,
 .container-card-menu-edit {
   background-color: white;
   border: solid 0.5px lightgrey;
@@ -81,6 +82,10 @@
   width: 100%;
   padding: 15px;
   margin-bottom: 20px;
+}
+
+.container-card-menu-show {
+  border: solid $yellow 3px;
 }
 
 .card-recipe {
@@ -231,4 +236,17 @@
 .card-grocery_item {
   margin: 15px;
   padding-top: 10px;
+}
+
+.menu_show_buttons {
+  display: flex;
+  p {
+    margin: 0px;
+    font-size: 28px;
+    font-weight: 300;
+    color: #5d5c5c;
+  }
+  &:focus {
+    box-shadow: pink;
+  }
 }

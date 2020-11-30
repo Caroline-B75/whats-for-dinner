@@ -27,6 +27,7 @@ import "bootstrap";
 
 import {displayReviewForm} from "../plugins/display_review_form.js"
 import {allowPopovers} from "../plugins/popovers.js"
+import {allowTooltips} from "../plugins/tooltips.js"
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -39,4 +40,8 @@ document.addEventListener('turbolinks:load', () => {
 
 document.addEventListener('turbolinks:load', () => {
   allowPopovers();
+});
+
+document.addEventListener('turbolinks:load', () => {
+  allowTooltips();
 });
