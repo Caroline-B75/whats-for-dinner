@@ -137,11 +137,11 @@
       margin: 0px;
       padding: 0px;
       margin-bottom: 5px;
-      &:hover {
+    }
+    a:hover {
         color: $yellow;
         text-decoration: none;
         transition: color 0.4s;
-      }
       &:focus {
         outline: 0;
         color: black;
