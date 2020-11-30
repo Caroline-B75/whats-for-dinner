@@ -17,4 +17,6 @@ class Recipe < ApplicationRecord
   validates :time, presence: true
   validates :content, presence: true
   validates_inclusion_of :diet, in: DIET, presence: true
+
+  before_destroy { self.photo.purge }
 end

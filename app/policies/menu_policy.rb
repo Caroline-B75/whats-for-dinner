@@ -10,7 +10,7 @@ class MenuPolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    record.users.include?(user)
   end
 
   def edit?

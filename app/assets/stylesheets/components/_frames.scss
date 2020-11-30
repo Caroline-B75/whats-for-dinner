@@ -155,6 +155,11 @@
   padding-top: 10px;
 }
 
+.card-menu-edit-margined {
+  margin: -15px 5px;
+  padding: 0px 10px 13px 10px;
+}
+
 .footer-card-recipe-random,
 .footer-card-menu-edit {
   width: 100%;
@@ -172,10 +177,11 @@
 }
 
 .footer-card-menu-edit {
-  justify-content: center;
+  justify-content: space-between;
   display: flex;
   align-items: center;
   font-size: 17px;
+  padding: 6px 11px;
 }
 
 .more-recipes {
@@ -209,12 +215,12 @@
 .menu-recipe-container {
   background-color: white;
   border-radius: 15px;
-  width: 400px;
+  width: 350px;
   padding: 20px 20px 10px 20px;
   margin: auto;
   box-shadow : $shadow;
   font-size: 15px;
-  margin-top: -530px;
+  margin-top: -450px;
 }
 
 .grocery-container {
@@ -231,6 +237,7 @@
   .menu-recipe-container {
   width: 600px;
   padding: 40px 40px 20px 40px;
+  margin-top: -570px;
   }
 }
 

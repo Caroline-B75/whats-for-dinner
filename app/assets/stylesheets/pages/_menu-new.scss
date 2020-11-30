@@ -30,10 +30,10 @@
   legend {
     display: none;
   }
-  input[type='checkbox'] {
+  input[type='radio'] {
     display: none;
   }
-  input[type='checkbox']:checked + label .diet-card {
+  input[type='radio']:checked + label .diet-card {
     background-color: white;
     box-shadow: none;
     opacity: 1;

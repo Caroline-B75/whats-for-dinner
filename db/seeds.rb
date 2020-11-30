@@ -150,6 +150,7 @@ recipe11 = Recipe.create!(name: 'Truffade gastronomique', difficulty: 'facile', 
 <br />3) Servez la truffade dans des plats à gratin individuels, saupoudrez d’ail et de persil hachés. Utilisez les pommes de terre, lamelles de truffe et de fromage restantes pour réaliser un joli dressage en rosace.
 <br />4) Enfournez les plats 5 min au four, le temps que le fromage commence à fondre. Servez et dégustez.")
 
+
 file11 = URI.open('https://res.cloudinary.com/dogomm21h/image/upload/v1606658660/whats_for_dinner/truffade.jpg')
 recipe11.photo.attach(io: file11, filename: 'some-image.jpg', content_type: 'image/jpg')
 recipe11.save!
@@ -159,6 +160,7 @@ recipe12 = Recipe.create!(name: "Crème de courge et foie gras", difficulty: "fa
 <br />2) Passer au robot et ajouter 1 dl de crème, 1 pincée de sucre, sel et poivre. laisser en attente.
 <br />3) Couper le foie en petits cubes et laisser au frais.
 <br />4) Finitions : réchauffer la crème de courge, répartir les cubes de foie gras dans les soupières et verser par dessus. Décorer avec quelques pluches de cerfeuil.")
+
 
 file12 = URI.open('https://res.cloudinary.com/dogomm21h/image/upload/v1606662216/whats_for_dinner/creme_courge_et_foie_gras.jpg')
 recipe12.photo.attach(io: file12, filename: 'some-image.jpg', content_type: 'image/jpg')
@@ -327,6 +329,7 @@ recipe25.save!
 recipe26 = Recipe.create!(name: 'Rôti de veau et champignons', difficulty: 'facile', price: 'coût moyen', time: '50 minutes', diet: 'carnivore', content: "1) Faire fondre le beurre dans une cocotte minute, y faire dorer le rôti de toutes parts, puis ajouter l'oignon émincé, le sel et le poivre.
 <br />2) Délayer dans un bol le fond de veau, les herbes, le basilic, le vin blanc et 1 verre d'eau. Verser ce mélange dans la cocotte, ainsi que les champignons lavées et coupés en quartiers et remuer.
 <br />3) Fermer la cocotte et laisser chuchoter environ 30 min par kg.")
+
 
 file26 = URI.open('https://res.cloudinary.com/dogomm21h/image/upload/v1606681951/whats_for_dinner/roti_de_veau_hafer2.jpg')
 recipe26.photo.attach(io: file26, filename: 'some-image.jpg', content_type: 'image/jpg')
