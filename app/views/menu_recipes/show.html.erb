@@ -29,7 +29,7 @@
   </div>
 
 
-  <div id="review-form">
+  <div id="review-form" class="<%= 'd-none' unless @menu_recipe.done? %>">
     <% if @user_review.nil? %>
     <%= render "reviews/new", menu_recipe: @menu_recipe, review: @review %>
     <% end %>
