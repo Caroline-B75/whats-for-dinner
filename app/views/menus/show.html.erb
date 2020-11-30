@@ -4,7 +4,8 @@
       <h1>Mon menu</h1>
     </div>
       <%= link_to 'Supprimer ce menu <i class="fas fa-trash"></i>'.html_safe, menu_path(@menu), method: :delete, class: "delete-menu-button" %>
-      <div class="container-card-menu-edit">
+      <h3 class="personnalized-text">Et voilà un super menu composé de <%= @menu.number_of_meals %> plats <%= @menu.diet %>s. Bon appétit ! </h3>
+      <div class="container-card-menu-show">
         <% @menu.menu_recipes.order(:id).each do |menu_recipe| %>
           <div class="card-menu-edit">
             <% if menu_recipe.done == true %>
@@ -30,16 +31,19 @@
           </div>
         <% end %>
       </div>
-      <div class="d-flex">
-        <%= link_to 'Ma liste de course',  menu_grocery_items_path(@menu), class: "yellow-button" %>
+      <div class="menu_show_buttons">
+        <%= simple_form_for [ @menu, @access ], remote: true do |f| %>
+          <%= f.input :email, label: false, placeholder: "utilisateur@email.com" %>
+          <p>|</p>
+          <%= button_tag type: 'submit'  do %>
+            <i class="far fa-paper-plane"  title="Partager" data-toggle="tooltip" data-placement="top" aria-hidden="true" aria-hissen=true></i>
+            <!-- <i class="fas fa-share"></i> -->
+          <% end %>
+        <% end %>
+        <div class="d-flex">
+            <%= link_to 'Ma liste de course',  menu_grocery_items_path(@menu), class: "yellow-button" %>
+        </div>
       </div>
-
-      <%= simple_form_for [ @menu, @access ], remote: true do |f| %>
-        <%= f.input :email, label: false, placeholder: "jean@gmail.com" %>
-        <%= f.submit "Partager", class: "btn btn-primary btn-add-doses" %>
-      <% end %>
-
   </div>
   <%= link_to '<i class="fas fa-arrow-left"></i> Retour'.html_safe, root_path, class: "retour-btn" %>
 </div>
-

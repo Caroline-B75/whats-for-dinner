@@ -10,6 +10,8 @@ class Menu < ApplicationRecord
   validates :number_of_meals, presence: true
   validates_inclusion_of :diet, in: Recipe::DIET
 
+  default_scope { order("created_at DESC") }
+
   def users
     users = []
     users << self.user
