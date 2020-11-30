@@ -27,6 +27,7 @@ import "bootstrap";
 
 import {displayReviewForm} from "../plugins/display_review_form.js"
 import {allowPopovers} from "../plugins/popovers.js"
+import { initStarRating } from '../plugins/init_star_rating.js';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -35,8 +36,7 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   displayReviewForm();
+  allowPopovers();
+  initStarRating();
 });
 
-document.addEventListener('turbolinks:load', () => {
-  allowPopovers();
-});
