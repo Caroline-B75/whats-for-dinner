@@ -25,7 +25,7 @@
             collection: Recipe::DIET,
             wrapper_tag: 'div',
             label_method: lambda { |diet| render 'menus/diet_card', diet: diet },
-            as: :check_boxes,
+            as: :radio_buttons,
             include_blank: false,
             include_hidden: false,
             label: true %>

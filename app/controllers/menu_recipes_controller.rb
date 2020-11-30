@@ -4,6 +4,10 @@ class MenuRecipesController < ApplicationController
     authorize @menu_recipe
     @review = Review.new
 
+    @menu_recipe.recipe.preparations.each do |preparation|
+      preparation.quantity = preparation.quantity * @menu_recipe.number_of_people
+    end
+
     @user_review = @menu_recipe.recipe.reviews.find_by(user_id: current_user.id)
   end
 

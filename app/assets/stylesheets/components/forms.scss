@@ -17,3 +17,9 @@ select#menu_recipe_number_of_people {
   font-weight: 500;
   margin: 8px;
 }
+
+.form-inline .form-control {
+    display: inline-block;
+    width: 245px;
+    vertical-align: middle;
+}
