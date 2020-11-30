@@ -180,3 +180,15 @@
     transition: background-color 0.4s;
   }
 }
+
+.delete-menu-recipe-button {
+  position: relative;
+  top: 25px;
+  right: -105%;
+  color: #8b8989;
+  &:hover {
+    color: black;
+    text-decoration: none;
+    transition: background-color 0.4s;
+  }
+}
