@@ -13,6 +13,7 @@ const displayReviewForm = () => {
         review_form.classList.add('d-none');
       };
     });
+  };
     // window.addEventListener("load", () => {
     //   if (checkbox.checked == true) {
     //   review_form.style.display = "block";
