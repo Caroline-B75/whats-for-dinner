@@ -1,0 +1,62 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  outline: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    border: none !important;
+}
+
+.modal-title {
+  margin-bottom: 0;
+  line-height: 1.5;
+  color: white;
+  font-size: 28px;
+  font-weight: 300;
+  margin-left: 10px;
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-image: 
+  linear-gradient(
+    rgba(0, 0, 0, 0.4), 
+    rgba(0, 0, 0, 0.3)
+  ),  /*Applique un filtre noir sur l'image*/
+  url(https://res.cloudinary.com/dogomm21h/image/upload/v1606747922/whats_for_dinner/pexels-lisa-fotios-1992912_o4rkws.jpg);
+  background-size: 100% auto;
+
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  outline: 0;
+}
+
+.modal-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.75rem;
+  border: none !important;
+  border-bottom-right-radius: 14px;
+  border-bottom-left-radius: 14px;
+}

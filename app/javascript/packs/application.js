@@ -41,3 +41,7 @@ document.addEventListener('turbolinks:load', () => {
   initRange();
 });
 
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+

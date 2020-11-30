@@ -5,9 +5,43 @@
       <div class="step-title mb-5">
         <h1 class="grocery-list-title">Votre liste de courses</h1>
       </div>
+
+
+
       <div class="col-md-3 offset-md-9 text-right">
-        <a href="#add-item" class="btn grocery_yellow_button">Ajouter une course</a>
+        <button type="button" class="btn grocery_yellow_button" data-toggle="modal" data-target="#addItem">
+          Ajouter une course
+        </button>
       </div>
+
+      <div id="addItem" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="addItemTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="addItemTitle">Ajouter dans ma liste de course :</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= simple_form_for([@menu, @grocery_item]) do |f| %>
+                <%= f.input :name, placeholder: "article à ajouter", label: false, input_html: { maxlength: 40 } %>
+                <%= f.input :quantity, placeholder: "quantité", label: false %>
+                <%= f.input :unit, collection: Ingredient::UNIT, prompt: "unité de mesure", label: false %>
+                <%= f.input :category, collection: Ingredient::CATEGORY, prompt: "au rayon",label: false %>
+                <%= f.input :checked, as: :hidden %>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn grocery_grey_button" data-dismiss="modal">Annuler</button>
+              <%= f.button :submit, "Ajouter à ma liste", data: {confirm: "Souhaitez-vous ajouter ce produit et enregistrer votre nouvelle liste de courses ?"}, class: "btn grocery_yellow_button"%>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
       <div class="container-card-menu-edit">
         <% Ingredient::CATEGORY.each do |category| %>
           <% if GroceryItem.find_by(category: category).nil? == false %>
@@ -38,25 +72,5 @@
           <a href="#haut"><i class="fas fa-angle-double-up"></i></a>
         </div>
       </div>
-      <div class="card-menu-edit mt-5 mb-5 mx-auto text-center justify-center" id="add-item">
-        <h4>Complétez votre liste de courses :</h4>
-        <div class="row justify-content-center">
-        <%= simple_form_for([@menu, @grocery_item], remote: true, html: {class: 'form-inline'} ) do |f| %>
-          <%= f.input :name, placeholder: "article à ajouter", label: false, input_html: { maxlength: 40 } %>
-          <%= f.input :quantity, placeholder: "quantité", label: false %>
-          <%= f.input :unit, collection: Ingredient::UNIT, prompt: "unité de mesure", label: false %>
-          <%= f.input :category, collection: Ingredient::CATEGORY, prompt: "au rayon",label: false %>
-          <%= f.input :checked, as: :hidden %>
-          <%= f.button :submit, "Ajouter à ma liste", data: {confirm: "Souhaitez-vous ajouter ce produit et enregistrer votre nouvelle liste de courses ?"}, class: "btn grocery_yellow_button"%>
-        <% end %>
-        </div>
-      </div>
     </div>
-
-
-
-<%# <%= mail_to "moi@domaine.dvp", "Contact par mail",
- :subject=>"formulaire rails",
- :body=>"Hello, Je te partage ma liste de courses !",
- :encoding=>"javascript"%>
-
+</div>
