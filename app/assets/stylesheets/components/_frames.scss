@@ -5,20 +5,21 @@
 
 .card-home {
   width: 230px;
-  height: 280px;
+  height: 250px;
   border-radius: 15px;
   box-shadow: 5px 5px 5px lightgrey;
   background-color: white;
   padding: 0px 30px 20px 30px;
+  margin-top: 30px;
   margin-bottom: 50px;
   p {
     font-size: 15px;
   }
 }
 .image-home {
-    height: 100px;
-    margin-top: -50px;
-  }
+  height: 130px;
+  margin-top: -90px;
+}
 
 
 .card-small {
@@ -125,6 +126,7 @@
     text-align: center;
     width: 100%;
     height: 50px;
+    p,
     a {
       color: black;
       line-height: 15px;
