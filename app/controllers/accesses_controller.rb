@@ -6,9 +6,11 @@ class AccessesController < ApplicationController
     authorize @access
     @user = User.find_by(email: params[:access][:email])
 
+
     if @user.present?
       @access.user = @user
       flash[:notice] = "Le menu a été partagé"
+      @access.save
     else
       flash[:alert] = "Ce user n'existe pas"
     end
