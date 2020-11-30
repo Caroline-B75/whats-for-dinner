@@ -8,11 +8,11 @@
 }
 
 #new_menu {
-  width: 600px;
+  width: 800px;
   input {
     // line-height: 2em;
-    font-size: 1.2em;
-    padding: 20px 15px;
+    font-size: 1.5em;
+    // padding: 20px 15px;
     text-align: center;
     box-shadow: $shadow;
   }
@@ -27,6 +27,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   legend {
     display: none;
   }
@@ -41,15 +42,15 @@
 }
 
 .diet-card {
-  height: 80px;
-  width: 90px;
+  height: 120px;
+  width: 140px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
   font-size: 2.8em;
-  margin: 10px 15px;
+  margin: 10px 35px;
   background-color: lightgrey;
   box-shadow: $shadow;
   opacity: 0.6;
@@ -59,6 +60,9 @@
 .diet-choice p {
   text-align: center;
   color: #585656;
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 1.7em;
 }
 
 .diet-card img {

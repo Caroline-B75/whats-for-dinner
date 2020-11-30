@@ -1,6 +1,8 @@
 const displayReviewForm = () => {
-  const checkbox = document.querySelector(".check-done")
-  const review_form = document.getElementById('review-form')
+  if (document.getElementById('review-form')) {
+
+ const checkbox = document.querySelector(".check-done")
+ const review_form = document.getElementById('review-form')
 
   if (checkbox) {
     checkbox.addEventListener("click", () => {
@@ -19,8 +21,6 @@ const displayReviewForm = () => {
     //   };
     // });
   };
-
 };
-
 
 export { displayReviewForm };
