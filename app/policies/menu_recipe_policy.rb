@@ -22,7 +22,7 @@ class MenuRecipePolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    record.menu.users.include?(user)
   end
 
 end

@@ -5,10 +5,8 @@ class MenusController < ApplicationController
   end
 
   def create
-    @diet = params[:menu][:diet].join(",")
     @menu = Menu.new(menu_params)
     @menu.user = current_user
-    @menu.diet = @diet
     @menu.save
 
     if @menu.save
@@ -23,6 +21,7 @@ class MenusController < ApplicationController
 
   def show
     @menu = Menu.find(params[:id])
+    @access = Access.new
     authorize @menu
   end
 

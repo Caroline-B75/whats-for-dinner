@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :menus, only: [ :show, :new, :create, :edit, :destroy ] do
     resources :menu_recipes, only: [ :create, :destroy ]
     resources :grocery_items, only: [ :index, :create ]
+    resources :accesses, only: [:create]
   end
 
   resources :grocery_items, only: [ :update ]
