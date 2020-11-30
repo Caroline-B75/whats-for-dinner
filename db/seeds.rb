@@ -151,7 +151,7 @@ Inspired by
 <br />3) Servez la truffade dans des plats à gratin individuels, saupoudrez d’ail et de persil hachés. Utilisez les pommes de terre, lamelles de truffe et de fromage restantes pour réaliser un joli dressage en rosace.
 <br />4) Enfournez les plats 5 min au four, le temps que le fromage commence à fondre. Servez et dégustez.')
 
-file11 = URI.open('https://res.cloudinary.com/dogomm21h/image/upload/v1606658660/Whats%20for%20dinner/Truffade_yy2ben.jpg')
+file11 = URI.open("https://res.cloudinary.com/dogomm21h/image/upload/v1606658660/Whats%20for%20dinner/Truffade_yy2ben.jpg")
 recipe11.photo.attach(io: file11, filename: 'some-image.jpg', content_type: 'image/jpg')
 recipe11.save!
 
@@ -161,7 +161,7 @@ recipe12 = Recipe.create!(name: "Crème de courge et foie gras", difficulty: "fa
 <br />3) Couper le foie en petits cubes et laisser au frais.
 <br />4) Finitions : réchauffer la crème de courge, répartir les cubes de foie gras dans les soupières et verser par dessus. Décorer avec quelques pluches de cerfeuil.")
 
-file12 = URI.open('https://res.cloudinary.com/dogomm21h/image/upload/v1606662216/Whats%20for%20dinner/cr%C3%A8me_courge_et_foie_gras_w4u0bo.jpg')
+file12 = URI.open('https://res.cloudinary.com/dogomm21h/image/upload/v1606662216/Whats#%20for%20dinner/cr%C3%A8me_courge_et_foie_gras_w4u0bo.jpg')
 recipe12.photo.attach(io: file12, filename: 'some-image.jpg', content_type: 'image/jpg')
 recipe12.save!
 
@@ -201,7 +201,7 @@ recipe15.photo.attach(io: file15, filename: 'some-image.jpg', content_type:�
 recipe15.save!
 
 
-recipe16 = Recipe.create!(name: 'Souris d'agneau au miel et thym', difficulty: 'facile', price: 'bon marché', time: '2h15', diet: 'carnivore', content: "1) Dans un poêlon, faites fondre l'huile d'olive avec le miel jusqu'à l'obtention d'un mélange homogène.
+recipe16 = Recipe.create!(name: "Souris d'agneau au miel et thym", difficulty: 'facile', price: 'bon marché', time: '2h15', diet: 'carnivore', content: "1) Dans un poêlon, faites fondre l'huile d'olive avec le miel jusqu'à l'obtention d'un mélange homogène.
 <br />2) Disposez les souris d'agneau dans une cocotte allant au four, salez et poivrez-les selon votre goût. Enduisez-les du mélange huile d'olive-miel. Ajoutez les gousses d'ail non épluchées et le thym.
 <br />3) Couvrez la cocotte et enfournez-la pendant 2 bonnes heures à 170°C (150°C si four à chaleur tournante)
 <br />4) A partir d'une heure de cuisson, surveillez la cuisson de temps en temps afin d'ajouter ou non un peu de liquide : eau, vin ou bouillon (cela dépend de la matière du plat que vous utilisez). Bon appétit !")
@@ -211,30 +211,30 @@ recipe16.photo.attach(io: file16, filename: 'some-image.jpg', content_type:�
 recipe16.save!
 
 
-recipe17 = Recipe.create!(name: 'Risotto au potiron', difficulty: 'facile', price: 'bon marché', time: '1 heure', diet: 'végétarien', content: '1) Pelez le potiron, éliminez les graines et coupez-le en tranches fines.
+recipe17 = Recipe.create!(name: 'Risotto au potiron', difficulty: 'facile', price: 'bon marché', time: '1 heure', diet: 'végétarien', content: "1) Pelez le potiron, éliminez les graines et coupez-le en tranches fines.
 <br />2) Hachez menu l'oignon et faites-le revenir dans 20 g de beurre, ajoutez le poiton, salez et laissez cuire à feu lent, en mélangeant et en versant un peu de bouillon.
 <br />3) Quand le potiron est défait, versez le riz et faites-le cuire pendant 18 minutes en rajoutant du bouillon chaud au fur et à mesure qu'il est absorbé.
-<br />4) Ajoutez le lait, mélangez à feu vif, ajouter le poivre, le persil et une bonne dose de parmesan. Mélangez rapidement avant de servir de façon que tous les ingrédients soient parfaitement amalgamés.')
+<br />4) Ajoutez le lait, mélangez à feu vif, ajouter le poivre, le persil et une bonne dose de parmesan. Mélangez rapidement avant de servir de façon que tous les ingrédients soient parfaitement amalgamés.")
 
 file17 = URI.open('https://res.cloudinary.com/dogomm21h/image/upload/v1606667743/Whats%20for%20dinner/risotto_potiron_slmbs3.jpg')
 recipe17.photo.attach(io: file17, filename: 'some-image.jpg', content_type: 'image/jpg')
 recipe17.save!
 
 
-recipe18 = Recipe.create!(name: 'Poivrons farcis', difficulty: 'facile', price: 'bon marché', time: '1h10', diet: 'végétarien', content: '1) Préparer la farce : Mélanger le riz avec les herbes hachées menu, les épices et le concentré de tomates. Bien malaxer.
+recipe18 = Recipe.create!(name: 'Poivrons farcis', difficulty: 'facile', price: 'bon marché', time: '1h10', diet: 'végétarien', content: "1) Préparer la farce : Mélanger le riz avec les herbes hachées menu, les épices et le concentré de tomates. Bien malaxer.
 <br />2) Enlever le chapeau des poivrons et bien rincer l'intérieur.
 <br />3) Préparer la sauce:
 Faire dorer l'oignon émincé, y rajouter le cube, le concentré et diluer. Porter à ébullition.
 <br />4) Pendant que la sauce mijote, remplir les poivrons aux trois-quart.
 <br />5) Les mettre dans la sauce, arroser de sauce l'intérieur des poivrons.
-<br />6) Mettre à feu doux et imbiber de jus de temps en temps.')
+<br />6) Mettre à feu doux et imbiber de jus de temps en temps.")
 
 file18 = URI.open('https://res.cloudinary.com/dogomm21h/image/upload/v1606668448/Whats%20for%20dinner/poivrons_farcis_v%C3%A9g%C3%A9tarien_vc1ibq.jpg')
 recipe18.photo.attach(io: file18, filename: 'some-image.jpg', content_type: 'image/jpg')
 recipe18.save!
 
 
-recipe19 = Recipe.create!(name: 'Gnocchi de patate douce', difficulty: 'facile', price: 'bon marché', time: '45 minutes', diet: 'végétarien', content: '1) Eplucher et couper les patates douces en morceaux. Plus les morceaux sont petits, plus ils vont cuire vite. Faire cuire 20 min dans l'autocuiseur.
+recipe19 = Recipe.create!(name: 'Gnocchi de patate douce', difficulty: 'facile', price: 'bon marché', time: '45 minutes', diet: 'végétarien', content: "1) Eplucher et couper les patates douces en morceaux. Plus les morceaux sont petits, plus ils vont cuire vite. Faire cuire 20 min dans l'autocuiseur.
 <br />2) Faire de la purée avec les patates douces (avec un presse-purée ou avec une fourchette) Ajouter immédiatement le jaune d'oeuf.
 <br />3) Ajouter la farine, la fécule, le sel et la muscade. Mélanger avec les mains pour obtenir une boule. Attention de ne pas se brûler.
 <br />4) Laisser la pâte refroidir.
@@ -244,14 +244,14 @@ recipe19 = Recipe.create!(name: 'Gnocchi de patate douce', difficulty: 'facile',
 <br />8) Les gnocchis sont cuits quand ils remontent à la surface. La cuisson prend généralement quelques secondes.
 <br />9) Sortir rapidement les gnocchis à l'aide d'un écumoire.
 <br />10) Dans une sauteuse, faire fondre une noisette de beurre. Ajouter la crème fraîche, saler et poivrer.
-<br />12) Couper la cuisson, saupoudrer de parmesan et parsemer des feuilles de basilic. Déguster aussitôt !')
+<br />12) Couper la cuisson, saupoudrer de parmesan et parsemer des feuilles de basilic. Déguster aussitôt !")
 
 file19 = URI.open('https://res.cloudinary.com/dogomm21h/image/upload/v1606669082/Whats%20for%20dinner/gnoccki_patate_douce_zh13xy.jpg')
 recipe19.photo.attach(io: file19, filename: 'some-image.jpg', content_type: 'image/jpg')
 recipe19.save!
 
 
-recipe20 = Recipe.create!(name: 'Parmentier de légumes', difficulty: 'facile', price: 'bon marché', time: '1h10', diet: 'végétarien', content: '1) Peler les pommes de terre et détailler le brocoli en bouquets. Faire cuire à la vapeur pendant 20 min.
+recipe20 = Recipe.create!(name: 'Parmentier de légumes', difficulty: 'facile', price: 'bon marché', time: '1h10', diet: 'végétarien', content: "1) Peler les pommes de terre et détailler le brocoli en bouquets. Faire cuire à la vapeur pendant 20 min.
 <br />2) Laver et éplucher les carottes. Éplucher l'oignon et émincer le.
 <br />3) Dans une cocotte, faire revenir l'oignon et ajouter les carottes coupées en petits morceaux.
 <br />4) Ajouter le bouillon et laisser cuire 15mn à feu doux.
@@ -259,14 +259,14 @@ recipe20 = Recipe.create!(name: 'Parmentier de légumes', difficulty: 'facile', 
 <br />6) Dans la cocotte, ajouter les tomates pelées et les bouquets de brocoli. Laisser cuire 10 min à feu doux.
 <br />7) Beurrer un plat à gratin et verser d'abord la préparation de légumes. Ajouter par dessus la purée de pommes de terre.
 <br />8) Lisser le dessus avec une fourchette et recouvrir de chapelure.
-<br />9) Enfourner dans un four chaud à 230°C / Thermostat 8')
+<br />9) Enfourner dans un four chaud à 230°C / Thermostat 8")
 
 file20 = URI.open('https://res.cloudinary.com/dogomm21h/image/upload/v1606675184/Whats%20for%20dinner/parmentier_de_l%C3%A9gumes_zetbmx.jpg')
 recipe20.photo.attach(io: file20, filename: 'some-image.jpg', content_type: 'image/jpg')
 recipe20.save!
 
 
-recipe21 = Recipe.create!(name: 'Aubergines farcies à la mozzarella', difficulty: 'facile', price: 'bon marché', time: '1 heure', diet: 'végétarien', content: '1) Blanchir les aubergines pendant 8 mn à l'eau bouillante.
+recipe21 = Recipe.create!(name: 'Aubergines farcies à la mozzarella', difficulty: 'facile', price: 'bon marché', time: '1 heure', diet: 'végétarien', content: "1) Blanchir les aubergines pendant 8 mn à l'eau bouillante.
 <br />2) Les couper en 2 et les laisser refroidir dans une passoire.
 <br />3) Vider les aubergines.
 <br />4) Mélanger la pulpe avec 400 g de mozzarella coupée en petits dés.
@@ -274,67 +274,67 @@ recipe21 = Recipe.create!(name: 'Aubergines farcies à la mozzarella', difficult
 <br />6) Farcir les aubergines.
 <br />7) Ajouter la pulpe de tomates à laquelle vous aurez ajouté un peu de thym, sel, poivre et éventuellement un peu de sucre, recouvrir le tout d'une tranche de mozzarella et passer au four à 200°C pendant 40 mn.')
 
-file21 = URI.open('https://res.cloudinary.com/dogomm21h/image/upload/v1606676857/Whats%20for%20dinner/aubergines_farcies_%C3%A0_la_mozzarella_bz4l9h.jpg')
+file21 = URI.open('https://res.cloudinary.com/dogomm21h/image/upload/v1606676857/Whats%20for%20dinner/aubergines_farcies_%C3%A0_la_mozzarella_bz4l9h.jpg")
 recipe21.photo.attach(io: file21, filename: 'some-image.jpg', content_type: 'image/jpg')
 recipe21.save!
 
 
-recipe22 = Recipe.create!(name: 'Nouilles chinoises aux légumes', difficulty: 'facile', price: 'bon marché', time: '25 minutes', diet: 'végétarien', content: '1) Détailler tous les légumes en fine julienne.
+recipe22 = Recipe.create!(name: 'Nouilles chinoises aux légumes', difficulty: 'facile', price: 'bon marché', time: '25 minutes', diet: 'végétarien', content: "1) Détailler tous les légumes en fine julienne.
 <br />2) Faire bouillir une grande casserole d'eau salée, y jeter les nouilles, dès que l'ébullition à repris, couvrir, éteindre le feu et laisser reposer pendant 4 min.
 <br />3) Pendant ce temps, faire revenir les légumes dans l'huile pendant 5 mn, à feu très vif, ajouter les cinq épices et la sauce de soja.
-<br />4) Égoutter les nouilles, les joindre aux légumes et rectifier l'assaisonnement si besoin.')
+<br />4) Égoutter les nouilles, les joindre aux légumes et rectifier l'assaisonnement si besoin.")
 
 file22 = URI.open('https://res.cloudinary.com/dogomm21h/image/upload/v1606677326/Whats%20for%20dinner/nouilles_chinoises_aux_l%C3%A9gumes_v7arsr.jpg')
 recipe22.photo.attach(io: file22, filename: 'some-image.jpg', content_type: 'image/jpg')
 recipe22.save!
 
 
-recipe23 = Recipe.create!(name: 'Curry de légumes', difficulty: 'facile', price: 'bon marché', time: '1h20', diet: 'végétarien', content: '1) Débiter les carottes en fines tranches et la patate en petits morceaux. Découper les courgettes en quarts de rondelles tout en conservant la peau.
+recipe23 = Recipe.create!(name: 'Curry de légumes', difficulty: 'facile', price: 'bon marché', time: '1h20', diet: 'végétarien', content: "1) Débiter les carottes en fines tranches et la patate en petits morceaux. Découper les courgettes en quarts de rondelles tout en conservant la peau.
 <br />2) Détailler les échalotes et l'ail et les faire dorer dans une grande sauteuse avec un peu d'huile. Ajouter les légumes, réduire le feu et couvrir.
 <br />3) En parallèle, dans un saladier, mélanger la crème de coco, le concentré de tomates et la pâte de curry avec le jus des citrons verts. Ajouter le piment et le basilic moulus, le cumin, et napper les légumes de ce mélange bien homogène. Ajouter 1/2 verre d'eau.
 <br />4) Poivrer et saler à discrétion.
-<br />5) Bien laisser mijoter sous couvercle à feu minimum.')
+<br />5) Bien laisser mijoter sous couvercle à feu minimum.")
 
 file23 = URI.open('https://res.cloudinary.com/dogomm21h/image/upload/v1606678287/Whats%20for%20dinner/curry_de_l%C3%A9gumes_bogcfw.jpg')
 recipe23.photo.attach(io: file23, filename: 'some-image.jpg', content_type: 'image/jpg')
 recipe23.save!
 
 
-recipe24 = Recipe.create!(name: 'Dahl de lentilles corail', difficulty: 'facile', price: 'bon marché', time: '30 minutes', diet: 'végétarien', content: '1) Laver les tomates et les découper en dés. Peler les carottes, et les découper en fines rondelles.
+recipe24 = Recipe.create!(name: 'Dahl de lentilles corail', difficulty: 'facile', price: 'bon marché', time: '30 minutes', diet: 'végétarien', content: "1) Laver les tomates et les découper en dés. Peler les carottes, et les découper en fines rondelles.
 <br />2) Dans une casserole, verser les lentilles corail et couvrir d'eau. Porter à ébullition. Laisser cuire pendant 10 min environ, jusqu'à complète absorption de l'eau. Retire du feu et laisser reposer.
 <br />3) Dans une sauteuse, verser l'huile et chauffer. Y ajouter l'ail qui dorera pendant une petite minute. Verser ensuite les légumes et saupoudrer avec les épices. Ajouter enfin le concentré de tomate.
 <br />4) Verser le lait de coco et laisser mijoter environ 10 min. sans couvrir.
-<br />5) Enfin, ajouter les lentilles et bien remuer le tout.')
+<br />5) Enfin, ajouter les lentilles et bien remuer le tout.")
 
 file24 = URI.open('https://res.cloudinary.com/dogomm21h/image/upload/v1606680037/Whats%20for%20dinner/dahl_de_lentilles_corail_h944qh.jpg')
 recipe24.photo.attach(io: file24, filename: 'some-image.jpg', content_type: 'image/jpg')
 recipe24.save!
 
 
-recipe25 = Recipe.create!(name: 'Tacos mexicains', difficulty: 'facile', price: 'bon marché', time: '55 minutes', diet: 'carnivore', content: '1) A la poêle, faire dorer l'oignon émincé dans un peu d'huile d'olive.
+recipe25 = Recipe.create!(name: 'Tacos mexicains', difficulty: 'facile', price: 'bon marché', time: '55 minutes', diet: 'carnivore', content: "1) A la poêle, faire dorer l'oignon émincé dans un peu d'huile d'olive.
 <br />2) Rajouter la viande, assaisonner et laisser cuire 5 min.
 <br />3) Laver les feuilles de laitue.
 <br />4) Couper les tomates et le poivron en petits dés.
 <br />5) Incorporer le tout à la poêlée avec le coulis de tomate, et poursuivre la cuisson pendant 5 min.
 <br />6) Egoutter les haricots rouges et les ajouter 2 min avant la fin de cuisson.
 <br />7) Hors du feu, ajuster l'assaisonnement et saupoudrer généreusement de cumin; on peut aussi rajouter quelques gouttes de Tabasco.
-<br />8) Garnir les tortillas de préparation et les refermer en les roulant comme des crêpes. Disposer 1 feuille de laitue sur chaque tacos avant de servir.')
+<br />8) Garnir les tortillas de préparation et les refermer en les roulant comme des crêpes. Disposer 1 feuille de laitue sur chaque tacos avant de servir.")
 
 file25 = URI.open('https://res.cloudinary.com/dogomm21h/image/upload/v1606681186/Whats%20for%20dinner/tacos_mexicains_usoldr.jpg')
 recipe25.photo.attach(io: file25, filename: 'some-image.jpg', content_type: 'image/jpg')
 recipe25.save!
 
 
-recipe26 = Recipe.create!(name: 'Rôti de veau et champignons', difficulty: 'facile', price: 'coût moyen', time: '50 minutes', diet: 'carnivore', content: '1) Faire fondre le beurre dans une cocotte minute, y faire dorer le rôti de toutes parts, puis ajouter l'oignon émincé, le sel et le poivre.
+recipe26 = Recipe.create!(name: 'Rôti de veau et champignons', difficulty: 'facile', price: 'coût moyen', time: '50 minutes', diet: 'carnivore', content: "1) Faire fondre le beurre dans une cocotte minute, y faire dorer le rôti de toutes parts, puis ajouter l'oignon émincé, le sel et le poivre.
 <br />2) Délayer dans un bol le fond de veau, les herbes, le basilic, le vin blanc et 1 verre d'eau. Verser ce mélange dans la cocotte, ainsi que les champignons lavées et coupés en quartiers et remuer.
 <br />3) Fermer la cocotte et laisser chuchoter environ 30 min par kg.')
 
-file26 = URI.open('https://res.cloudinary.com/dogomm21h/image/upload/v1606681951/Whats%20for%20dinner/roti_de_veau_hafer2.jpg')
+file26 = URI.open('https://res.cloudinary.com/dogomm21h/image/upload/v1606681951/Whats%20for%20dinner/roti_de_veau_hafer2.jpg")
 recipe26.photo.attach(io: file26, filename: 'some-image.jpg', content_type: 'image/jpg')
 recipe26.save!
 
 
-recipe27 = Recipe.create!(name: 'Lotte à l'Armoricaine', difficulty: 'facile', price: 'assez cher', time: '1 heure', diet: 'végétarien', content: '1) Pelez et hachez les 4 échalotes.
+recipe27 = Recipe.create!(name: "Lotte à l'Armoricaine", difficulty: 'facile', price: 'assez cher', time: '1 heure', diet: 'végétarien', content: "1) Pelez et hachez les 4 échalotes.
 <br />2) Pelez et pressez la gousse d'ail.
 <br />3) Pelez la douzaine d'oignons grelots.
 <br />4) Ouvrez la boîte de tomates et coupez-les.
@@ -343,7 +343,7 @@ recipe27 = Recipe.create!(name: 'Lotte à l'Armoricaine', difficulty: 'facile', 
 <br />7) Flambez-les avec le Cognac puis retirez et placez sur une assiette.
 <br />8) Mettez à la place les échalotes, l'ail, les oignons, les tomates et le vin dans lequel est délayé le concentré de tomates. Salez, poivrez, ajoutez le piment et laissez mijoter environ 20 min à découvert.
 <br />9) Remettez la lotte dans la sauce, couvrez et laissez cuire encore 20 min.
-<br />10) Accompagnez de légumes, pommes de terre et carottes cuites vapeur.')
+<br />10) Accompagnez de légumes, pommes de terre et carottes cuites vapeur.")
 
 file27 = URI.open('https://res.cloudinary.com/dogomm21h/image/upload/v1606682436/Whats%20for%20dinner/lotte_a_l_armoricaine_x0e7hj.jpg')
 recipe27.photo.attach(io: file27, filename: 'some-image.jpg', content_type: 'image/jpg')

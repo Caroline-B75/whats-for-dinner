@@ -155,6 +155,11 @@
   padding-top: 10px;
 }
 
+.card-menu-edit-margined {
+  margin: -15px 5px;
+  padding: 0px 10px 13px 10px;
+}
+
 .footer-card-recipe-random,
 .footer-card-menu-edit {
   width: 100%;
@@ -172,10 +177,11 @@
 }
 
 .footer-card-menu-edit {
-  justify-content: center;
+  justify-content: space-between;
   display: flex;
   align-items: center;
   font-size: 17px;
+  padding: 6px 11px;
 }
 
 .more-recipes {

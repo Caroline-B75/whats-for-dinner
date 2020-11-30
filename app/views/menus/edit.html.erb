@@ -8,7 +8,8 @@
     </div>
     <div class="container-card-menu-edit">
       <% @menu.menu_recipes.order(:id).each do |menu_recipe| %>
-        <div class="card-menu-edit">
+        <div class="card-menu-edit-margined">
+          <%= link_to '<i class="fas fa-times"></i>'.html_safe, menu_menu_recipe_path(@menu, menu_recipe), method: :delete, remote: true, class: "delete-menu-recipe-button" %>
           <div class="card-recipe">
             <div class="img-small img">
               <%= cl_image_tag Recipe.find(menu_recipe.recipe_id).photo.key, height: 150, width: 150, crop: :fill %>
@@ -19,9 +20,6 @@
           </div>
           <div class="footer-card-menu-edit">
             <%= link_to '<i class="fas fa-sync"></i>'.html_safe, switch_menu_recipe_path(@menu, menu_recipe), method: :post, remote: true %>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <%= link_to '<i class="fas fa-trash"></i>'.html_safe, menu_menu_recipe_path(@menu, menu_recipe), method: :delete, remote: true %>
-            &nbsp;&nbsp;&nbsp;&nbsp;
             <%= simple_form_for(menu_recipe) do |f| %>
               <i class="fas fa-user-friends"></i>
               <%= f.select :number_of_people, (1..50), {}, { value: menu_recipe.number_of_people, onchange: 'this.form.submit();' } %>
