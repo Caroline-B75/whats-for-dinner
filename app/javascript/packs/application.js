@@ -26,6 +26,7 @@ import "bootstrap";
 
 import {displayReviewForm} from "../plugins/display_review_form.js"
 import {allowPopovers} from "../plugins/popovers.js"
+import {allowTooltips} from "../plugins/tooltips.js"
 import { initStarRating } from '../plugins/init_star_rating.js';
 import {initRange} from "../components/range.js"
 
@@ -39,9 +40,9 @@ document.addEventListener('turbolinks:load', () => {
   allowPopovers();
   initStarRating();
   initRange();
+  allowTooltips();
 });
 
 $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
 })
-

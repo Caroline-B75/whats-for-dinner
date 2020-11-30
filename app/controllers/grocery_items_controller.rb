@@ -42,6 +42,7 @@ class GroceryItemsController < ApplicationController
         end
       end
     end
+    flash[:notice] = "#{@current_user.first_name.capitalize}, votre menu a bien été sauvegardé !"
     redirect_to menu_path(@menu)
   end
 
