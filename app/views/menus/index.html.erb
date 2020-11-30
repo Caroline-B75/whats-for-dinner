@@ -1,0 +1,9 @@
+<div>
+  <h1>Mes menus : </h1>
+  <ul>
+    <% @final_menus.each do | menu | %>
+    <li><%= menu.diet %> - <%= menu.created_at %> - <%= link_to "Détail", menu_path(menu) %></li>
+    <% end %>
+  </ul>
+</div>
+

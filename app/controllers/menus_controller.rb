@@ -1,4 +1,20 @@
 class MenusController < ApplicationController
+  def index
+    @menus = policy_scope(Menu)
+    @user_menus = @menus.where(user: current_user)
+    @accesses = Access.where(user: current_user)
+
+    @final_menus = []
+
+    @accesses.each do | access |
+      @final_menus << access.menu
+    end
+
+    @user_menus.each do |menu|
+      @final_menus << menu
+    end
+  end
+
   def new
     @menu = Menu.new
     authorize @menu
