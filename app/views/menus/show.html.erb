@@ -26,6 +26,12 @@
       <div class="d-flex">
         <%= link_to 'Ma liste de course',  menu_grocery_items_path(@menu), class: "yellow-button" %>
       </div>
+
+      <%= simple_form_for [ @menu, @access ], remote: true do |f| %>
+        <%= f.input :email, label: false, placeholder: "jean@gmail.com" %>
+        <%= f.submit "Partager", class: "btn btn-primary btn-add-doses" %>
+      <% end %>
+
   </div>
   <%= link_to '<i class="fas fa-arrow-left"></i> Retour'.html_safe, root_path, class: "retour-btn" %>
 </div>
