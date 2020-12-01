@@ -4,4 +4,12 @@ class RecipePolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def favorite?
+    true
+  end
+
+  def unfavorite?
+    true
+  end
 end

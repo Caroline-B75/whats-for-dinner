@@ -4,24 +4,26 @@
       <div class="step-creation-menu">
         <h1>2</h1>
       </div>
-      <h1>Personnalisez votre menu</h1>
+      <h1>Personnaliser mon menu</h1>
     </div>
     <div class="container-card-menu-edit">
       <% @menu.menu_recipes.order(:id).each do |menu_recipe| %>
-        <div class="card-menu-edit-margined">
-          <%= link_to '<i class="fas fa-times"></i>'.html_safe, menu_menu_recipe_path(@menu, menu_recipe), method: :delete, remote: true, class: "delete-menu-recipe-button" %>
+        <div class="card-menu-edit">
           <div class="card-recipe">
             <div class="img-small img">
-              <%= cl_image_tag Recipe.find(menu_recipe.recipe_id).photo.key, height: 150, width: 150, crop: :fill %>
+              <%= cl_image_tag Recipe.find(menu_recipe.recipe_id).photo.key %>
             </div>
             <div class="card-recipe-title">
               <a tabindex="0" class="btn-title-popover" role="button" data-placement="top" data-toggle="popover" data-trigger="focus" data-html="true" data-content="<%= Recipe.find(menu_recipe.recipe_id).time %><br><%= Recipe.find(menu_recipe.recipe_id).difficulty%><br><%= Recipe.find(menu_recipe.recipe_id).price%><br>"><%= Recipe.find(menu_recipe.recipe_id).name %></a>
             </div>
           </div>
           <div class="footer-card-menu-edit">
-            <%= link_to '<i class="fas fa-sync"></i>'.html_safe, switch_menu_recipe_path(@menu, menu_recipe), method: :post, remote: true %>
+            <%= link_to '<i class="fas fa-sync"></i>'.html_safe, switch_menu_recipe_path(@menu, menu_recipe), method: :post, class: 'tooltips', title: "Changer de recette", data: { toggle: 'tooltip', placement: 'top' }, remote: true %>
+            <p>|</p>
+            <%= link_to '<i class="fas fa-times"></i>'.html_safe, menu_menu_recipe_path(@menu, menu_recipe), method: :delete, remote: true, class: 'tooltips', title: "Supprimer ce repas", data: { toggle: 'tooltip', placement: 'top' }, remote: true %>
+            <p>|</p>
             <%= simple_form_for(menu_recipe) do |f| %>
-              <i class="fas fa-user-friends"></i>
+              <%= link_to '<i class="fas fa-user-friends"></i>'.html_safe, "#", class: 'tooltips', title: "Nombre de personnes à table", data: { toggle: 'tooltip', placement: 'top' }, remote: true %>
               <%= f.select :number_of_people, (1..50), {}, { value: menu_recipe.number_of_people, onchange: 'this.form.submit();' } %>
             <% end %>
           </div>
@@ -36,18 +38,17 @@
   <%= link_to '<i class="fas fa-arrow-left"></i> Retour'.html_safe, new_menu_path, class: "retour-btn" %>
   <div class= "arrow-down" >
     <a href="#more-recipe" id="more-recipe-text">Plus de recettes</a>
-    <a href="#more-recipe"><%= cl_image_tag("double_down_array_white_ltq34i.png", height: 35, width: 50, crop: :fill) %></a>
+    <a href="#more-recipe"><%= cl_image_tag("double_down_array_white_ltq34i.png", height: 35, width: 50) %></a>
   </div>
 </div>
 <div class="more-recipes" id="more-recipe">
   <h2>D'autres recettes</h2>
   <div class="container-recipe-random" id="recipe-random-generator">
-    <% random_recipes = Recipe.all.sample(5) %>
-    <% random_recipes.each do |random_recipe|  %>
+    <% @random_recipes.each do |random_recipe|  %>
       <div class="card-menu-edit">
         <div class="card-recipe">
           <div class="img-small img">
-            <%= cl_image_tag random_recipe.photo.key, height: 100, width: 150, crop: :fill %>
+            <%= cl_image_tag random_recipe.photo.key %>
           </div>
           <div class="card-recipe-title">
             <a tabindex="0" class="btn-title-popover" role="button" data-placement="top" data-toggle="popover" data-trigger="focus" data-html="true" data-content="<%= random_recipe.time %><br><%= random_recipe.difficulty%><br><%= random_recipe.price%><br>"><%= random_recipe.name %></a>
@@ -55,10 +56,27 @@
         </div>
         <div class="footer-card-recipe-random">
           <%= link_to '<i class="fas fa-plus"></i>&nbsp;&nbsp;Ajouter au menu'.html_safe, menu_menu_recipes_path(@menu, recipe_id: random_recipe.id), method: :post, remote: true %>
-          <!-- simple form remote true @random_recipes juste boutton -->
         </div>
       </div>
     <% end %>
-    <a href="#more-recipe" id="btn-refresh-random-recipe"><i class="fas fa-sync"></i></a>
+    <a href="#more-recipe" id="btn-refresh-random-recipe"><i class="fas fa-sync tooltips" data-toggle="tooltip" data-placement="top" title="Nouvelles propositions"></i></a>
+  </div>
+  <h2>Vos recettes favorites</h2>
+  <div class="container-recipe-random" id="recipe-random-generator">
+    <% current_user.favorites.each do |favorite_recipe|  %>
+      <div class="card-menu-edit">
+        <div class="card-recipe">
+          <div class="img-small img">
+            <%= cl_image_tag favorite_recipe.photo.key %>
+          </div>
+          <div class="card-recipe-title">
+            <a tabindex="0" class="btn-title-popover" role="button" data-placement="top" data-toggle="popover" data-trigger="focus" data-html="true" data-content="<%= favorite_recipe.time %><br><%= favorite_recipe.difficulty%><br><%= favorite_recipe.price%><br>"><%= favorite_recipe.name %></a>
+          </div>
+        </div>
+        <div class="footer-card-recipe-random">
+          <%= link_to '<i class="fas fa-plus"></i>&nbsp;&nbsp;Ajouter au menu'.html_safe, menu_menu_recipes_path(@menu, recipe_id: favorite_recipe.id), method: :post, remote: true %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

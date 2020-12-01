@@ -10,6 +10,8 @@ class Recipe < ApplicationRecord
   has_many :menu_recipes
   has_many :menus, through: :menu_recipes
   has_one_attached :photo
+  has_many :favorite_recipes
+  has_many :favorited_by, through: :favorite_recipes, source: :user
 
   validates :name, presence: true, uniqueness: true
   validates_inclusion_of :difficulty, in: DIFFICULTY, presence: true

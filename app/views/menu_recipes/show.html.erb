@@ -27,9 +27,10 @@
         <%= f.check_box :done, class: "check-done", onchange: "this.form.submit()"%>
         <%= f.label "Fait", {class: "checkbox inline label-checkbox"} %>
       <% end %>
-      <%= form_for @menu_recipe do |f| %>
-        <%= f.check_box :favorite, class: "check-favorite", onchange: "this.form.submit()"%>
-        <%= f.label "Ajouter aux favoris", {class: "checkbox inline label-checkbox"} %>
+      <% if @user_favorite == true %>
+        <%= link_to '<i class="fas fa-heart"></i>'.html_safe, recipe_unfavorite_path(@menu_recipe), method: :delete, class: 'tooltips favorite-btn', title: "Retirer des favoris", data: { toggle: 'tooltip', placement: 'top' }, remote: true %>
+      <% else %>
+        <%= link_to '<i class="far fa-heart"></i>'.html_safe, recipe_favorite_path(@menu_recipe), method: :post, class: 'tooltips favorite-btn', title: "Ajouter aux favoris", data: { toggle: 'tooltip', placement: 'top' }, remote: true %>
       <% end %>
     </div>
   </div>

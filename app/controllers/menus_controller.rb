@@ -9,6 +9,7 @@ class MenusController < ApplicationController
 
     @accesses.each do | access |
       @access_menus << access.menu
+
     end
 
     @final_menus = (@user_menus + @access_menus).sort.reverse.first(5)
@@ -42,6 +43,7 @@ class MenusController < ApplicationController
   end
 
   def edit
+    @random_recipes = Recipe.all.sample(5)
     @menu = Menu.find(params[:id])
     authorize @menu
   end
