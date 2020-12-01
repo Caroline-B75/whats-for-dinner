@@ -33,3 +33,27 @@
   font-size: 30px;
   padding: 15px;
 }
+
+.item_update_form {
+  display: none;
+}
+
+.item_update_form_display {
+  display: inline-block;
+}
+
+.was-validated .form-control:valid, .form-control.is-valid {
+  border-color: #dfb687;
+  padding-right: calc(0.5em + 0.5rem);
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+  margin: auto;
+  font-size: small;
+}
+
+.col-item-update {
+  padding-left: 15px;
+  padding-right: 0px;
+}
