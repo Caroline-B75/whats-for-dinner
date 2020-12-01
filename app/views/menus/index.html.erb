@@ -1,9 +1,42 @@
-<div>
-  <h1>Mes menus : </h1>
-  <ul>
+<div class="background-recipe d-flex flex-column align-items-center">
+  <div class="content-container">
+    <div class="step-title">
+      <h1>Mes menus</h1>
+    </div>
     <% @final_menus.each do | menu | %>
-    <li><%= menu.diet %> - <%= menu.created_at %> - Crée par <%= User.find(menu.user_id).username %> - <%= link_to "Détail", menu_path(menu) %></li>
+      <%= link_to menu_path(menu), class: "menu-link" do %>
+        <p class="m-0">Crée le : <%= menu.created_at.to_s.match(/\d{4}-\d{2}-\d{2}/) %> par <%= User.find(menu.user_id).username %></p>
+      <% end %>
+      <div class="w-100 d-flex justify-content-end mr-4">
+        <%= link_to 'Supprimer ce menu <i class="fas fa-trash"></i>'.html_safe, menu_path(menu), method: :delete, class: "text-right delete-link"%>
+      </div>
+
+      <div class="container-card-menu-show">
+        <% menu.menu_recipes.each do |menurecipe| %>
+          <div class="card-menu-edit">
+            <div class="card-recipe">
+              <div class="img-small img img-recipe">
+                <%= cl_image_tag menurecipe.recipe.photo.key%>
+              </div>
+              <div class="card-recipe-title">
+                <%= link_to menurecipe.recipe.name,  menu_recipe_path(menurecipe), class: "menu-recipe-button" %>
+              </div>
+            </div>
+            <div class="footer-card-menu-edit">
+              <% if menurecipe.done == true %>
+                <p>Faite</p>
+              <% end %>
+              <%= menurecipe.number_of_people %>
+              &nbsp;
+              <i class="fas fa-user-friends"></i>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="d-flex">
+        <%= link_to 'Liste de course',  menu_grocery_items_path(menu), class: "yellow-button mb-5" %>
+      </div>
     <% end %>
-  </ul>
+  </div>
 </div>
 

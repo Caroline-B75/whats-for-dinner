@@ -1,18 +1,18 @@
 class MenusController < ApplicationController
   def index
     @menus = policy_scope(Menu)
+
     @user_menus = @menus.where(user: current_user)
     @accesses = Access.where(user: current_user)
 
-    @final_menus = []
+    @access_menus = []
 
     @accesses.each do | access |
-      @final_menus << access.menu
+      @access_menus << access.menu
     end
 
-    @user_menus.each do |menu|
-      @final_menus << menu
-    end
+    @final_menus = (@user_menus + @access_menus).sort.reverse.first(5)
+
   end
 
   def new

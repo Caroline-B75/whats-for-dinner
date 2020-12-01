@@ -1,5 +1,5 @@
 <%= simple_form_for [ menu_recipe, review ], remote: true do |f| %>
-  <%= f.input :rating, collection: (1..4).to_a, label: "Note" %>
+  <%= f.input :rating, collection: (1..5).to_a, label: "Note" %>
   <%= f.input :content, label: "Commentaire" %>
   <%= f.submit "Enregistrer", class: "btn btn-primary btn-add-doses" %>
 <% end %>
