@@ -83,6 +83,6 @@ class MenuRecipesController < ApplicationController
   private
 
   def menu_recipe_params
-    params.require(:menu_recipe).permit(:number_of_people, :done)
+    params.require(:menu_recipe).permit(:number_of_people, :done, :favorite)
   end
 end
