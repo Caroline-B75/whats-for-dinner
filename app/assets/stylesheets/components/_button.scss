@@ -67,7 +67,20 @@
   color: white;
   font-family: 'Lobster', sans-serif;
   font-size: 22px;
-  margin: 20px;
+  margin: 20px 10px;
+}
+
+.grocery_yellow_button_update {
+  border-radius: $border-radius;
+  background-color: #EAA858;
+  border: 0px;
+  padding: 4px 20px 5px 20px;
+  box-shadow: $shadow;
+  display: block;
+  color: rgb(15, 15, 15);
+  font-family: 'Lobster', sans-serif;
+  margin-bottom: 20px;
+  margin-left: 15px;
 }
 
 .grocery_grey_button {

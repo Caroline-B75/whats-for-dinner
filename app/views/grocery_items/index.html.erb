@@ -59,6 +59,26 @@
                             <%= f.label "#{grocery_item.name} - #{grocery_item.quantity} #{grocery_item.unit}", { class: "#{grocery_item.checked ? 'item-bought' : 'item-to-buy'}" } %>
                           <% end %>
                         </td>
+                        <td class='pencil' id='<%= "#{grocery_item.id}" %>'>
+                          <i class="fas fa-pencil-alt" ></i>
+                        </td>
+                      </tr>
+                      <tr class ="item_update_form" id='display<%= "#{grocery_item.id}" %>'>
+                        <td>
+                          <%= simple_form_for(grocery_item, remote: true) do |f| %>
+                            <div class="row">
+                            <div class="col-12 col-md-6 col-lg-4 col-item-update">
+                            <%= f.input :quantity, placeholder: "nouvelle quantité", label: false %>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-8 col-item-update">
+                            <%= f.input :unit, collection: Ingredient::UNIT, prompt: "unité de mesure", label: false %>
+                            </div>
+                            </div>
+                            <div class="row">
+                            <%= f.button :submit, "Enregistrer", class: "btn grocery_yellow_button_update"%>
+                            </div>
+                          <% end %>
+                        </td>
                       </tr>
                     <% end %>
                   <% end %>
