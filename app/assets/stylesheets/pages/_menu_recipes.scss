@@ -22,12 +22,11 @@
 
 .recipe-ingredients {
   margin-bottom: 15px;
-}
-
-.recipe-ingredients p {
-  text-align: center;
-  margin: 0;
-  font-family: Lato;
+  p {
+    text-align: center;
+    margin: 0;
+    font-family: Lato;
+  }
 }
 
 .ingredients-list {
@@ -49,16 +48,19 @@
 
 .label-checkbox {
   font-family: Lobster;
-  font-size: 25px;
+  font-size: 15px;
   margin: 8px;
+}
+@include media-breakpoint-up(md) {
+  .label-checkbox {
+    font-size: 25px;
+  }
 }
 
 .recipe-content {
   padding: 10px 30px;
   text-align: justify;
 }
-
-
 @include media-breakpoint-up(md) {
   .recipe-content {
     padding: 20px 60px;
@@ -69,16 +71,22 @@
   margin: 0 auto;
   width: 430px;
   padding: 10px;
+  p {
+    margin: 0;
+    width: 100%;
+  }
 }
+@include media-breakpoint-up(md) {
+  .reviews-display {
+    width: 670px;
+  }
+}
+
 .review {
   background-color: white;
   border-radius: 15px;
   padding: 20px;
   margin: 15px;
-}
-
-.reviews-display p {
-  margin: 0;
 }
 
 .review-features {
@@ -88,9 +96,4 @@
   font-weight: bold;
 }
 
-@include media-breakpoint-up(md) {
-  .reviews-display {
-    width: 670px;
-  }
-}
 

@@ -1,17 +1,27 @@
 // cards home page
 
-.card-home {
-  width: 230px;
-  height: 240px;
-  border-radius: 15px;
-  box-shadow: 5px 5px 5px lightgrey;
-  background-color: white;
-  padding: 0px 30px 20px 30px;
-  margin-bottom: 65px;
-  p {
-    font-size: 15px;
+@media (min-width: 375px) {
+  .card-home {
+    width: 230px;
+    height: 240px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px lightgrey;
+    background-color: white;
+    padding: 0px 30px 20px 30px;
+    margin-bottom: 65px;
+    p {
+      font-size: 15px;
+    }
   }
-}
+ }
+ @media (max-width: 375px) {
+  .card-home {
+    width: 310px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+ }
 
 .image-home {
     height: 100px;
@@ -103,10 +113,19 @@
   }
 }
 
-.card-menu-edit {
-  margin: 0px 15px;
-  padding-top: 10px;
+@media (max-width: 375px) {
+    .card-menu-edit {
+    margin: 50px 15px;
+    padding-top: 10px;
+  }
 }
+@media (min-width: 375px) {
+    .card-menu-edit {
+    margin: 0px 15px;
+    padding-top: 10px;
+  }
+}
+
 
 .footer-card-recipe-random,
 .footer-card-menu-edit {

@@ -39,7 +39,7 @@ recipe2 = Recipe.create!(name: "Bricks au thon", difficulty: "très facile", pri
 <br />4) Poivrer à votre convenance en n'hésitant pas à goûter la farce.
 <br />5) Mettre un peu de farce au centre de chaque feuille de brick puis replier les quatre côtés de la feuille sur le dessus pour former un rectangle.")
 
-file2 = URI.open("http://res.cloudinary.com/dogomm21h/image/upload/v1606231285/h4ayric0te81ark1scsk.jpg")
+file2 = URI.open("https://res.cloudinary.com/dogomm21h/image/upload/v1606743402/1spf2p80bevqpp4wzdmw8ncr6emx.jpg")
 recipe2.photo.attach(io: file2, filename: 'some-image.jpg', content_type: 'image/jpg')
 recipe2.save!
 
@@ -408,6 +408,7 @@ rumsteack_veau = Ingredient.create!(name: "rumsteack(s) de veau", unit: "entier"
 salade = Ingredient.create!(name: "salade", unit: "entier", category: "Fruits et Légumes")
 sel = Ingredient.create!(name: "sel", unit: "pincée(s)", category: "Condiment et Assaisonnement")
 steak = Ingredient.create!(name: "steak(s)", unit: "entier", category: "Boucherie")
+souris_d_agneau = Ingredient.create!(name: "souris d'agneau", unit: "entier", category: "Boucherie")
 thon = Ingredient.create!(name: "thon", unit: "g", category: "Poissonnerie")
 thym = Ingredient.create!(name: "thym", unit: "branche(s)", category: "Condiment et Assaisonnement")
 tomate = Ingredient.create!(name: "tomate(s)", unit: "entier", category: "Fruits et Légumes")
@@ -619,6 +620,7 @@ Preparation.create!(ingredient_id: oignon.id, recipe_id: recipe15.id, quantity: 
 Preparation.create!(ingredient_id: échalotte.id, recipe_id: recipe15.id, quantity: 1)
 Preparation.create!(ingredient_id: ail.id, recipe_id: recipe15.id, quantity: 1)
 Preparation.create!(ingredient_id: wisky.id, recipe_id: recipe15.id, quantity: 10)
+Preparation.create!(ingredient_id: souris_d_agneau.id, recipe_id: recipe16.id, quantity: 1)
 Preparation.create!(ingredient_id: ail.id, recipe_id: recipe16.id, quantity: 3)
 Preparation.create!(ingredient_id: thym.id, recipe_id: recipe16.id, quantity: 2)
 Preparation.create!(ingredient_id: huile_d_olive.id, recipe_id: recipe16.id, quantity: 3)
