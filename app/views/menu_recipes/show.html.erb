@@ -22,10 +22,16 @@
   <div class="recipe-content">
     <h3>Recette</h3>
     <p><%= simple_format(@menu_recipe.recipe.content) %></p>
-    <%= form_for @menu_recipe do |f| %>
-      <%= f.check_box :done, class: "check-done", onchange: "this.form.submit()"%>
-      <%= f.label "Fait", {class: "checkbox inline label-done"} %>
-    <% end %>
+    <div class="recipe-checkboxes">
+      <%= form_for @menu_recipe do |f| %>
+        <%= f.check_box :done, class: "check-done", onchange: "this.form.submit()"%>
+        <%= f.label "Fait", {class: "checkbox inline label-checkbox"} %>
+      <% end %>
+      <%= form_for @menu_recipe do |f| %>
+        <%= f.check_box :favorite, class: "check-favorite", onchange: "this.form.submit()"%>
+        <%= f.label "Ajouter aux favoris", {class: "checkbox inline label-checkbox"} %>
+      <% end %>
+    </div>
   </div>
 
 

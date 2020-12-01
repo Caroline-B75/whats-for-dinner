@@ -41,7 +41,12 @@
   justify-content: space-between;
 }
 
-.label-done {
+.recipe-checkboxes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.label-checkbox {
   font-family: Lobster;
   font-size: 25px;
   margin: 8px;
