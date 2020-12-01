@@ -1,0 +1,21 @@
+.delete-link {
+  color: #5d5c5c;
+}
+
+.delete-link:hover {
+  text-decoration: none;
+  color: #5d5c5c;
+}
+
+.menu-link {
+  color: black;
+}
+
+.menu-link:hover {
+  text-decoration: none;
+  color: $yellow;
+}
+
+.img-recipe {
+  object-fit: cover;
+}
