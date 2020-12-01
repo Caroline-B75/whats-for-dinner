@@ -112,11 +112,16 @@
 }
 
 #btn-refresh-random-recipe {
-  color: #a7a7a7;
   font-size: 25px;
   margin: -15px;
   position: relative;
   right: -30px;
+  color: #5d5c5c;
+  &:hover {
+    color: black;
+    text-decoration: none;
+    transition: color 0.4s;
+  }
 }
 
 .btn-add-meal {
@@ -203,4 +208,9 @@
     text-decoration: none;
     transition: background-color 0.4s;
   }
+}
+
+.tooltips.favorite-btn {
+  font-size: 22px;
+  color: $red;
 }

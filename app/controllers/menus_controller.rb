@@ -6,7 +6,7 @@ class MenusController < ApplicationController
 
     @final_menus = []
 
-    @accesses.each do | access |
+    @accesses.each do |access|
       @final_menus << access.menu
     end
 
@@ -42,6 +42,7 @@ class MenusController < ApplicationController
   end
 
   def edit
+    @random_recipes = Recipe.all.sample(5)
     @menu = Menu.find(params[:id])
     authorize @menu
   end

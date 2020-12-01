@@ -8,18 +8,14 @@ class MenuRecipesController < ApplicationController
       preparation.quantity = preparation.quantity * @menu_recipe.number_of_people
     end
 
+    @user_favorite = current_user.favorites.include? Recipe.find(@menu_recipe.recipe_id)
     @user_review = @menu_recipe.recipe.reviews.find_by(user_id: current_user.id)
   end
 
   def create
     @menu = Menu.find(params[:menu_id])
     if params[:recipe_id] == "random"
-      if @menu.diet == "flexitarien"
-        list_recipes = Recipe.where("diet LIKE? OR diet LIKE?", "vegetarien","carnivore")
-      else
-        list_recipes = Recipe.where(diet: @menu.diet)
-      end
-      recipe = list_recipes.sample
+      recipe = create_list_recipes(@menu.diet).sample
     else
       recipe = Recipe.find(params[:recipe_id])
     end
@@ -44,7 +40,7 @@ class MenuRecipesController < ApplicationController
 
   def switch
     @menu = Menu.find(params[:menu_id])
-    list_recipes = Recipe.where(diet: @menu.diet)
+    list_recipes = create_list_recipes(@menu.diet)
     new_menu_recipe = list_recipes.sample
     @menu_recipe = MenuRecipe.find(params[:id])
     @menu_recipe.update(recipe: new_menu_recipe)
@@ -84,5 +80,14 @@ class MenuRecipesController < ApplicationController
 
   def menu_recipe_params
     params.require(:menu_recipe).permit(:number_of_people, :done, :favorite)
+  end
+
+  def create_list_recipes(diet)
+    if diet == "flexitarien"
+      list_recipes = Recipe.where("diet LIKE? OR diet LIKE?", "vegetarien","carnivore")
+    else
+      list_recipes = Recipe.where(diet: diet)
+    end
+    return list_recipes
   end
 end
