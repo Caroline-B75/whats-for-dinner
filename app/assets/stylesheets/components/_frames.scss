@@ -231,23 +231,32 @@
   margin-top: -450px;
 }
 
+@include media-breakpoint-up(md) {
+  .menu-recipe-container {
+  width: 600px;
+  padding: 40px 40px 20px 40px;
+  margin-top: -570px;
+  }
+}
+
 .grocery-container {
   background-color: none;
   border-radius: 15px;
-  width: 90%;
-  padding: 120px 20px 10px 20px;
+  width: 100%;
+  padding: 60px 5px 5px 5px;
   margin: auto;
   font-size: 15px;
   margin-top: -800px;
 }
 
 @include media-breakpoint-up(md) {
-  .menu-recipe-container {
-  width: 600px;
+  .grocery-container {
+  width: 90%;
   padding: 40px 40px 20px 40px;
-  margin-top: -450px;
+  margin-top: -800px;
   }
 }
+
 
 .menu-recipe-container h3 {
   font-family: Lobster;
