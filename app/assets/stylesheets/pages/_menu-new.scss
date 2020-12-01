@@ -1,14 +1,24 @@
 .profile-set {
   > div {
-    flex: 1;
-    &:first-of-type {
-      margin-right: 20px;
+    width: 47%;
+  }
+  .form-control {
+    margin: 0;
+  }
+}
+
+@media (max-width: 375px) {
+
+  .profile-set {
+
+    > div {
+      width: 100%;
     }
   }
 }
 
+
 #new_menu {
-  width: 800px;
   input {
     // line-height: 2em;
     font-size: 1.5em;
@@ -39,22 +49,34 @@
     box-shadow: none;
     opacity: 1;
   }
+
+  .form-check {
+    padding-left : 0;
+  }
 }
 
-.diet-card {
-  height: 120px;
-  width: 140px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  font-size: 2.8em;
-  margin: 10px 35px;
-  background-color: lightgrey;
-  box-shadow: $shadow;
-  opacity: 0.6;
-
+@media(min-width: 375px) {
+  .diet-card {
+    height: 120px;
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 2.8em;
+    margin: 10px 35px;
+    background-color: lightgrey;
+    box-shadow: $shadow;
+    opacity: 0.6;
+  }
+}
+@media(max-width: 375px) {
+  .diet-card {
+    height: 80px;
+    width: 80px;
+    margin: 10px;
+  }
 }
 
 .diet-choice p {
