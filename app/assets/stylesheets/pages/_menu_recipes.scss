@@ -8,6 +8,11 @@
 .recipe-title {
   padding: 30px;
   h1 {
+    font-size: 30px;
+  }
+}
+@include media-breakpoint-up(md) {
+  .recipe-title h1 {
     font-size: 40px;
   }
 }
