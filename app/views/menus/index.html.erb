@@ -1,40 +1,31 @@
-<div class="background-recipe d-flex flex-column align-items-center">
+<div class=" d-flex flex-column align-items-center">
+  <%= cl_image_tag ("background_photo_chwags.jpg"), class:"background-img"%>
   <div class="content-container">
-    <div class="step-title">
-      <h1>Mes menus</h1>
-    </div>
+    <h1 class ="mon-menu-title">Mes menus</h1>
     <% @final_menus.each do | menu | %>
-      <%= link_to menu_path(menu), class: "menu-link" do %>
-        <p class="m-0">Crée le : <%= menu.created_at.to_s.match(/\d{4}-\d{2}-\d{2}/) %> par <%= User.find(menu.user_id).username %></p>
-      <% end %>
-      <div class="w-100 d-flex justify-content-end mr-4">
-        <%= link_to 'Supprimer ce menu <i class="fas fa-trash"></i>'.html_safe, menu_path(menu), method: :delete, class: "text-right delete-link"%>
-      </div>
-
-      <div class="container-card-menu-show">
-        <% menu.menu_recipes.each do |menurecipe| %>
-          <div class="card-menu-edit">
-            <div class="card-recipe">
-              <div class="img-small img img-recipe">
-                <%= cl_image_tag menurecipe.recipe.photo.key%>
-              </div>
-              <div class="card-recipe-title">
-                <%= link_to menurecipe.recipe.name,  menu_recipe_path(menurecipe), class: "menu-recipe-button" %>
+      <p class="mb-2 mt-4">Vous avez créé ce menu le <%= menu.created_at.to_s.match(/\d{4}-\d{2}-\d{2}/) %></p>
+      <div class="container-card-menu-show flex-column">
+        <div class="w-100 d-flex justify-content-end mr-4">
+          <%= link_to '<i class="fas fa-times"></i>'.html_safe, menu_path(menu), method: :delete, remote: true, class: 'tooltips', title: "Supprimer ce menu", data: { toggle: 'tooltip', placement: 'top' }, remote: true %>
+        </div>
+        <div class="d-flex align-items-center justify-content-center flex-wrap">
+          <% menu.menu_recipes.each do |menurecipe| %>
+            <div class="card-menu-edit mb-3">
+              <div class="card-recipe">
+                <div class="img-small img img-recipe">
+                  <%= cl_image_tag menurecipe.recipe.photo.key%>
+                </div>
+                <div class="card-recipe-title">
+                  <%= link_to menurecipe.recipe.name,  menu_recipe_path(menurecipe), class: "menu-recipe-button" %>
+                </div>
               </div>
             </div>
-            <div class="footer-card-menu-edit">
-              <% if menurecipe.done == true %>
-                <p>Faite</p>
-              <% end %>
-              <%= menurecipe.number_of_people %>
-              &nbsp;
-              <i class="fas fa-user-friends"></i>
-            </div>
-          </div>
-        <% end %>
-      </div>
-      <div class="d-flex">
-        <%= link_to 'Liste de course',  menu_grocery_items_path(menu), class: "yellow-button mb-5" %>
+          <% end %>
+        </div>
+        <div class="d-flex justify-content-center mt-4 mb-3">
+          <%= link_to 'Liste de course',  menu_grocery_items_path(menu), class: "yellow-button mr-3 ml-3" %>
+          <%= link_to 'Détails', menu_path(menu), class: "yellow-button mr-3 ml-3" %>
+        </div>
       </div>
     <% end %>
   </div>

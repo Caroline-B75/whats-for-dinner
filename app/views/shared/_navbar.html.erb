@@ -32,6 +32,7 @@
             <% else %>
               <%= link_to "Créer un menu", new_menu_path, class: "dropdown-item" %><hr>
             <% end %>
+            <%= link_to "Menus partagés avec moi",  shared_menus_path, class: "dropdown-item" %><hr>
             <%= link_to "Me déconnecter", destroy_user_session_path, method: :delete,  class: "dropdown-item" %>
           <% end %>
         </div>
