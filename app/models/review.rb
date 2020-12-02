@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-  RATING = [1, 2, 3, 4]
+  RATING = [1, 2, 3, 4, 5]
   belongs_to :recipe
   belongs_to :user
 
