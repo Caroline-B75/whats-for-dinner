@@ -1,0 +1,26 @@
+<h2>Ajoutons des ingrédients pour la recette : <%= @recipe.name %></h2>
+<p>dont revoici la recette : <br><%= simple_format(@recipe.content) %></p>
+
+<% if @recipe.preparations.any? %>
+  <% @recipe.preparations.each do |preparation| %>
+    <p><%= preparation.quantity %> <%= Ingredient.find(preparation.ingredient_id).unit %> <%= Ingredient.find(preparation.ingredient_id).name %></p> 
+  <% end %>
+<% end %>
+
+<%= simple_form_for (@preparation), url: recipe_preparation_index_path(@recipe) do |f| %>
+  <%= f.input :quantity %>
+  <%= f.association :ingredient %>
+  <%# <%= f.input :, :as => :hidden %> %>
+  <%= f.button :submit, "Enregistrer", class: "btn grocery_yellow_button"%>
+<% end %>
+
+<%# <%= simple_form_for @ingredient do |f| %> %>
+  <%# <%= f.input :name %> %>
+  <%# <%= f.input :difficulty, collection: Recipe::DIFFICULTY  %> %>
+  <%# <%= f.input :price, collection: Recipe::PRICE  %> %>
+  <%# <%= f.input :diet, collection: Recipe::DIET %> %>
+  <%# <%= f.input :time %> %>
+  <%# <%= f.input :content, as: :text %> %>
+  <%# <%= f.input :photo, as: :file %> %>
+  <%# <%= f.button :submit, "Enregistrer", class: "btn grocery_yellow_button"%> %>
+<%# <% end %> %>

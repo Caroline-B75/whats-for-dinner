@@ -1,4 +1,23 @@
 class RecipesController < ApplicationController
+  def new
+    @recipe = Recipe.new
+    authorize @recipe
+  end
+
+  def create
+    @recipe = Recipe.new(name: params[:recipe][:name], difficulty:  params[:recipe][:difficulty], price:  params[:recipe][:price], diet:  params[:recipe][:diet], time:  params[:recipe][:time], content:  params[:recipe][:content], photo:  params[:recipe][:photo])
+    @recipe.save!
+    authorize @recipe
+    redirect_to edit_recipe_path(@recipe)
+  end
+
+  def edit
+    @recipe = Recipe.find(params[:id])
+    @ingredient = Ingredient.new
+    @preparation = Preparation.new
+    authorize @recipe
+  end
+
   def favorite
     @menu_recipe = MenuRecipe.find(params[:id])
     recipe = Recipe.find(@menu_recipe.recipe_id)
