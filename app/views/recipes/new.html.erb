@@ -1,0 +1,10 @@
+<%= simple_form_for @recipe do |f| %>
+  <%= f.input :name %>
+  <%= f.input :difficulty, collection: Recipe::DIFFICULTY  %>
+  <%= f.input :price, collection: Recipe::PRICE  %>
+  <%= f.input :diet, collection: Recipe::DIET %>
+  <%= f.input :time %>
+  <%= f.input :content, as: :text %>
+  <%= f.input :photo, as: :file %>
+  <%= f.button :submit, "Ajouter la recette", class: "btn grocery_yellow_button"%>
+<% end %>

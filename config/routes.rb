@@ -13,6 +13,12 @@ Rails.application.routes.draw do
     resources :reviews, only: [ :create ]
   end
 
+  resources :recipes, only: [ :new, :create, :edit, :destroy] do
+    resources :preparation, only: [ :new, :create, :destroy]
+  end
+
+  resources :ingredients, only: [ :new, :create, :destroy]
+
 # ajouter 2 spéciales : grocery et menu_recipes patch
   # get 'users/toys', to: "toys#show_user_toy", as: :user_toys
   post '/menus/:menu_id/menu_recipes/:id/switch', to: "menu_recipes#switch", as: :switch_menu_recipe
