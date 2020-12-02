@@ -1,7 +1,7 @@
 <div class="banner d-flex flex-column align-items-center">
   <div class="content-container">
     <div class="step-title">
-      <h1>Mon menu</h1>
+      <h1 class ="mon-menu-title">Mon menu</h1>
     </div>
       <%= link_to 'Supprimer ce menu <i class="fas fa-trash"></i>'.html_safe, menu_path(@menu), method: :delete, class: "delete-menu-button" %>
       <h3 class="personnalized-text">Et voilà un super menu composé de <%= @menu.menu_recipes.count %> plats <%= @menu.diet %>s. <strong>Bon appétit !</strong></h3>

@@ -218,14 +218,14 @@
   margin: auto;
   box-shadow : $shadow;
   font-size: 15px;
-  margin-top: -450px;
+  margin-top: -70vh;
 }
 
 @include media-breakpoint-up(md) {
   .menu-recipe-container {
   width: 600px;
   padding: 40px 40px 20px 40px;
-  margin-top: -570px;
+  margin-top: -70vh;
   }
 }
 
@@ -233,17 +233,17 @@
   background-color: none;
   border-radius: 15px;
   width: 100%;
-  padding: 60px 5px 5px 5px;
+  padding: 10px 5px 5px 5px;
   margin: auto;
   font-size: 15px;
-  margin-top: -800px;
+  margin-top: -93vh;
 }
 
 @include media-breakpoint-up(md) {
   .grocery-container {
   width: 90%;
   padding: 40px 40px 20px 40px;
-  margin-top: -800px;
+  margin-top: -93vh;
   }
 }
 
