@@ -7,13 +7,11 @@ class MenusController < ApplicationController
 
     @access_menus = []
 
-    @accesses.each do | access |
+    @accesses.each do |access|
       @access_menus << access.menu
-
     end
 
     @final_menus = (@user_menus + @access_menus).sort.reverse.first(5)
-
   end
 
   def new
