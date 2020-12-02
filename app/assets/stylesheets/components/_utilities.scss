@@ -42,6 +42,7 @@ body::-webkit-scrollbar {
 
 // step titles
 
+.step-title-menu-new,
 .step-title {
   display: flex;
   align-items: center;
@@ -60,6 +61,10 @@ body::-webkit-scrollbar {
       color: white;
     }
   }
+}
+
+.step-title-menu-new {
+  margin-top: 25px;
 }
 
 .personnalized-text {
