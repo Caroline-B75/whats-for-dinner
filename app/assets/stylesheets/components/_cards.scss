@@ -130,7 +130,7 @@
   }
 }
 
-
+.footer-card-menu,
 .footer-card-recipe-random,
 .footer-card-menu-edit {
   width: 100%;
@@ -153,8 +153,8 @@
   }
 }
 
+.footer-card-menu,
 .footer-card-menu-edit {
-  justify-content: space-between;
   display: flex;
   align-items: center;
   font-size: 15px;
@@ -163,6 +163,18 @@
   border-radius: 15px;
   margin-top: 8px;
   margin-bottom: 12px;
+}
+
+.footer-card-menu {
+  justify-content: center;
+  .fa-check {
+    color: #2cc52c;
+    font-size: 18px;
+  }
+}
+
+.footer-card-menu-edit {
+  justify-content: space-between;
 }
 
 .popover {

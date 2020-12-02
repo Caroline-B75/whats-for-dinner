@@ -1,6 +1,6 @@
 .table_grocery_item {
   table-layout: auto;
-  width: 100%;  
+  width: 100%;
 }
 
 .grocery-list{
@@ -67,7 +67,7 @@
 }
 
 .block {
-  width: 100%; 
+  width: 100%;
   background: #eaa85805;
   padding: .5em;
   display: inline-block;
@@ -75,14 +75,14 @@
   font-size:1em;
   box-sizing: border-box;
   box-shadow: 2px 2px 3px 0px #0000003b;
-  border-radius: 20px;
+  border-radius: 15px;
 }
-	
+
 .grid >.block{
 	transition: all 0.7s easein 0.7s;
 }
 
-.grid{ 
+.grid{
     column-count: 3;
     column-gap: 1em;
 }

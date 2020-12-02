@@ -4,7 +4,7 @@
       <h1>Mon menu</h1>
     </div>
       <%= link_to 'Supprimer ce menu <i class="fas fa-trash"></i>'.html_safe, menu_path(@menu), method: :delete, class: "delete-menu-button" %>
-      <h3 class="personnalized-text">Et voilà un super menu composé de <%= @menu.number_of_meals %> plats <%= @menu.diet %>s. Bon appétit ! </h3>
+      <h3 class="personnalized-text">Et voilà un super menu composé de <%= @menu.menu_recipes.count %> plats <%= @menu.diet %>s. <strong>Bon appétit !</strong></h3>
       <div class="container-card-menu-show">
         <% @menu.menu_recipes.order(:id).each do |menu_recipe| %>
           <div class="card-menu-edit">
@@ -20,13 +20,16 @@
                   <%= link_to Recipe.find(menu_recipe.recipe_id).name,  menu_recipe_path(menu_recipe), class: "menu-recipe-button" %>
                 </div>
               </div>
-              <div class="footer-card-menu-edit">
+              <div class="footer-card-menu">
+                <div>
+                  <%= menu_recipe.number_of_people %>
+                  &nbsp;
+                  <i class="fas fa-user-friends"></i>
+                </div>
                 <% if menu_recipe.done == true %>
-                  <p>Faite</p>
+                  &nbsp;&nbsp;&nbsp;
+                  <i class="fas fa-check"></i>
                 <% end %>
-                <%= menu_recipe.number_of_people %>
-                &nbsp;
-                <i class="fas fa-user-friends"></i>
               </div>
           </div>
         <% end %>
