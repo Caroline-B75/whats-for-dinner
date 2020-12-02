@@ -39,7 +39,7 @@ recipe2 = Recipe.create!(name: "Bricks au thon", difficulty: "très facile", pri
 <br />4) Poivrer à votre convenance en n'hésitant pas à goûter la farce.
 <br />5) Mettre un peu de farce au centre de chaque feuille de brick puis replier les quatre côtés de la feuille sur le dessus pour former un rectangle.")
 
-file2 = URI.open("https://res.cloudinary.com/dogomm21h/image/upload/v1606743402/1spf2p80bevqpp4wzdmw8ncr6emx.jpg")
+file2 = URI.open("https://res.cloudinary.com/dogomm21h/image/upload/v1606903794/whats_for_dinner/brick-au-thon_ibiz3n.jpg")
 recipe2.photo.attach(io: file2, filename: 'some-image.jpg', content_type: 'image/jpg')
 recipe2.save!
 
