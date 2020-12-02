@@ -68,3 +68,7 @@ body::-webkit-scrollbar {
   margin-bottom: 20px;
   color: $red;
 }
+
+.compensate-div {
+  height: calc(80 + 800px);
+}
