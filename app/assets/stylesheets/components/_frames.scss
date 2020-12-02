@@ -1,5 +1,14 @@
 // basic page structure (except navbar and footer)
 
+.background-img {
+  position: absolute;
+  z-index: -1;
+  height: calc(100vh - 80px);
+  width: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+
 .main-container {
   width: 100%;
   scroll-behavior: smooth;
