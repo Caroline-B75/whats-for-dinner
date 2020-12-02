@@ -5,7 +5,7 @@
     </div>
       <%= link_to 'Supprimer ce menu <i class="fas fa-trash"></i>'.html_safe, menu_path(@menu), method: :delete, class: "delete-menu-button" %>
       <h3 class="personnalized-text">Et voilà un super menu composé de <%= @menu.menu_recipes.count %> plats <%= @menu.diet %>s. <strong>Bon appétit !</strong></h3>
-      <div class="container-card-menu-show">
+      <div class="container-card-menu-show mt-2">
         <% @menu.menu_recipes.order(:id).each do |menu_recipe| %>
           <div class="card-menu-edit">
             <% if menu_recipe.done == true %>
@@ -34,7 +34,7 @@
           </div>
         <% end %>
       </div>
-      <div class="menu_show_buttons">
+      <div class="menu_show_buttons mt-3">
         <%= simple_form_for [ @menu, @access ], remote: true do |f| %>
           <%= f.input :email, label: false, placeholder: "utilisateur@email.com" %>
           <p>|</p>
