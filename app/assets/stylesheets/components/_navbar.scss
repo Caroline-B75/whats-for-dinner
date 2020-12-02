@@ -1,13 +1,12 @@
 .navbar-lewagon {
+  z-index: 1099;
   justify-content: space-between;
   background: white;
   position: fixed;
   width: 100%;
   height: 80px;
-
   position: relative;
   width: 100%;
-  opacity: 0.8;
 }
 
 .navbar-lewagon .navbar-collapse {
