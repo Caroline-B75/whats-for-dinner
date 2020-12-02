@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
       redirect_to menu_recipe_path(@menu_recipe)
     else
       flash[:alert] = "Votre avis n'est pas enregistré."
-      render :new
+      render 'menu_recipe/show'
     end
   end
 

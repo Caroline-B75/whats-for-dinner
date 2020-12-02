@@ -42,6 +42,7 @@ body::-webkit-scrollbar {
 
 // step titles
 
+.step-title-menu-new,
 .step-title {
   display: flex;
   align-items: center;
@@ -62,9 +63,17 @@ body::-webkit-scrollbar {
   }
 }
 
+.step-title-menu-new {
+  margin-top: 25px;
+}
+
 .personnalized-text {
   font-family: Lato;
   font-size: 20px;
   margin-bottom: 20px;
   color: $red;
+}
+
+.compensate-div {
+  height: calc(80 + 800px);
 }
