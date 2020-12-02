@@ -1,13 +1,17 @@
 // Specific CSS for your home-page
 
 .home-title {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  position: relative;
+  margin-top: 200px !important;
+  margin-bottom: 150px;
   text-align: center;
-  font-size: 80px;
+  font-size: 90px;
   color:$red;
 }
 
-.title-format {
-
+.banner {
+  .red-button {
+    padding : 25px 50px 25px 50px;
+    font-size: 30px;
+  }
 }
