@@ -1,0 +1,5 @@
+meta_product_name: "What's for dinner"
+meta_title: "What's for dinner - Menu, liste de course, recettes : Organisez vos repas en 3 clics"
+meta_description: "Générateur de menus et liste de courses organisée pour vous faciliter la préparation de vos repas au quotidien"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@Lewagonparis"   # required for Twitter Cards
