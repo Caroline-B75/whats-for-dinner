@@ -52,7 +52,12 @@ class MenusController < ApplicationController
     @menu.menu_recipes.destroy_all
     @menu.delete
     authorize @menu
-    redirect_to root_path
+
+    if params[:redirect_path]
+      redirect_to params[:redirect_path]
+    else
+      redirect_to root_path
+    end
   end
 
   private

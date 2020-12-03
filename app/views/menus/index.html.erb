@@ -5,7 +5,9 @@
       <p class="mb-2 mt-4">Vous avez créé ce menu le <%= menu.created_at.to_s.match(/\d{4}-\d{2}-\d{2}/) %></p>
       <div class="container-card-menu-show flex-column">
         <div class="w-100 d-flex justify-content-end mr-4">
-          <%= link_to '<i class="fas fa-times"></i>'.html_safe, menu_path(menu), method: :delete, remote: true, class: 'tooltips', title: "Supprimer ce menu", data: { toggle: 'tooltip', placement: 'top' }, remote: true %>
+          <%= link_to menu_path(menu, redirect_path: menus_path), method: :delete, remote: true, class: 'tooltips', title: "Supprimer ce menu", data: { toggle: 'tooltip', placement: 'top' }, remote: true do %>
+            <i class="fas fa-times"></i>
+          <% end %>
         </div>
         <div class="d-flex align-items-center justify-content-center flex-wrap">
           <% menu.menu_recipes.each do |menurecipe| %>
