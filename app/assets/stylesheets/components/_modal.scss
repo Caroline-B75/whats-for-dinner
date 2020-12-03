@@ -11,6 +11,14 @@
   background-color: rgba(255, 255, 255, 0.6);
 }
 
+.modal .form-control {
+  margin: 0px;
+}
+
+.modal .grocery_yellow_button {
+  margin: 20px 0px 30px 0px;
+}
+
 .modal-header {
     display: flex;
     align-items: flex-start;
@@ -28,6 +36,7 @@
   font-size: 28px;
   font-weight: 300;
   margin-left: 10px;
+  margin-top: 20px;
 }
 
 .modal-content {
