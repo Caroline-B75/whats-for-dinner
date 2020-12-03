@@ -41,8 +41,8 @@ class MenusController < ApplicationController
   end
 
   def edit
-    @random_recipes = Recipe.all.sample(5)
     @menu = Menu.find(params[:id])
+    @random_recipes = create_list_recipes_not_existing(@menu).sample(5)
     authorize @menu
   end
 
@@ -52,12 +52,25 @@ class MenusController < ApplicationController
     @menu.menu_recipes.destroy_all
     @menu.delete
     authorize @menu
-    redirect_to root_path
+    render :back
   end
 
   private
 
   def menu_params
     params.require(:menu).permit(:diet, :number_of_people, :number_of_meals)
+  end
+
+  def create_list_recipes_not_existing(menu)
+    menu_recipes_ids = []
+    menu.menu_recipes.each do |menu_recipe|
+      menu_recipes_ids << Recipe.find(menu_recipe.recipe_id)
+    end
+    if menu.diet == "flexitarien"
+      list_recipes = Recipe.where.not(id: menu_recipes_ids)
+    else
+      list_recipes = Recipe.where.not(id: menu_recipes_ids).where(diet: menu.diet)
+    end
+    return list_recipes
   end
 end
