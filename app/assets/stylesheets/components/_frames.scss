@@ -17,9 +17,6 @@
 }
 
 .banner {
-  background-image: url("https://res.cloudinary.com/dogomm21h/image/upload/v1606485167/background_photo_owmsqk.jpg");
-  background-size: cover;
-  background-position: bottom;
   height: calc(100vh - 80px);
   .red-button {
     margin-bottom: 50px;
@@ -263,6 +260,11 @@
   font-family: Lobster;
   margin-top: 20px;
   text-align: center;
+}
+@include media-breakpoint-down(md) {
+  .menu-recipe-container {
+    margin-top: -420px;
+  }
 }
 
 .card-grocery_item {

@@ -1,7 +1,4 @@
 .background-recipe {
-  background-image: url("https://res.cloudinary.com/dogomm21h/image/upload/v1606485167/background_photo_owmsqk.jpg");
-  background-size: cover;
-  background-position: bottom;
   min-height: calc(100vh - 100px);
 }
 
@@ -74,15 +71,26 @@
 
 .reviews-display {
   margin: 0 auto;
-  width: 380px;
+  width: 370px;
   padding: 5px 10px 15px 10px;
   p {
     margin: 0;
   }
+
 }
 @include media-breakpoint-up(md) {
   .reviews-display {
     width: 630px;
+  }
+}
+
+#review_content {
+  border-radius: 15px;
+  margin: 0px;
+}
+@include media-breakpoint-down(md) {
+  #review_content {
+    font-size: 15px;
   }
 }
 
