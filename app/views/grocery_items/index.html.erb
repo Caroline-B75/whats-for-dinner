@@ -44,7 +44,8 @@
         <div class="container-grocery">
           <div class="grid">
             <% Ingredient::CATEGORY.each do |category| %>
-              <% if GroceryItem.find_by(category: category).nil? == false %>
+              
+              <% if @grocery_items.where(category: category).present? %>
                 <div class="block">
 
                   <%# <div class="card-grocery_item"> %>
