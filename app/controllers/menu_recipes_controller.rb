@@ -4,6 +4,11 @@ class MenuRecipesController < ApplicationController
     authorize @menu_recipe
     @review = Review.new
 
+    @reviews = @menu_recipe.recipe.reviews
+    if !@reviews.nil?
+      @average_review = @reviews.average(:rating)
+    end
+
     @menu_recipe.recipe.preparations.each do |preparation|
       preparation.quantity = preparation.quantity * @menu_recipe.number_of_people
     end

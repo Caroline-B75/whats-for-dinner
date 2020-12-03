@@ -43,6 +43,24 @@
   </div>
 </div>
 
+<% if !@average_review.nil? %>
+  <div class="reviews-display">
+    <div class="review-average">
+      <div class="review-features">
+        <p>Note globale: <%= @average_review.round %> / 5</p>
+        <p>
+          <% @average_review.round.times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+          <% (5 - @average_review.round).times do %>
+            <i class="far fa-star"></i>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+<% end %>
+
 <div class="reviews-display">
   <% @menu_recipe.recipe.reviews.order(id: :desc).each do | review | %>
     <div class="review">
