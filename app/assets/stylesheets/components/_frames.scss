@@ -228,6 +228,7 @@
   box-shadow : $shadow;
   font-size: 15px;
   margin-top: -70vh;
+  margin-bottom: 15px;
 }
 
 @include media-breakpoint-up(md) {
@@ -235,6 +236,7 @@
   width: 600px;
   padding: 40px 40px 20px 40px;
   margin-top: -70vh;
+  margin-bottom: 15px;
   }
 }
 

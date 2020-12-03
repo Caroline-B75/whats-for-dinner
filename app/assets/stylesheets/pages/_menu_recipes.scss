@@ -74,24 +74,28 @@
 
 .reviews-display {
   margin: 0 auto;
-  width: 430px;
-  padding: 10px;
+  width: 380px;
+  padding: 5px 10px 15px 10px;
   p {
     margin: 0;
-    width: 100%;
   }
 }
 @include media-breakpoint-up(md) {
   .reviews-display {
-    width: 670px;
+    width: 630px;
   }
 }
 
+.review-average,
 .review {
   background-color: white;
   border-radius: 15px;
   padding: 20px;
-  margin: 15px;
+}
+
+
+.review-average {
+  border: solid $yellow 2px;
 }
 
 .review-features {
