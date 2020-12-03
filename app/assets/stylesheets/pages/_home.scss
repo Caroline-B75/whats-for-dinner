@@ -8,10 +8,23 @@
   font-size: 90px;
   color:$red;
 }
+@include media-breakpoint-down(md) {
+  .home-title {
+    margin-top: 150px !important;
+    padding: 0px 20px 0px 20px;
+    font-size: 60px;
+  }
+}
 
 .banner {
   .red-button {
     padding: 20px 50px 22px 50px;
     font-size: 30px;
+  }
+  @include media-breakpoint-down(md) {
+    .red-button {
+      font-size: 25px;
+      padding: 20px 40px 20px 40px;
+    }
   }
 }

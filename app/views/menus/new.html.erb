@@ -1,6 +1,6 @@
 <div class="banner">
   <div class="content-container mx-auto">
-    <div class="step-title-menu-new">
+    <div class="step-title-menu-new" id="step1">
       <div class="step-creation-menu">
         <h1>1</h1>
       </div>
@@ -19,7 +19,7 @@
             placeholder: "Nombre de repas",
             label: false %>
         </div>
-        <div class="d-flex flex-column flex-md-row justify-content-between mt-5">
+        <div id="diet-cards" class="d-flex flex-column flex-md-row justify-content-between">
         <br><br>
         <%= f.input :diet,
           collection: Recipe::DIET,
@@ -37,3 +37,4 @@
     </div>
   </div>
 </div>
+
