@@ -33,6 +33,13 @@
   // }
 }
 
+@include media-breakpoint-down(md) {
+  #step1 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
 .menu_diet {
   display: flex;
   align-items: center;
@@ -52,6 +59,18 @@
 
   .form-check {
     padding-left : 0;
+  }
+}
+
+#diet-cards {
+  margin-top: 25px;
+}
+@include media-breakpoint-down(md) {
+  #diet-cards {
+    margin-top: 0px;
+    p {
+      font-size: 15px;
+    }
   }
 }
 
@@ -89,4 +108,9 @@
 
 .diet-card img {
   width: 110px;
+}
+@include media-breakpoint-down(md) {
+  .diet-card img {
+    width: 70px;
+  }
 }

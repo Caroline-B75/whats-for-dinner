@@ -1,51 +1,58 @@
-<div class="banner d-flex flex-column align-items-center">
+<div class="d-flex flex-column align-items-center">
   <div class="content-container">
+
     <div class="step-title">
       <h1 class ="mon-menu-title">Mon menu</h1>
     </div>
-      <%= link_to 'Supprimer ce menu <i class="fas fa-trash"></i>'.html_safe, menu_path(@menu), method: :delete, class: "delete-menu-button" %>
       <h3 class="personnalized-text">Et voilà un super menu composé de <%= @menu.menu_recipes.count %> plats <%= @menu.diet %>s. <strong>Bon appétit !</strong></h3>
       <div class="container-card-menu-show mt-2">
-        <% @menu.menu_recipes.order(:id).each do |menu_recipe| %>
-          <div class="card-menu-edit">
-            <% if menu_recipe.done == true %>
-              <div class="card-recipe-done">
-            <% else %>
-              <div class="card-recipe">
-            <% end %>
-                <div class="img-small img">
-                  <%= cl_image_tag Recipe.find(menu_recipe.recipe_id).photo.key, height: 150, width: 150, crop: :fill %>
+        <div class="w-100 d-flex justify-content-end mr-4">
+          <%= link_to menu_path(@menu), method: :delete, remote: true, class: 'tooltips', title: "Supprimer ce menu", data: { toggle: 'tooltip', placement: 'top' }, remote: true do %>
+            <i class="fas fa-times"></i>
+          <% end %>
+        </div>
+        <div class="d-flex align-items-center justify-content-center flex-wrap">
+          <% @menu.menu_recipes.order(:id).each do |menu_recipe| %>
+            <div class="card-menu-edit">
+              <% if menu_recipe.done == true %>
+                <div class="card-recipe-done">
+              <% else %>
+                <div class="card-recipe">
+              <% end %>
+                  <div class="img-small img">
+                    <%= cl_image_tag Recipe.find(menu_recipe.recipe_id).photo.key, height: 150, width: 150, crop: :fill %>
+                  </div>
+                  <div class="card-recipe-title">
+                    <%= link_to Recipe.find(menu_recipe.recipe_id).name,  menu_recipe_path(menu_recipe), class: "menu-recipe-button" %>
+                  </div>
                 </div>
-                <div class="card-recipe-title">
-                  <%= link_to Recipe.find(menu_recipe.recipe_id).name,  menu_recipe_path(menu_recipe), class: "menu-recipe-button" %>
+                <div class="footer-card-menu">
+                  <div>
+                    <%= menu_recipe.number_of_people %>
+                    &nbsp;
+                    <i class="fas fa-user-friends"></i>
+                  </div>
+                  <% if menu_recipe.done == true %>
+                    &nbsp;&nbsp;&nbsp;
+                    <i class="fas fa-check"></i>
+                  <% end %>
                 </div>
-              </div>
-              <div class="footer-card-menu">
-                <div>
-                  <%= menu_recipe.number_of_people %>
-                  &nbsp;
-                  <i class="fas fa-user-friends"></i>
-                </div>
-                <% if menu_recipe.done == true %>
-                  &nbsp;&nbsp;&nbsp;
-                  <i class="fas fa-check"></i>
-                <% end %>
-              </div>
-          </div>
-        <% end %>
+            </div>
+          <% end %>
+        </div>
+        <div class="d-flex justify-content-center mt-4 mb-3">
+          <%= link_to 'Ma liste de course',  menu_grocery_items_path(@menu), class: "yellow-button" %>
+        </div>
       </div>
-      <div class="menu_show_buttons mt-3">
+      <div class="menu_show_buttons mt-4">
+        <p>Partager ma recette et mon menu avec un autre utilisateur :</p>
         <%= simple_form_for [ @menu, @access ], remote: true do |f| %>
           <%= f.input :email, label: false, placeholder: "utilisateur@email.com" %>
-          <p>|</p>
+          <p class="pipe-input mb-2">|</p>
           <%= button_tag type: 'submit'  do %>
             <i class="far fa-paper-plane"  title="Partager" data-toggle="tooltip" data-placement="top" aria-hidden="true" aria-hissen=true></i>
           <% end %>
         <% end %>
-        <div class="d-flex">
-            <%= link_to 'Ma liste de course',  menu_grocery_items_path(@menu), class: "yellow-button" %>
-        </div>
       </div>
   </div>
-  <%= link_to '<i class="fas fa-arrow-left"></i> Retour'.html_safe, root_path, class: "retour-btn" %>
 </div>
