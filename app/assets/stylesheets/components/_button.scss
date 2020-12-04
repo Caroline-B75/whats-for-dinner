@@ -96,6 +96,8 @@
   margin: 20px;
 }
 .arrow-down {
+  position: relative;
+  bottom: 1em;
   line-height: 15px;
   display: flex;
   flex-direction: column;
