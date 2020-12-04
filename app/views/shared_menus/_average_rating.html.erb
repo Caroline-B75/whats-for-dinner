@@ -1,0 +1,12 @@
+<%= recipe.time %>
+<br><%= recipe.difficulty %>
+<br><%= recipe.price %>
+<% average_review = recipe.reviews.average(:rating) %>
+<% if average_review.nil? == false %>
+<br><% average_review.round.times do %>
+    <i class='fas fa-star'></i>
+  <% end %>
+  <% (5 - average_review.round).times do %>
+    <i class='far fa-star'></i>
+  <% end %>
+<% end %>

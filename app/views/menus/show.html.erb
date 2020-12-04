@@ -7,7 +7,9 @@
       <h3 class="personnalized-text">Et voilà un super menu composé de <%= @menu.menu_recipes.count %> plats <%= @menu.diet %>s. <strong>Bon appétit !</strong></h3>
       <div class="container-card-menu-show mt-2">
         <div class="w-100 d-flex justify-content-end mr-4">
-          <%= link_to '<i class="fas fa-times"></i>'.html_safe, menu_path(@menu), method: :delete, remote: true, class: 'tooltips', title: "Supprimer ce menu", data: { toggle: 'tooltip', placement: 'top' }, remote: true %>
+          <%= link_to menu_path(@menu), method: :delete, remote: true, class: 'tooltips', title: "Supprimer ce menu", data: { toggle: 'tooltip', placement: 'top' }, remote: true do %>
+            <i class="fas fa-times"></i>
+          <% end %>
         </div>
         <div class="d-flex align-items-center justify-content-center flex-wrap">
           <% @menu.menu_recipes.order(:id).each do |menu_recipe| %>
