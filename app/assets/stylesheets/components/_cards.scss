@@ -178,11 +178,11 @@
 }
 
 .popover {
-  border: solid 1px lightgrey;
+  border: solid 1px #881e32;
   border-radius: 15px 15px 0px 0px;
   width: 150px;
   height: 112px;
-  background-color: $yellow;
+  background-color: $red;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -191,5 +191,5 @@
 .popover-body {
   text-align: center;
   color: white;
-  font-size: 15px;
+  font-size: 16px;
 }
