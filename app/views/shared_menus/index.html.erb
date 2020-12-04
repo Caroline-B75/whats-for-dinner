@@ -3,8 +3,10 @@
   <div class="content-container">
     <h1 class ="mon-menu-title">Menus partagés avec moi</h1>
     <% @shared_menus.each do | menu | %>
-      <p class="mb-2 mt-4">Menu créé le <%= menu.created_at.strftime("%d/%m/%Y") %> par <%= User.find(menu.user_id).username %></p>      <div class="container-card-menu-show flex-column">
-        <div class="w-100 d-flex justify-content-end mr-4">
+      <div class="container-card-menu-show flex-column mt-5">
+        <div class="w-100 d-flex justify-content-between pl-4 pr-4">
+          <p></p>
+          <h3 class="user-name-shared-menu-card">Partagé par <%= User.find(menu.user_id).username %> le <%= menu.created_at.strftime("%d/%m/%Y") %></h3>
           <%= link_to '<i class="fas fa-times"></i>'.html_safe, menu_path(menu), method: :delete, remote: true, class: 'tooltips', title: "Supprimer ce menu", data: { toggle: 'tooltip', placement: 'top' }, remote: true %>
         </div>
         <div class="d-flex align-items-center justify-content-center flex-wrap">
