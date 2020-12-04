@@ -45,7 +45,7 @@
         </div>
       </div>
       <div class="menu_show_buttons mt-4">
-        <p>Partager ma recette et mon menu avec un autre utilisateur :</p>
+        <p>Partager mon menu et ma liste de course avec un autre utilisateur :</p>
         <%= simple_form_for [ @menu, @access ], remote: true do |f| %>
           <%= f.input :email, label: false, placeholder: "utilisateur@email.com" %>
           <p class="pipe-input mb-2">|</p>
