@@ -51,7 +51,7 @@ class MenuRecipesController < ApplicationController
     @menu_recipe.update(recipe: new_menu_recipe)
 
     authorize @menu_recipe
-    redirect_to :back
+    redirect_to edit_menu_path(@menu)
   end
 
   def self.create_menu_recipes(menu)

@@ -18,9 +18,9 @@
             </div>
           </div>
           <div class="footer-card-menu-edit">
-            <%= link_to '<i class="fas fa-sync"></i>'.html_safe, switch_menu_recipe_path(@menu, menu_recipe), method: :post, class: 'tooltips', title: "Changer de recette", data: { toggle: 'tooltip', placement: 'top' }, remote: true %>
+            <%= link_to '<i class="fas fa-sync"></i>'.html_safe, switch_menu_recipe_path(@menu, menu_recipe), method: :post, remote: true, class: 'tooltips', title: "Changer de recette", data: { toggle: 'tooltip', placement: 'top' } %>
             <p>|</p>
-            <%= link_to '<i class="fas fa-times"></i>'.html_safe, menu_menu_recipe_path(@menu, menu_recipe), method: :delete, remote: true, class: 'tooltips', title: "Supprimer ce repas", data: { toggle: 'tooltip', placement: 'top' }, remote: true %>
+            <%= link_to '<i class="fas fa-times"></i>'.html_safe, menu_menu_recipe_path(@menu, menu_recipe), method: :delete, remote: true, class: 'tooltips', title: "Supprimer ce repas", data: { toggle: 'tooltip', placement: 'top' } %>
             <p>|</p>
             <%= simple_form_for(menu_recipe) do |f| %>
               <%= link_to '<i class="fas fa-user-friends"></i>'.html_safe, "#", class: 'tooltips', title: "Nombre de personnes à table", data: { toggle: 'tooltip', placement: 'top' }, remote: true %>
